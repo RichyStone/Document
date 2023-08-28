@@ -1,0 +1,218 @@
+进程间通信（IPC，InterProcess Communication）是指在不同进程之间传播或交换信息。
+
+1.管道（Pipe）
+适用于父子进程之间的通信。其优点是操作简单，易于实现，但只能在具有亲缘关系的进程之间使用，并且只能进行单向通信。
+
+命名管道：
+
+	发送端：
+	
+		void PipeSend(string str)
+        {
+            try
+            {
+                using (var PipeServer = new NamedPipeServerStream("TestPipe", System.IO.Pipes.PipeDirection.InOut, 1, PipeTransmissionMode.Message, PipeOptions.Asynchronous))
+                {
+                    PipeServer.WaitForConnection();
+                    var bytes = System.Text.Encoding.Default.GetBytes(str);
+                    PipeServer.Write(bytes, 0, bytes.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error($"{ex.Message}\n{ex.StackTrace}");
+            }
+        }
+	
+	接收端： 
+	
+        void PipeReceive()
+        {
+            Task.Run(() =>
+            {
+                try
+                {
+                    using (var pipere = new NamedPipeClientStream(".", "TestPipe", PipeDirection.In))
+                    {
+                        pipere.Connect();
+                        pipere.ReadMode = PipeTransmissionMode.Message;
+                        var bytes = new byte[100];
+                        do
+                        {
+                            int count = pipere.Read(bytes, 0, bytes.Length);
+                            var str = System.Text.Encoding.Default.GetString(bytes, 0, count);
+                        }
+                        while (!pipere.IsMessageComplete);
+
+                        if (pipere.IsConnected)
+                            pipere.Flush();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LoggHelper.Error($"{ex.Message}\n{ex.StackTrace}");
+                }
+            });
+        }
+		
+参考资料网址：
+https://blog.csdn.net/hellolib/article/details/82734501
+
+2.共享内存（Shared Memory）
+共享内存是指两个或多个进程共享一个给定的存储区域，在这个存储区域中存储的数据可以被所有共享该存储区域的进程访问。共享内存的优点是速度快、效率高，但是对于共享数据的同步和互斥控制需要考虑。
+
+	写入：
+
+        public void WriteMMF(byte[] data)
+        {
+            var mmf = MemoryMappedFile.CreateOrOpen(index.ToString(), data.Length, MemoryMappedFileAccess.ReadWrite);
+            using (var mmfStream = mmf.CreateViewStream())
+            {
+                mmfStream.Write(data, 0, data.Length);
+            }
+        }
+ 
+	读取：
+	
+        private byte[] ReadMMF(int name, int length)
+        {
+            byte[] buffer = null;
+            try
+            {
+                MemoryMappedFile mmf = MemoryMappedFile.OpenExisting(name.ToString());
+                using (var mmfStream = mmf.CreateViewStream(0, length, MemoryMappedFileAccess.ReadWrite))
+                {
+                    int nLength = 0;
+                    buffer = new byte[length];
+                    do
+                    {
+                        nLength = mmfStream.Read(buffer, 0, length);
+                    } while (nLength > 0);
+                }
+                mmf.Dispose();
+                GC.Collect();
+            }
+            catch (Exception ex)
+            {
+                buffer = null;
+            }
+
+            return buffer;
+        }
+		
+参考资料网址：
+https://blog.csdn.net/qq_36753998/article/details/128551531
+https://www.cnblogs.com/arxive/p/7222185.html
+
+3.发送消息（SendMessage）
+适用于同一台机器上进程之间的通信。相比于管道，它具有很多优点，如可以进行双向通信，支持多个读写者同时访问等，但实现较为复杂。
+
+[DllImport("User32.dll", EntryPoint = "SendMessage")]
+public static extern int SendMessage(IntPtr hwnd, int msg, int wParam, ref COPYDATASTRUCT IParam);
+public static extern int SendMessage(int hwnd, int msg, int wParam, ref COPYDATASTRUCT IParam);
+public static extern IntPtr SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
+要有此函数，需要添加using System.Runtime.InteropServices;命名空间
+
+此方法各个参数表示的意义：
+wnd：接收消息的窗口的句柄。如果此参数为HWND_BROADCAST，则消息将被发送到系统中所有顶层窗口，包括无效或不可见的非自身拥有的窗口、被覆盖的窗口和弹出式窗口，但消息不被发送到子窗口。
+msg：指定被发送的消息类型
+wP：消息内容
+lP：指定附加的消息指定信息
+
+SendMessage与PostMessage之间的区别：SendMessage和PostMessage，这两个函数虽然功能非常相似，都是负责向指定的窗口发送消息，
+SendMessage() 函数发出消息后一直等到接收方的消息响应函数处理完之后才能返回，并能够得到返回值，在此期间发送方程序将被阻塞，
+SendMessage() 后面的语句不能被继续执行，即是说此方法是同步的，PostMessage() 函数在发出消息后马上返回，其后语句能够被立即执行，但是无法获取接收方的消息处理返回值，即是说此方法是异步的。
+
+	发送端：
+
+		const int WM_COPYDATA = 0x004A;
+
+        public struct COPYDATASTRUCT
+        {
+            public IntPtr dwData;
+            public int cData;
+            [MarshalAs(UnmanagedType.LPStr)]
+            public string lpData;
+        }
+
+        [DllImport("User32.dll")]
+        public static extern int FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hwnd, int msg, int wParam, ref COPYDATASTRUCT IParam);
+		
+        private void ReplyWhetherSuccess(bool isSuccess)
+        {
+            var strSent = isSuccess ? "success" : "fail";
+
+            var mainProcess = Process.GetProcessesByName("Tztek.Virgo.B21IA49").FirstOrDefault();
+            if (mainProcess != null && mainProcess.MainWindowHandle != IntPtr.Zero)
+            {
+                byte[] arr = System.Text.Encoding.Default.GetBytes(strSent);
+                int len = arr.Length;
+                COPYDATASTRUCT cdata;
+                cdata.dwData = (IntPtr)100;
+                cdata.lpData = strSent;
+                cdata.cData = len + 1;
+                SendMessage(mainProcess.MainWindowHandle, WM_COPYDATA, 0, ref cdata);
+            }
+			
+            ////int WINDOW_HANDLE = FindWindow(null, "TestWindow");
+            ////if (WINDOW_HANDLE != 0)
+            ////{
+            ////    byte[] arr = System.Text.Encoding.Default.GetBytes(strSent);
+            ////    int len = arr.Length;
+            ////    COPYDATASTRUCT cdata;
+            ////    cdata.dwData = (IntPtr)100;
+            ////    cdata.lpData = strSent;
+            ////    cdata.cData = len + 1;
+            ////    SendMessage(WINDOW_HANDLE, WM_COPYDATA, 0, ref cdata);
+            ////}
+        }
+
+	接收端：
+
+		////wpf用此方法
+		hwnd:当前窗口句柄
+		msg：指定被发送的消息类型
+		wParam：消息内容
+		lParam：指定附加的消息指定信息
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            if (msg == WM_COPYDATA)
+            {
+                COPYDATASTRUCT cdata = new COPYDATASTRUCT();
+                Type mytype = cdata.GetType();
+                cdata = (COPYDATASTRUCT)Marshal.PtrToStructure(lParam, mytype);
+                this.textBox1.Text = cdata.lpData;
+            }
+            return IntPtr.Zero;
+        }
+
+		////WinFrom用此方法
+        protected override void DefWndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+            case WM_COPYDATA:
+                COPYDATASTRUCT cdata = new COPYDATASTRUCT();
+                Type mytype = cdata.GetType();
+                cdata = (COPYDATASTRUCT)m.GetLParam(mytype);
+                this.textBox1.Text = cdata.lpData;
+                break;
+            default:
+                base.DefWndProc(ref m);
+                break;
+            }
+        }	
+		
+参考资料网址：
+https://blog.csdn.net/testcs_dn/article/details/8685940
+https://blog.csdn.net/liuyukuan/article/details/53515761
+  
+4.信号量（Semaphore）
+信号量是一种 IPC 机制，它是一个计数器，用于保护共享资源。
+
+5.套接字（Socket）
+套接字是一种通用的进程间通信方式，应用程序可以通过套接字进行网络通信。适用于需要高速数据传输和共享的进程之间的通信。

@@ -1,0 +1,159 @@
+进程（Process）、应用程序域（AppDomain）、.NET上下文（Context）的概念与操作
+
+参考链接：https://www.cnblogs.com/leslies2/archive/2012/03/06/2379235.html
+
+进程（Process）、线程（Thread）、应用程序域（AppDomain）、上下文（Context）的关系：
+一个进程内可以包括多个应用程序域，也包括多个线程，线程也可以穿梭于多个应用程序域当中。但在同一个时刻，线程只会处于一个应用程序域内。线程也能穿梭于多个上下文当中，进行对象的调用。
+
+一、进程的概念与作用
+
+进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。进程之间是相对独立的，一个进程无法直接访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。
+
+1.1 Process 的属性与方法
+
+在 System.Diagnostics 命名空间当中存在Process类，专门用于管理进程的开始、结束，访问进程中的模块，获取进程中的线程，设定进程的优先级别等。
+
+属性					说明
+BasePriority			获取关联进程的基本优先级。
+ExitCode				获取关联进程终止时指定的值。
+ExitTime				获取关联进程退出的时间。
+Handle					返回关联进程的本机句柄。
+HandleCount				获取由进程打开的句柄数。
+HasExited				获取指示关联进程是否已终止的值。
+Id						获取关联进程的唯一标识符。
+MachineName				获取关联进程正在其上运行的计算机的名称。
+MainModule				获取关联进程的主模块。
+Modules					获取已由关联进程加载的模块。
+PriorityClass			获取或设置关联进程的总体优先级类别。
+ProcessName				获取该进程的名称。
+StartInfo				获取或设置要传递给Process的Start方法的属性。
+StartTime				获取关联进程启动的时间。
+SynchronizingObject		获取或设置用于封送由于进程退出事件而发出的事件处理程序调用的对象。
+Threads					获取在关联进程中运行的一组线程
+
+方法					说明
+GetProcessById			创建新的 Process 组件，并将其与您指定的现有进程资源关联。
+GetProcessByName		创建多个新的 Process 组件，并将其与您指定的现有进程资源关联。
+GetCurrentProcess		获取新的 Process 组件并将其与当前活动的进程关联。
+GetProcesses			获取本地计算机上正在运行的每一个进程列表。
+Start					启动一个进程。
+Kill					立即停止关联的进程。
+Close					释放与此组件关联的所有资源。
+WaitForExit				指示 Process 组件无限期地等待关联进程退出。
+
+二、应用程序域
+
+使用.NET建立的可执行程序 *.exe，并没有直接承载到进程当中，而是承载到应用程序域（AppDomain）当中。
+应用程序域是.NET引入的一个新概念，它比进程所占用的资源要少，可以被看作是一个轻量级的进程。
+
+在一个进程中可以包含多个应用程序域，一个应用程序域可以装载一个可执行程序（*.exe）或者多个程序集（*.dll）。这样可以使应用程序域之间实现深度隔离，即使进程中的某个应用程序域出现错误，也不会影响其他应用程序域的正常运作。
+
+当一个程序集同时被多个应用程序域调用时，会出现两种情况：
+第一种情况：CLR分别为不同的应用程序域加载此程序集。
+第二种情况：CLR把此程序集加载到所有的应用程序域之外，并实现程序集共享，此情况比较特殊，被称作为Domain Neutral。
+
+2.1 AppDomain的属性与方法
+
+在System命名空间当中就存在AppDomain类，用管理应用程序域。下面是AppDomain类的常用属性：
+
+属性							说明
+ActivationContext				获取当前应用程序域的激活上下文。
+ApplicationIdentity				获得应用程序域中的应用程序标识。
+BaseDirectory					获取基目录。
+CurrentDomain					获取当前 Thread 的当前应用程序域。
+Id								获得一个整数，该整数唯一标识进程中的应用程序域。
+RelativeSearchPath				获取相对于基目录的路径，在此程序集冲突解决程序应探测专用程序集。
+SetupInformation				获取此实例的应用程序域配置信息。
+
+AppDomain类中有多个方法，可以用于创建一个新的应用程序域，或者执行应用程序域中的应用程序。
+
+方法							说明
+CreateDomain					创建新的应用程序域。
+CreateInstance					创建在指定程序集中定义的指定类型的新实例。
+CreateInstanceFrom				创建在指定程序集文件中定义的指定类型的新实例。
+DoCallBack						在另一个应用程序域中执行代码，该应用程序域由指定的委托标识。
+ExecuteAssembly					执行指定文件中包含的程序集。
+ExecuteAssemblyByName			执行程序集。
+GetAssemblies					获取已加载到此应用程序域的执行上下文中的程序集。
+GetCurrentThreadId				获取当前线程标识符。
+GetData							为指定名称获取存储在当前应用程序域中的值。
+IsDefaultAppDomain				返回一个值，指示应用程序域是否是进程的默认应用程序域。
+SetData							为应用程序域属性分配值。
+Load							将 Assembly 加载到此应用程序域中。
+Unload							卸载指定的应用程序域。
+
+AppDomain类中有多个事件，用于管理应用程序域生命周期中的不同部分。
+
+事件							说明
+AssemblyLoad					在加载程序集时发生。
+AssemblyResolve					在对程序集的解析失败时发生。
+DomainUnload					在即将卸载 AppDomain 时发生。
+ProcessExit						当默认应用程序域的父进程存在时发生。
+ReflectionOnlyAssemblyResolve	当程序集的解析在只反射上下文中失败时发生。
+ResourceResolve					当资源解析因资源不是程序集中的有效链接资源或嵌入资源而失败时发生。
+TypeResolve						在对类型的解析失败时发生。
+UnhandledException				当某个异常未被捕获时出现。
+
+三、深入了解.NET上下文
+
+3.1 .NET上下文的概念
+
+应用程序域是进程中承载程序集的逻辑分区，在应用程序域当中，存在更细粒度的用于承载.NET对象的实体，那就.NET上下文Context。
+所有的.NET对象都存在于上下文当中，每个AppDomain当中至少存在一个默认上下文（context 0）。
+一般不需要指定特定上下文的对象被称为上下文灵活对象（context-agile），建立此对象不需要特定的操作，只需要由CLR自行管理，一般这些对象都会被建立在默认上下文当中。
+
+3.2 透明代理
+
+在上下文的接口当中存在着一个消息接收器负责检测拦截和处理信息，当对象是MarshalByRefObject的子类的时候，CLR将会建立透明代理，实现对象与消息之间的转换。
+应用程序域是CLR中资源的边界，一般情况下，应用程序域中的对象不能被外界的对象所访问。而MarshalByRefObject 的功能就是允许在支持远程处理的应用程序中跨应用程序域边界访问对象，在使用.NET Remoting远程对象开发时经常使用到的一个父类。
+
+3.3 上下文绑定
+
+系统需要对象使用消息接收器机制的时候，即可使用ContextBoundObject类。ContextBoundObject继承了MarshalByRefObject类，保证了它的子类都会通过透明代理被访问。
+
+一般类所建立的对象为上下文灵活对象（context-agile），它们都由CLR自动管理，可存在于任意的上下文当中。
+而 ContextBoundObject 的子类所建立的对象只能在建立它的对应上下文中正常运行，此状态被称为上下文绑定。
+其他对象想要访问ContextBoundObject 的子类对象时，都只能通过代透明理来操作。
+
+四、进程、应用程序域、线程的相互关系
+
+4.1 跨AppDomain运行代码
+
+在应用程序域之间的数据是相对独立的，当需要在其他AppDomain当中执行当前AppDomain中的程序集代码时，可以使用CrossAppDomainDelegate委托。
+把CrossAppDomainDelegate委托绑定方法以后，通过AppDomain的DoCallBack方法即可执行委托。
+
+		static void Main(string[] args)
+         {
+             Console.WriteLine("CurrentAppDomain start!");
+             //建立新的应用程序域对象
+             AppDomain newAppDomain = AppDomain.CreateDomain("newAppDomain");
+             //绑定CrossAppDomainDelegate的委托方法
+             CrossAppDomainDelegate crossAppDomainDelegate=new CrossAppDomainDelegate(MyCallBack);
+             //绑定DomainUnload的事件处理方法
+             newAppDomain.DomainUnload += (obj, e) =>
+             {
+                 Console.WriteLine("NewAppDomain unload!");
+             };
+             //调用委托
+             newAppDomain.DoCallBack(crossAppDomainDelegate);
+             AppDomain.Unload(newAppDomain) ;
+             Console.ReadKey();
+         }
+ 
+         public static void MyCallBack()
+         {
+             string name = AppDomain.CurrentDomain.FriendlyName;
+             for(int n=0;n<4;n++)
+             Console.WriteLine(string.Format( "  Do work in {0}........" , name));
+         }
+
+4.2 跨AppDomain的线程
+
+线程存在于进程当中，它在不同的时刻可以运行于多个不同的AppDomain当中。它是进程中的基本执行单元，在进程入口执行的第一个线程被视为这个进程的主线程。
+在.NET应用程序中，都是以Main()方法作为入口的，当调用此方法时，系统就会自动创建一个主线程。
+线程主要是由CPU寄存器、调用栈和线程本地存储器（Thread Local Storage，TLS）组成的。
+CPU寄存器主要记录当前所执行线程的状态，调用栈主要用于维护线程所调用到的内存与数据，TLS主要用于存放线程的状态信息。
+
+4.3 跨上下文的线程
+
+线程既然能够跨越AppDomain的边界，当然也能跨越不同的上下文。

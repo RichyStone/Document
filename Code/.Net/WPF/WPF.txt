@@ -1,0 +1,47 @@
+WPF及MVVM
+
+WPF简介
+WPF：WPF即Windows Presentation Foundation，翻译为中文“Windows呈现基础”，是微软推出的基于Windows Vista的用户界面框架，属于.NET Framework 3.0的一部分。它提供了统一的编程模型、语言和框架，真正做到了分离界面设计人员与开发人员的工作；同时它提供了全新的多媒体交互用户图形界面。
+
+WPF特点
+1、统一的编程模型
+WPF提供的编程模型统一普通控件、语音、视频、文档3D等技术，这些媒体类型能够统一协调工作，降低了我们的学习成本。
+2、与分辨率无关
+WPF是基于矢量绘图的，因此它产生的图形界面能够支持各种分辨率的显示设备，而不会像WinForm等在高分辨率的现实设备上产生锯齿。
+3、硬件加速技术
+WPF是基于Direct3D创建。在WPF应用程序中无论是2D还是3D的图形或者文字内容都会被转换为3D三角形、材质和其他Direct3D对象，并由硬件负责渲染，因此它能够更好的利用系统的图像处理单元GPU，从硬件加速中获得好处。
+4、声明式编程
+WPF引入一种新的XAML语言（Extensible Application Markup Language）来开发界面。使用XAML语言将界面开发以及后台逻辑开发很好的分开，降低了前后台开发的耦合度，使用户界面设计师与程序开发者能更好的合作，降低维护和更新的成本。
+5、易于部署
+WPF除了可以使用传统的Windows Installer以及ClickOnce方式来发布我们的桌面应用程序之外，还可以将我们的应用程序稍加改动发布为基于浏览器的应用程序。
+
+面板（Panel）
+WPF用于布局的面板主要有6个，StackPanel(栈面板)、WrapPanel（环绕面板）。DockPanel（停靠面板）、Canvas（画布）、Grid（网格面板）和UniformGrid(均布网格)。
+
+依赖属性及附加属性：
+依赖的由来：
+在面向对象的世界里，属性大量存在，比如Button，就大约定义了70-80个属性来描述其状态。那么属性的不足又在哪里呢？
+当然，所谓的不足，要针对具体环境来说。拿Button来讲，它的继承树是Button->ButtonBase->ContentControl->Control->FrameworkElement->UIElement->Visual->DependencyObject->…
+
+每次继承，父类的私有字段都被继承下来。当然，这个继承是有意思的，不过以Button来说，大多数属性并没有被修改，仍然保持着父类定义时的默认值。通常情况，在整个Button对象的生命周期里，也只有少部分属性被修改，大多数属性一直保持着初始值。每个字段，都需要占用4K等不等的内存，这里，就出现了期望可以优化的地方：
+因继承而带来的对象膨胀。每次继承，父类的字段都被继承，这样，继承树的低端对象不可避免的膨胀。    
+
+大多数字段并没有被修改，一直保持着构造时的默认值，可否把这些字段从对象中剥离开来，减少对象的体积
+
+有了以上的背景，依赖就出现了，微软设计了DependencyProperty类， 里面有着 public static DependencyProperty Register(string name, Type propertyType, Type ownerType, object defaultValue)方法来注册属性。然后又定义了一个DependencyObject的基类来消费这个属性。这样继承自DenpendencyObject的类就可以注册自己的依赖属性，属性是自己注册的，其实严格的说并不是自己的，所以节省了空间。注册的属性在DependencyProperty里面通过一个hash( internal static Dictionary<object, DependencyProperty> RegisteredDps = new Dictionary<object, DependencyProperty>())来维护。注册过的属性都存在这个hash里面。自此依赖我感觉的由来就清楚了，不是自己的属性，而是此属性要依赖于DependencyProperty的。
+
+依赖解释好了，那属性呢？其实属性就是对外暴漏接口罢了，注册依赖属性后就是给依赖属性赋值（set），或者问依赖属性取值（get），这些操作封装到了DependencyObject类里面，所有用过的属性的值都通过 List<EffectiveValueEntry> _effectiveValues = new List<EffectiveValueEntry>()来存储和维护。这样就不会污染最初的默认value。这里也就实现了某个属性变化的过程都可以DependencyObject里面的effectiveValues找到痕迹，这样也就支持了动画。获取和赋值都是通过EffectiveValueEntry这个入口来获得的。就此依赖属性设计好了。
+这样的设计听好了，但是我们想要求子类也有自己的默认属性，比如很多控件都有Name属性，但有时候并不希望大家的默认值是一样的，但是有共用同一个DP。这该怎么解决呢？
+
+要想支持不同的默认值，那么内部就要维护一个对应不同DependencyObjectType的一个List，可以根据传入的DependencyObject的类型来读取它对应的默认值。DP内需要维护一个自描述的List，按照微软的命名规则，添加新的类型属性元数据（PropertyMetadata）。其实在DependencyProperty里面添加了private List<PropertyMetadata> _metadataMap = new List<PropertyMetadata>();来维护元数据，实现对默认值的修改。
+
+附加属性说白了就是依赖属性的改造，只是封装不同，区别在于附加二字，其实就是有些对象不具备某些属性，有些对象具备这些属性，那么具备这些依赖属性的对象就可以某些属性附加到不具备这些属性的对象上。比如人没有年级，班级的属性，而学校有年级班级的属性，但是当人在学校学习的时候就具备了班级年级的属性，这个时候学校这个对象就可以附加给人这个对象班级年级的属性。这就是附加属性。
+
+回想下依赖属性，依赖属性是对一个对象来说的，这个对象可以注册依赖属性，以后这个对象就具备了这个属性。而附加属性是对两个对象来说的，一个是附加对象，一个是被附加对象。是不是可以这样理解，附加对象给被附加对象注册了一个依赖属性罢了。但这个依赖属性依靠附加对象操作。
+
+WPF：
+https://www.gingerdoc.com/wpf/wpf_overview
+https://www.cnblogs.com/dotnet261010/category/935256.html
+
+MVVM：
+https://www.cnblogs.com/wzh2010/p/6920706.html

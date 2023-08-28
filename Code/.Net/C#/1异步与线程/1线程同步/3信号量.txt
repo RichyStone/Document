@@ -1,0 +1,70 @@
+信号量（Semaphore/SemaphoreSlim）
+
+一、继承
+Semaphore-> WaitHandle->->MarshalByRefObject
+SemaphoreSlim->IDisposable
+
+二、定义
+Semaphore 限制可同时访问某一资源或资源池的线程数。
+SemaphoreSlim对可同时访问资源或资源池的线程数加以限制的Semaphore的轻量替代。
+SemaphoreSlim 表示一个轻量、快速的信号量，可在等待时间预计很短的情况下用于在单个进程内等待
+
+三、Semaphore/SemaphoreSlim的区别
+Semaphore表示一个命名（系统范围内）或本地信号量。它是对Win32信号量对象的封装，Win32信号量是计数信号量，其可用于控制对资源池的访问,可以跨进程使用。
+SemaphoreSlim类为一个轻量、快速的信号量，可在等待时间预计很短的情况下，用于在单个进程内的等待。
+
+四、应用场景
+
+互斥锁和同步都是锁定一个资源，同时只让一个线程去操作。 
+对于可以允许限定数量线程执行的情况互斥锁就不适合了，这里就需要信号量。 
+信号量说简单点就是为了线程同步，或者说是为了限制线程能运行的数量。
+
+五、Semaphore使用
+
+1.构造函数
+public Semaphore(int initialCount, int maximumCount);
+initialCount:可以同时授予的信号量的初始请求数。 
+maximumCount:可以同时授予的信号量的最大请求数。
+
+//设置一个最大允许5个线程允许的信号量
+//并将它的计数器的初始值设为0
+//这就是说除了调用该信号量的线程都将被阻塞
+static Semaphore semaphore = new Semaphore(0, 5);
+
+2.方法
+WaitOne()：阻止当前线程，直到当前 System.Threading.WaitHandle 收到信号。 
+Release()：退出信号量并返回前一个计数。
+
+信号量内部有个计数器，比如你想限制最多5个线程运行，那么这个计数器的值就会被设置成5，如果一个线程调用了这个Semaphore，那么它的计数器就会相应的减1，直到这个计数器变为0。这时，如果有另一个线程继续调用这个Semaphore，那么这个线程就会被阻塞。
+
+获得Semaphore的线程处理完它的逻辑之后，你就可以调用它的Release()函数将它的计数器重新加1，这样其它被阻塞的线程就可以得到调用了。
+//释放信号量，将初始值设回5，你可以将这个函数看成你给它传的是多少值，计数器就会加多少回去，Release()相当于是Release(1)
+
+另外，可以给信号量设置一个名称，这个名称是操作系统可见的，因此，可以使用这些信号量来协调跨进程边界的资源使用。
+Semaphore seamphore = new Semaphore(5, 5, "SemaphoreExample");
+
+六、SemaphoreSlim使用
+虽然Semaphore可以很好的限制并发和加锁，但Semaphore不支持异步（Semaphore会阻塞线程，而高并发中最忌讳的就是阻塞浪费线程，在高并发中对于暂时不用的线程应该尽快将其放入线程池中等待下次调用而不是阻塞），并且需要调用操作系统底层导致性能并不高。
+而SemaphoreSlim就是为了解决这个问题而来的（功能上和Semaphore类似）
+
+1.构造函数
+SemaphoreSlim(Int32)     
+初始化 SemaphoreSlim 类的新实例，以指定可同时授予的请求的初始数量。
+
+SemaphoreSlim(Int32, Int32)     
+初始化 SemaphoreSlim 类的新实例，同时指定可同时授予的请求的初始数量和最大数量。
+
+2.方法
+Release()     
+释放 SemaphoreSlim 对象一次。
+
+Release(Int32)     
+释放 SemaphoreSlim 对象指定的次数。
+
+Wait()     
+阻止当前线程，直至它可进入SemaphoreSlim为止。
+
+WaitAsync()     
+输入 SemaphoreSlim 的异步等待。返回值为Task<bool>。
+
+注：使用WaitAsync时是异步的 不阻塞当前线程

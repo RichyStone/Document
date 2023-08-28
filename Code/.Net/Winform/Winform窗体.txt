@@ -1,0 +1,45 @@
+Winform窗体
+
+属性：
+FormBorderStyle = FormBorderStyle.None;		边框样式
+MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);	屏幕尺寸
+WindowState = FormWindowState.Maximized;	窗体是最大值、最小值还是正常
+DoubleBuffered=True;						是否使用双缓冲(辅助缓冲区)绘制控件的图面，以减少或避免闪烁。
+// 开启双缓冲，1.在缓冲区绘制控件而不是直接绘制到界面上 2.忽略 WM_ERASEBKGND 窗口消息以减少闪烁
+Control.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+方法：
+1、show() showdialog()区别
+Show()：调用的窗体不会返回任何值（窗体显示为无模式窗体），在使用.Show()显示form以后，会马上继续执行.Show()后面的语句。
+
+ShowDialog()：调用的form会返回一个DialogResult（窗体显示为模式窗体），在使用.ShowDialog()后，主程序会暂停，等待form被Close()后返回一个值，然后再继续执行form.ShowDialog()后面的语句。
+
+参考资料网址：
+https://blog.csdn.net/pengbostudio/article/details/86314972
+
+2、Hide() Close() Dispose()的区别
+
+Hide()方法：将一个窗体隐藏，之后可以通过Show()显示出来，不能中途停止，此时该窗体的所有资源都健在；
+
+Close()方法：发送WM_CLOSE消息，预示即将关闭窗体，可以在Form_Closing事件中进行拦截（不想关闭了），它的执行完成操作应该是在Form_Closed事件中，该方法执行完毕后，窗体句柄已经关闭，此时不能在Show()了，但属于该窗体的资源还是存在内存中的，比如说字符串资源仍然可以在程序其它地方访问；如果不拦截的话，属于它的资源会被标记，等到GC进行垃圾回收的时候就会被销毁了，最后也会调用Dispose()，即不是实时的销毁资源；
+
+Dispose()方法：要求GC立即销毁该窗体，回收资源，不可撤销；
+
+参考资料网址：
+https://blog.csdn.net/liupeng_qwert/article/details/45557321
+
+3、控件重绘
+
+Refresh(): 强制控件使其工作区无效并立即重绘自己和任何子控件。== Invalidate+Update
+
+Invalidate():使控件的特定区域(可以自己设置区域，从而提高性能)无效并向控件发送绘制消息。将控件标记为需要重绘，但是不会立即执行刷新重绘，等到系统空闲时进行重绘。
+
+Update(): 使控件重绘其工作区内的无效区域，立即调用Paint事件。若有无效区域，Update将立即触发重绘。
+
+Paint(): 无处不在。如果你调用3次Invalidate，但是系统将只触发一次Paint事件。
+
+事件：
+1、Form_Closing: 
+e.Cancel=True取消关闭
+
+2、KeyPreView
+如果把窗体的KeyPreview属性设为True，那么窗体将比其内的控件优先获得键盘事件的激活权。比如窗体Form1和其内的文本框Text1都准备响应KeyPress事件，那么将首先激活窗体的KeyPress事件。

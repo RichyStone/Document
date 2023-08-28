@@ -1,0 +1,201 @@
+Task:
+
+Task是.NET4.0加入的，与线程池ThreadPool的功能类似，用Task开启新任务时，会从线程池中调用线程，而Thread每次实例化都会创建一个新的线程。我们可以说Task是一种基于任务的编程模型。它与Thread的主要区别是，更加方便对线程进行调度和获取线程的执行结果。并且Task是针对多核有优化。
+
+Task并不是线程，Task的执行需要线程池中的或者独立线程来完成，Task和线程并不是1对1的关系 。
+
+Task.Run()方法是把一个任务推给了线程池，当线程池中有空闲线程时则执行此Task任务（将在线程池上运行的指定排队任务）。
+不同任务可能推给线程池中的同一个线程去执行，前提是当前线程池中该线程执行完上一个任务后才能下一个任务。
+真正实现的异步操作还是Task新增线程来实现的，但是不代表说开一个Task，就开一个线程，有可能是几个Task在一个线程上运行的，他们并不是一一对应的关系。
+
+一、Task中的全局队列和本地队列
+Task使线程池中的每个线程都有一个本地队列，线程池通过一个任务调度器分配任务
+
+当主线程创建一个Task，由于创建这个Task的并不是线程池中的线程，则任务调度器会把该Task放入全局队列中 如果这个Task是由线程池中的线程创建，并且未设置TaskCreationOptions.PreferFairness标记，则任务调度器会把该Task放入到该线程的本地队列中，
+如果设置了TaskCreationOptions.PreferFairness标记，则放入全局队列。
+
+二.Task的三种调用方式
+1.Task task=new task()
+task.Start();
+使用默认TaskScheduler执行任务
+task.Start(TaskScheduler scheduler);   
+使用指定TaskScheduler执行任务
+
+可以为委托传递一个参数 但是需要装箱拆箱
+
+2.Task.Factory.StartNew()
+可以自定义任务调度器
+StartNew方法仅在需要精细地控制长时间运行的计算密集型任务时使用
+可以为委托传递输入参数。
+
+3.Task.Run(() => { });
+使用默认的线程池调度器
+Run方法是启动计算密集型任务的建议的方法
+Run方法无法为委托传递输入参数。
+
+三、TaskCreationOptions 枚举
+None = 0
+默认的，任务进入本地队列，使用线程池中的线程
+
+PreferFairness = 1 
+进入全局队列
+
+LongRunning = 2
+使用TaskCreationOptions.LongRunning创建的任务将会脱离线程池启动一个单独的线程来执行。
+默认的TaskScheduler采用的是.NET线程池ThreadPool，它主要面向的是细粒度的小任务，其执行时间通常在毫秒级。线程池中的线程数与处理器的内核数有关，如果线程池中没有空闲的线程，那么后续的Task将会被阻塞。因此，如果事先知道一个Task的执行需要较长的时间，就需要使用TaskCreationOptions.LongRunning枚举指明。
+
+AttachedToParent = 4
+父Task会等待子Task结束。
+父Task会捕获子Task的Exception。
+父Task的执行状态取决于子Task的执行状态。
+子任务和父任务并不一定运行在同一线程上。
+
+DenyChildAttach = 8
+如果你不希望一个Task的启动的子Attach附加到它自己身上，则可以在启动父Task时为它指定TaskCreationOptions.DenyChildAttach。通过DenyChildAttach启动的父Task拒绝用AttachedToParent来启动子Task的附加
+
+HideScheduler = 16
+当指定TaskCreationOptions.HideScheduler时，创建Task里再创建的子Task将使用默认的TaskScheduler（既是ThreadPoolTaskScheduler——线程池），而不是当前的TaskScheduler。这相当于在创建Task时隐藏了自己当前的TaskScheduler。
+
+RunContinuationsAsynchronously = 64
+强制异步执行添加到当前任务的延续任务
+
+四、取消令牌CancellationTokenSource
+创建一个取消task的令牌的实例，在不启动task直接取消，task状态为Canceled；如果task启动了，其实并没有取消task，task还会继续跑。
+
+使用方法：
+实例化 CancellationTokenSource 对象，此对象管理取消通知并将其发送给单个取消标记。
+
+将CancellationTokenSource.Token 属性返回的标记传递给每个侦听取消的任务或线程。
+
+CancellationToken.IsCancellationRequested从接收取消令牌的操作调用该方法为每个任务或线程提供响应取消请求的机制。是否选择取消操作，以及具体操作方式取决于应用程序逻辑。
+
+调用 CancellationTokenSource.Cancel 方法以提供取消通知。这将取消 CancellationToken.IsCancellationRequested 令牌的每个副本上的属性设置为 true。
+
+Dispose使用完对象后CancellationTokenSource调用该方法。
+
+常用方法：
+
+Cancel()
+传达取消请求。
+
+Cancel(Boolean)
+如果出现异常，传达取消请求，并指定是否应处理其余回调和可取消操作。
+
+CancelAfter(Int32)
+在指定的毫秒数后计划对此 CancellationTokenSource 的取消操作。
+
+CancelAfter(TimeSpan)
+在指定的时间跨度后计划对此 CancellationTokenSource 的取消操作。
+
+Dispose()
+释放 CancellationTokenSource 类的当前实例所使用的所有资源。
+
+五、属性：
+IsCompleted			是否完成
+Status				任务状态：RanToCompletion、Faulted、 Canceled等
+ID					任务 Id 按需分配，不一定表示任务实例的创建顺序。 请注意，尽管冲突非常罕见，但不保证任务标识符是唯一的。
+CompletedTask    	获取一个已成功完成的任务。CompletedTask取到的不是当前完成后的Task，而是创建一个独立Task
+CurrentId  			返回当前正在执行Task的ID
+Exception   		获取 AggregateException导致的提前结束的Task。如果Task成功完成或尚未引发任何异常，这将返回 null。
+IsCanceled     		获取此 Task 实例是否由于被取消的原因而已完成执行。
+
+六、Task的常用方法
+
+Task为静态 task为实例
+
+1.ConfigAwait
+task.ConfigAwait(Bool b) TRUE是返回之前的线程进行操作，FALSE是不需要返回之前的线程进行操作
+例 async Task RunTask()
+{
+	//Before Await 主线程
+	await Task.WhenAll(RunSomethingAsync()).ConfigAwait(True:如果主线程是UI线程，默认为TRUE，即返回主线程); 
+	//After Await 选择主线程或线程池
+}
+
+2.Async/Await
+await是等待任务返回的结果，然后后面的代码开始执行；
+使用await 修饰符返回的是Task运行的结果值。
+例：
+Task<string> task =Task<string>.Run(delegate { return "匿名函数无参可以不用写()"; });
+String str=await task;
+
+如果await后面接的是方法，那么await等待的方法，返回值必须是Task或Task<T>，也就是await后面只能接Task。 
+
+异步返回类型：
+https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/async-return-types
+
+3.Wait WaitAll WaitAny
+void task.Wait()				阻塞当前线程
+bool task.Wait(MilliSeconds/TimeSpan TimeOut)	根据传入参数，判断完成与否
+
+4.Delay
+Task.Delay()实质创建一个运行给定时间的任务，Thread.Sleep()使当前线程休眠给定时间。
+Thread.Sleep()是同步延迟，Task.Delay()是异步延迟。
+Thread.Sleep()会阻塞线程，Task.Delay()不会。
+Thread.Sleep()不能取消，Task.Delay()可以。
+反编译Task.Delay()，基本上讲它就是个包裹在任务中的定时器。
+
+Task.Delay()和Thread.Sleep()最大的区别是Task.Delay()旨在异步运行，在同步代码中使用Task.Delay()是没有意义的；
+在异步代码中使用Thread.Sleep()是一个非常糟糕的主意。通常使用await关键字调用Task.Delay()。
+
+参考资料网址：
+https://www.cnblogs.com/mq0036/p/12186776.html
+https://www.cnblogs.com/dfcq/p/12685872.html
+https://blog.csdn.net/agony_sun/article/details/78031520
+
+5.ContinueWith
+创建一个在目标 Task 完成时接收调用方提供的状态信息和取消标记并执行的延续任务。
+参数是上一个执行的Task。
+Task.Run(() => { MessageBox.Show(Task.CurrentId.ToString()); }).ContinueWith(preT => 
+{ MessageBox.Show(preT.Id.ToString()); });
+
+参考资料网址：
+https://www.cnblogs.com/zhousong/p/9063124.html
+
+6.WhenAll WhenAny
+WhenAll:所有提供的任务已完成时，创建将完成的任务。Task.WaitAll阻止当前线程，直到所有其他任务完成执行为止。
+Task.WhenAll方法用于创建仅当所有其他任务均已完成时才完成的任务。
+如果我们使用Task.WhenAll，我们将得到一个未完成的任务对象。但是，它不会阻塞，会允许程序执行。
+WhenAny:任何提供的任务已完成时，创建将完成的任务。
+
+7.Yield 
+Task.Yield 简单来说就是创建时就已经完成的 Task ，或者说执行时间为0的 Task ，或者说是空任务，也就是在创建时就将 Task 的 IsCompeted 值设置为0。
+借助 await 实现线程的切换。
+
+参考资料网址：
+https://www.cnblogs.com/icejd/p/14911039.html
+
+8.Task.FromResult/Task.CompletedTask/Task.FromException/Task.FromCanceled
+
+FromCanceled(CancellationToken)     
+FromCanceled<TResult>(CancellationToken)     
+创建 Task/Task<TResult>，它因指定的取消标记进行的取消操作而完成。
+
+FromResult<TResult>(TResult)   
+创建指定结果的、成功完成的 Task<TResult>。
+以同步的方法返回异步的值
+
+FromException(Exception)     
+FromException<TResult>(Exception) 
+创建 Task/Task<TResult>，它在完成后出现指定的异常。
+
+其实这几个都是一个意思，就是从池里产生一个具备对应状态的Task出来，他不代表task执行，而是代表执行结果
+
+例如：
+Task.FromCanceled的正确执行语句为:
+
+if(token.IsCancellationRequested)
+    Task.FromCanceled(token)        //取消了情况他会正常执行，没有取消的情况他直接异常
+
+如果令牌取消了，那么产生一个已经取消的task，至于这个task有啥用，是用来产生结果回调通知给外面的
+
+9.GetAwaiter()   
+
+获取用于等待此 Task 的 awaiter。
+.Net注解：此方法适用于编译器使用，而不是直接在代码中使用。 
+
+10.RunSynchronously()
+
+RunSynchronously()
+RunSynchronously(TaskScheduler)     
+相当于同步运行一个Task对象的内容。使用它将不会另开线程执行Task对象。

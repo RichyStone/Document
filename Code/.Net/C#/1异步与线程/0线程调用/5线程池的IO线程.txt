@@ -1,0 +1,88 @@
+CLR线程池的I/O线程
+
+参考资料：
+https://www.cnblogs.com/leslies2/archive/2012/02/08/2320914.html
+
+I/O 线程是.NET专为访问外部资源所设置的一种线程，
+因为访问外部资源常常要受到外界因素的影响，为了防止让主线程受影响而长期处于阻塞状态，.NET为多个I/O操作都建立起了异步方法，
+例如：FileStream、TCP/IP、WebRequest、WebService等等，而且每个异步方法的使用方式都非常类似，都是以BeginXXX为开始，以EndXXX结束。
+
+一、异步读写 FileStream
+
+需要在 FileStream 异步调用 I/O线程，必须使用以下构造函数建立 FileStream 对象，并把useAsync设置为 true。
+FileStream stream = new FileStream ( string path, FileMode mode, FileAccess access, FileShare share, int bufferSize,bool useAsync ) ;
+
+其中 path 是文件的相对路径或绝对路径; mode 确定如何打开或创建文件; access 确定访问文件的方式; share 确定文件如何进程共享; bufferSize 是代表缓冲区大小,一般默认最小值为8，在启动异步读取或写入时，文件大小一般大于缓冲大小; userAsync代表是否启动异步I/O线程。
+
+注意：当使用 BeginRead 和 BeginWrite 方法在执行大量读或写时效果更好，但对于少量的读/写，这些方法速度可能比同步读取还要慢，因为进行线程间的切换需要大量时间。
+
+1.异步写入
+
+FileStream中包含BeginWrite、EndWrite 方法可以启动I/O线程进行异步写入。
+
+public override IAsyncResult BeginWrite ( byte[] array, int offset, int numBytes, AsyncCallback userCallback, Object stateObject )
+public override void EndWrite (IAsyncResult asyncResult ) 
+
+BeginWrite 返回值为IAsyncResult, 使用方式与委托的BeginInvoke方法相似，最好就是使用回调函数，避免线程阻塞。在最后两个参数中，参数AsyncCallback用于绑定回调函数; 参数Object用于传递外部数据。要注意一点：AsyncCallback所绑定的回调函数必须是带单个 IAsyncResult 参数的无返回值方法。
+
+在例子中，把FileStream作为外部数据传递到回调函数当中，然后在回调函数中利用IAsyncResult.AsyncState获取FileStream对象，最后通过FileStream.EndWrite（IAsyncResult）结束写入。
+
+	//新立文件File.sour
+    FileStream stream = new FileStream("File.sour", FileMode.OpenOrCreate, 
+                                        FileAccess.ReadWrite,FileShare.ReadWrite,1024,true);
+    byte[] bytes = new byte[16384];
+    string message = "An operating-system ThreadId has no fixed relationship........";
+    bytes = Encoding.Unicode.GetBytes(message); 
+    //启动异步写入
+    stream.BeginWrite(bytes, 0, (int)bytes.Length,new AsyncCallback(Callback),stream);
+    stream.Flush();
+
+	static void Callback(IAsyncResult result)
+         {
+             //显示线程池现状
+             Thread.Sleep(200);
+           
+             //结束异步写入
+             FileStream stream = (FileStream)result.AsyncState;
+             stream.EndWrite(result);
+             stream.Close();
+         }
+
+2.异步读取
+
+FileStream 中包含 BeginRead 与 EndRead 可以异步调用I/O线程进行读取。
+
+public override IAsyncResult BeginRead ( byte[] array,int offset,int numBytes, AsyncCallback userCallback,Object stateObject)
+public override int EndRead(IAsyncResult asyncResult)
+
+其使用方式与BeginWrite和EndWrite相似，AsyncCallback用于绑定回调函数; Object用于传递外部数据。在回调函数只需要使用IAsyncResut.AsyncState就可获取外部数据。EndWrite 方法会返回从流读取到的字节数量。
+
+首先定义 FileData 类，里面包含FileStream对象，byte[] 数组和长度。
+然后把FileData对象作为外部数据传到回调函数，在回调函数中，把IAsyncResult.AsyncState强制转换为FileData，然后通过FileStream.EndRead（IAsyncResult）结束读取。最后比较一下长度，若读取到的长度与输入的数据长度不一至，则抛出异常。
+
+二、异步操作TCP/IP套接字
+
+在介绍 TCP/IP 套接字前先简单介绍一下 NetworkStream 类，它是用于网络访问的基础数据流。 NetworkStream 提供了好几个方法控制套接字数据的发送与接收, 其中BeginRead、EndRead、BeginWrite、EndWrite 能够实现异步操作，而且异步线程是来自于CLR线程池的I/O线程。
+
+public override int ReadByte ()
+public override int Read (byte[] buffer,int offset, int size)
+
+public override void WriteByte (byte value)
+public override void Write (byte[] buffer,int offset, int size)
+
+public override IAsyncResult BeginRead (byte [] buffer, int offset, int size,  AsyncCallback callback, Object state )
+public override int EndRead(IAsyncResult result)
+
+public override IAsyncResult BeginWrite (byte [] buffer, int offset, int size,  AsyncCallback callback, Object state )
+public override void EndWrite(IAsyncResult result) 
+
+若要创建 NetworkStream，必须提供已连接的 Socket。
+而在.NET中使用TCP/IP套接字不需要直接与Socket打交道，因为.NET把Socket的大部分操作都放在System.Net.TcpListener和System.Net.Sockets.TcpClient里面，这两个类大大地简化了Socket的操作。
+一般套接字对象Socket包含一个Accept（）方法，此方法能产生阻塞来等待客户端的请求，而在TcpListener类里也包含了一个相似的方法 public TcpClient AcceptTcpClient（）用于等待客户端的请求。
+此方法将会返回一个TcpClient 对象，通过 TcpClient 的 public NetworkStream GetStream（）方法就能获取NetworkStream对象，控制套接字数据的发送与接收。
+
+下面以一个例子说明异步调用TCP/IP套接字收发数据的过程。
+
+首先在服务器端建立默认地址127.0.0.1用于收发信息，使用此地址与端口500新建TcpListener对象，调用TcpListener.Start 侦听传入的连接请求，再使用一个死循环来监听信息。
+
+在ChatClient类包括有接收信息与发送信息两个功能：当接收到客户端请求时，它会利用 NetworkStream.BeginRead 读取客户端信息，并在回调函数ReceiveAsyncCallback中输出信息内容，若接收到的信息的大小小于1时，它将会抛出一个异常。当信息成功接收后，再使用 NetworkStream.BeginWrite 方法回馈信息到客户端

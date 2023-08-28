@@ -1,0 +1,23 @@
+通知事件（EventWaitHandle）
+通知事件对象可以通过通知操作的方式来保持线程的同步。c#中的ManualResetEvent和AutoResetEvent属于通知事件。
+
+AutoResetEvent 和 ManualResetEvent 都是密封类 无法被继承.都继承自 EventWaitHandle->WaitHandle->MarshalByRefObject.
+AutoResetEvent 和 ManualResetEvent 只是构造函数包装器.
+它们唯一要做的就是使用EventResetMode.AutoReset或EventResetMode.ManualReset从EventWaitHandle调用构造函数.
+
+Reset ()：将事件状态设置为非终止状态，导致线程阻止；如果该操作成功，则返回true；否则，返回false.
+Set ()：将事件状态设置为终止状态，允许一个或多个等待线程继续；如果该操作成功，则返回true；否则，返回false.
+
+WaitOne()
+阻止当前线程，直到收到信号.
+
+WaitOne(TimeSpan, Boolean)
+阻止当前线程，直到当前实例收到信号，使用 TimeSpan 度量时间间隔并指定是否在等待之前退出同步域.
+
+AutoResetEvent   	收到Set后，一次只能执行一个线程,其它线程继续WaitOne.
+ManualResetEvent  	收到Set后，所有处理WaitOne状态线程均继续执行.
+AutoResetEvent   	自动Reset().
+ManualResetEvent  	手动调用Reset().
+
+参考资料网址：
+https://blog.csdn.net/conganguo/article/details/40556071

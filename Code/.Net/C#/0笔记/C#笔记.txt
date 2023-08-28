@@ -1,0 +1,300 @@
+一、委托、事件、Lambda表达式
+
+1）委托
+委托（Delegate） 是存有对某个方法的引用的一种引用类型变量。引用可在运行时被改变。
+例： Public string Delegate del(); 
+
+匿名委托无参可以不用写()
+Action action = delegate { Console.WriteLine("匿名委托无参可以不用写()"); };
+
+泛型委托：
+Action 	无返回值；
+Func	有返回值；
+Func<TParam,TParam,TResult> func =Tresult Method (Tparam,Tparam); 
+
+2）事件
+事件是封装过的委托实例，事件的本质就是一个私有化的委托对象，以及两个公有的方法，add和remove
+
+声明事件就是在声明委托变量的前面加了一个Event关键字。当加了Event关键字后，委托变量就变成了一个事件。
+例：Public event Action TripleClick;
+事件在触发或调用的时候与委托变量的使用方式一模一样。
+事件不能用=赋值，只能用+=和-=赋值。 
+事件在外部不能直接调用，事件只能在定义事件的类的内部调用。
+
+事件的作用就是防止委托随意被调用和被覆盖，事件本质上就是一个私有的委托和两个公有方法add(+=)和remove(-=) 
+
+3）LambdaExpression:
+简化版匿名委托
+()=>{} 
+=>读作goes to
+
+二、静态构造函数
+1.不可以加访问修饰符
+2.不可以加参数
+3.不能实例化实例变量
+4.一个类只能有一个静态构造函数
+
+三、可选参数、具名参数及可空参数
+1）可选参数，是指给方法的特定参数指定默认值，在调用方法时可以省略掉这些参数。
+当参数为部分可选时， 可选参数  的声明必须定义在 不可选参数（命名参数）的后面。
+
+2）具名参数的使用主要是体现在函数调用的时候，通过具名参数，我们可以指定特定参数的值，如 Demo(y:10)
+当使用具名参数时，调用方法可以不用管参数的声明顺序
+
+3）可空参数
+比如属性可以这样定义： 
+public decimal? Price { get; set; }
+而方法参考可以这样定义：
+public void GetProduct(string name, decimal? price = null)
+
+使用：
+调用属性时，可以直接为Price赋值为null
+调用方法时，只传name参数，而price则默认为null了。
+
+参考资料网址：
+https://www.cnblogs.com/mq0036/p/10613787.html
+
+四、Default表达式
+
+参考资料网址：
+https://blog.csdn.net/wcc27857285/article/details/96700760
+
+五、？？符号
+变量定义中含有一个问号，意思是这个数据类型是NullAble类型的。(NullAble意思是可以为空)
+变量定义中含有两个问号，意思是取所赋值??左边的，如果左边为null，取所赋值??右边的。
+例：
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int? a;
+            a = null;//此时输出3
+            //a = 6;//此时输出6
+            int b = a ?? 3;
+            Console.Write(b);
+            Console.ReadKey();
+        }
+    }
+}
+
+参考资料网址：
+https://www.cnblogs.com/gggg/p/5867412.html
+
+六、反射
+反射就是动态获取程序集中的元数据(提供程序集的类型信息)的功能。
+动态加载程序集，获取类型，创建对象，调用其成员。
+
+Type类，用来包含类型的特性。对于程序中的每一个类型，都会有一个包含这个类型的信息的Type类的对象，类型信息包含数据，属性和方法等信息。
+1.生成Type对象
+
+有两种方法可以生成Type类的对象：一种是Typeof(类名)，一种是对象调用GetType()函数。
+
+Type type = typeof(Person);
+
+Person person = new Person();
+Type type2 = person.GetType();
+2.获取类的信息
+
+//类的名称
+string name = type.Name;
+//类的命名空间
+string space = type.Namespace;
+//类的程序集
+Assembly assembly = type.Assembly;
+//类的共有字段
+FieldInfo[] fieldInfos = type.GetFields();
+//类的属性
+PropertyInfo[] propertyInfos = type.GetProperties();
+//类的方法
+MethodInfo[] methodInfos = type.GetMethods();
+
+3.创建对象
+你需要动态的创建一个实例模型的时候，就用Activator.CreateInstance(Type type);
+如果是明确的知道要创建哪个实例的模型，就可以用 new Class()了。
+
+参考资料网址：
+https://www.cnblogs.com/cbltech/p/14595573.html
+
+七、集合与Linq
+集合 :
+List<T>方法：
+
+Contains	确定某元素是否在List中
+CopyTo		从目标数组的开头开始，将整个List复制到兼容的一维数组
+Find		搜索与指定谓词所定义的条件相匹配的元素，并返回整个List中的第一个匹配元素
+Sort		排序
+Reverse		反转
+
+Linq：
+namespace System.Linq  
+public static class Enumerable
+
+语法：
+from 元素 in 集合
+Where 元素条件
+orderby 元素.属性 ascending/descending
+then by
+group 元素 by 元素.属性
+select 元素
+
+方法：
+1、union()		合并两个集合
+List<int> Result = listA.Union(listB).ToList<int>(); //剔除重复项
+List<int> Result = listA.Concat(listB).ToList<int>();//保留重复项
+
+参考资料网址：
+https://blog.csdn.net/qq_18671415/article/details/104613770
+
+2、Distinct()	去重
+平时，我们将c#中的Distinct大多用于对数组去重，一般数组为基础的数据类型，例如 int,string。
+也可以用于对象去重，Distinct方法不加参数的话，去重的规则是比较对象集合中对象的引用是否相同，如果相同，则去重，否则不去重。
+
+参考资料网址：
+https://www.cnblogs.com/cmblogs/p/7070313.html
+
+
+3、简单的函数计算（count，min，max，sum）
+
+list.where()			返回一个IEnumerable<T> 集合
+List.FirstOrDefault()	返回第一个对象或Null
+list.Any()				返回Bool，集合中是否有
+list.All()				是否集合中所有元素都满足条件
+list.Skip(int num)		跳过前面多少条数据取余下的数据
+list.Take(10)			数据从开始获取，获取指定数量（10）的连续数据
+list.Skip(10).Take(10)	取第11条到第20条数据 
+list.OfType<T>()		筛选指定的集合中的T类型
+list.FindAll()			如果所有元素均与指定谓词定义的条件匹配，返回当前list，否则返回一个空list
+
+八、常用特性
+[Browsable(true), Category("光源设置"), DisplayName("触发模式"), Description("触发模式：外触发为FALSE，内触发为TRUE")
+
+参考资料网址：
+https://www.cnblogs.com/rohelm/archive/2012/04/19/2456088.html
+https://www.cnblogs.com/wllhq/p/4634410.html
+
+九、扩展方法
+
+1、在现有的类型上添加扩展方法（无需创建新的派生类型、重新编译或者以其他方式修改原始类型）。
+
+2、扩展方法是一种特殊的静态方法，虽然是静态方法，但是可以像使用类型上的实例方法一样去使用扩展方法（调用扩展方法与调用在类型中实际定义的方法之间没有明显的差异）。
+
+3、扩展方法的第一个参数指定该方法作用于哪个类型，并且该参数以this修饰符为前缀。当你在其他命名空间使用时，需要用using将扩展方法所在命名空间显式导入到源代码中。
+
+4、扩展方法必须在非泛型静态类中定义。
+
+5、扩展方法无法访问扩展类型中的私有变量。
+
+6、可以使用扩展方法来扩展类或接口，但不能重写扩展方法。
+
+7、与接口或类方法具有相同名称和签名的扩展方法永远不会调用（这一点要牢记）。
+
+参考资料网址：
+https://blog.csdn.net/chenweicode/article/details/90715439
+https://www.php.cn/csharp-article-352532.html
+
+十、泛型类型约束
+定义：在定义泛型的时候，我们可以使用 where 限制参数的范围。
+使用：在使用泛型的时候，你必须遵守 where 限制参数的范围，否则编译不会通过。
+
+例：
+class MyClass<T, U>
+        where T : class///约束T参数必须为“引用 类型{ }”
+        where U : struct///约束U参数必须为“值 类型”
+    { }
+T：new()		类型参数必须具有无参数的公共构造函数。
+T：<基类名>		类型参数必须是指定的基类或派生自指定的基类。
+T：<接口名称>	类型参数必须是指定的接口或实现指定的接口。可以指定多个接口约束。约束接口也可以是泛型的。
+
+参考资料网址：
+https://www.cnblogs.com/raincedar/p/15670209.html
+
+十一、句柄和指针
+Intptr 用于表示指针或句柄的平台特定类型
+单从概念上讲，句柄指一个对象的标识，而指针是一个对象的内存首地址。从实际处理的角度讲，即可以把句柄定义为指针，又可以把它定义为同类对象数组的索引。
+
+1）句柄:是由操作环境定义的一个和对象一一对应的32位无符号整数值，它被程序用来标识或者切换到对象，对象可以映射到唯一的句柄，句柄也可以映射到唯一的对象。句柄，就是用来维护进程或者系统范围内的一个标识。就比如我们去访问一个文件的时候，同一时刻，只能有一个进程访问，不能有其他，这个句柄就是这个文件锁。句柄是一个动态的地址，用来记录当前对象的分配，很明显就只有一个。
+
+HWND是Handle to A Window的缩写,窗口句柄. 如果把窗口当做一个人的话，那么HWND就是该人的身份证号码。
+Process process = Process.GetCurrentProcess();
+IntPtr hWnd=process.MainWindowHandle;	//获取关联进程主窗口的窗口句柄
+
+namespace System.Windows.Forms
+Public struct Message
+{
+      
+         
+        public IntPtr HWnd(Handle to A Window) { get; set; }	//消息的窗口句柄。
+		
+        public int Msg { get; set; }		//消息 ID 号。
+       
+        public IntPtr WParam { get; set; }	//32位消息的特定附加信息,具体表示什么处决于message 
+       
+        public IntPtr LParam { get; set; }	//32位消息的特定附加信息,具体表示什么处决于message 
+}
+
+2）指针：指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。
+在计算机中，所有的数据都是存放在存储器中的，不同的数据类型占有的内存空间的大小各不相同。内存是以字节为单位的连续编址空间，每一个字节单元对应着一个独一的编号，这个编号被称为内存单元的地址。系统在内存中，为变量分配存储空间的首个字节单元的地址，称之为该变量的地址。地址用来标识每一个存储单元，方便用户对存储单元中的数据进行正确的访问。在高级语言中地址形象地称为指针。
+
+十二、按位操作
+!,&&,|| 	逻辑的	非与或
+~,&,| 		按位的	非与或
+
+参考资料网址：
+https://www.cnblogs.com/GreenLeaves/p/6752822.html
+
+<<	左移
+>>	右移
+
+参考资料网址：
+https://www.cnblogs.com/zhangyongjian/p/3658569.html
+
+十三、条件编译(conditional compilation)
+
+//#define NUM1
+//#define NUM2
+
+using System;
+namespace ConditionalCompilation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+#if (NUM1 && !NUM2)
+         Console.WriteLine("NUM1 is defined");
+
+#elif (!NUM1 && NUM2)
+         Console.WriteLine("NUM2 is defined");
+#elif (NUM1 && NUM2)
+         Console.WriteLine("NUM1 and NUM2 are defined");
+#else
+         Console.WriteLine("NUM1 and NUM2 are not defined");
+#endif
+            Console.Read();
+        }
+    }
+}
+
+当编译器遇到#if语句后，将先检查相关的符号是否存在，如果符号存在，就只编译#if块中的代码。否则，编译器会忽略所有的代码，直到遇到匹配的#endif指令为止。一般是在调试时定义符号DEBUG，把不同的调试相关代码放在#if子句中。在完成了调试后，就把#define语句注释掉，所有的调试代码会奇迹般地消失，可执行文件也会变小，最终用户不会被这些调试信息弄糊涂(显然，要做更多的测试，确保代码在没有定义DEBUG的情况下也能工作)。这项技术在C和C++编程中非常普通，称为条件编译(conditional compilation)。
+
+十四、序列化与反序列化
+　
+在.NET Framework 3.0之前，提供了3中序列化器，序列化器理解为把可序列化的类型序列化成XML的类。这三种序列化器分别是BinaryFormatter、SoapFormatter和XmlSerializer类。下面分别介绍下这3种序列化器。
+
+BinaryFormatter类：把.NET Object序列化成二进制格式。在这个过程，对象的公共字段和私有字段以及类名称（包括类的程序集名），将转换成成字节流。
+SoapFormatter类：把.NET Object序列化成SOAP格式，SOAP是一种轻量、简单的，基于XML的协议。只序列化字段，包括公共字段和私有字段。
+XmlSerializer类：该类仅仅序列化公共字段和属性，且不保存类型的保真度。
+　　对于这三种序列化机制，BinaryFormatter二进制序列化的优点是：性能高，但是不能跨平台。而SoapFormatter，XmlSerializer的优点是：跨平台、互操作性好，并且可读性强，但是传输性能不及BinaryFormatter。
+
+　　在.NET原有的序列化机制中，BinaryFormatter和SoapFormatter除了要序列化对象的状态信息外，还会将程序集和版本信息持久化到流中，因为只有这样才能保证对象呗反序列为正确的对象类型副本，这就要求客户端必须拥有原有的.NET 程序集，不能满足跨平台的需求。所以WCF不得不定义自己的序列化机制来满足面向服务的需求。
+
+十五、链表
+
+链表是一种线性表数据结构，在内存中它可以是非连续的，通过在每个结点中使用指针存储下一个结点的地址来实现逻辑顺序。一个结点由两部分组成：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。
+
+​链表由很多种类，常见的有：单链表、双链表和循环链表，它们实现的原理差别不大，相对于单链表只是多添加了一些特定的功能
+
+LinkedList链表
+是C#的链表，不过它不是最简单的单链表，而是一个双链表。单链表只有一个指针结点指向它的下一个元素，而双链表中每个结点有两个指针结点，一个指向它的下一个元素，另一个指向它的上一个元素。

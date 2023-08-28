@@ -1,0 +1,180 @@
+任务调度器
+
+一、TaskScheduler
+SynchronizationContext是对“调度程序（scheduler）”的通用抽象。个别框架会有自己的抽象调度程序，比如System.Threading.Tasks。
+当Tasks通过委托的形式进行排队和执行时，会用到System.Threading.Tasks.TaskScheduler。
+和SynchronizationContext提供了一个Post虚方法用于将委托排队调用一样，TaskScheduler也提供了一个QueueTask抽象方法。
+
+通过TaskScheduler.Default我们可以获取到Task默认的调度程序ThreadPoolTaskScheduler——线程池（译注：这下知道为什么Task默认使用的是线程池线程了吧）。并且可以通过继承TaskScheduler来重写相关方法来实现在任意时间任意地点进行Task调用。
+
+和SynchronizationContext一样，TaskScheduler也有一个Current属性，会返回当前调度程序。不过，和SynchronizationContext不同的是，它没有设置当前调度程序的方法，而是在启动Task时就要提供，因为当前调度程序是与当前运行的Task相关联的。
+
+二、函数
+
+任务入口，待调度执行的 Task 会通过该方法传入，调度器会将task安排到指定的队列（线程池任务队列（全局任务队列、本地队列）、独立线程、ui线程）,只能被.NET Framework调用，不能给派生类调用
+protected internal abstract void QueueTask(Task task);
+
+protected abstract bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued);
+protected abstract bool TryExecuteTask(Task task, bool taskWasPreviouslyQueued);
+  
+// 获取所有调度到该 TaskScheduler 的 Task
+protected abstract IEnumerable<Task>? GetScheduledTasks();
+
+三、.net中的任务调度器有哪些
+
+线程池任务调度器：ThreadPoolTaskScheduler
+核心库任务调度器：ConcurrentExclusiveSchedulerPair
+UI任务调度器：SynchronizationContextTaskScheduler，并发度为1
+
+在Task底层有一个TaskScheduler，它决定了task该如何被调度，而在.netframework中有两种系统定义Scheduler，第一个是Task默认的ThreadPoolTaskScheduler，还是一种就是SynchronizationContextTaskScheduler（wpf），默认的调度器无法控制任务优先级，那么需要自定义调度器实现优先级控制。
+
+1、ThreadPoolTaskScheduler
+  
+这种scheduler机制是task的默认机制，而且从名字上也可以看到它是一种委托到ThreadPool的机制，刚好也从侧面说明task是基于ThreadPool基础上的封装
+ThreadPoolTaskScheduler的原理：将指定的长任务开辟一个独立的线程去执行，未指定的长时间运行的任务就用线程池的线程执行。
+
+internal sealed class ThreadPoolTaskScheduler : TaskScheduler
+{
+
+   // QueueTask方法
+   protected internal override void QueueTask(Task task)
+        {
+            TaskCreationOptions options = task.Options;
+            if (Thread.IsThreadStartSupported && (options & TaskCreationOptions.LongRunning) != 0)
+            {
+                // Run LongRunning tasks on their own dedicated thread.
+                new Thread(s_longRunningThreadWork)
+                {
+                    IsBackground = true,
+                    Name = ".NET Long Running Task"
+                }.UnsafeStart(task);
+            }
+            else
+            {
+                // Normal handling for non-LongRunning tasks.
+                ThreadPool.UnsafeQueueUserWorkItemInternal(task, (options & TaskCreationOptions.PreferFairness) == 0);
+            }
+        }
+
+ }
+ 
+2、ConcurrentExclusiveSchedulerPair
+核心库中有个类，名为System.Threading.Tasks.ConcurrentExclusiveSchedulerPair，其实公开了两个TaskScheduler属性，一个叫ExclusiveScheduler，另一个叫ConcurrentScheduler。
+调度给ConcurrentScheduler的任务可以并发，但是要在构造ConcurrentExclusiveSchedulerPair时就要指定最大并发数；相反，在ExclusiveScheduler执行任务时，那么将只允许运行一个排他任务，这个行为很像读写锁。
+
+它实际上是两个互相关联的调度器。 只要 ExclusiveScheduler 上没有运行任务， ConcurrentScheduler就可以让多个任务同时执行。只有当 ConcurrentScheduler 没有执行任务时， ExclusiveScheduler 才可以执行任务，并且每次只允许运行一个任务：
+
+属性
+Completion	
+当调度程序已经完成处理过程时，获取将要完成的 Task。
+
+ConcurrentScheduler	
+获取可用于调度任务到此添加线对的 TaskScheduler，其中的线对可以与此线对上的其他任务同时运行。
+
+ExclusiveScheduler	
+获取可用于调度任务到此添加线对的 TaskScheduler，其中的线对必须独占地运行，不考虑此线对上的其他任务。
+
+方法
+Complete()	
+通知不能接受更多任务的计划程序对。
+
+ConcurrentExclusiveSchedulerPair 的常见用法是：
+
+1）用 ExclusiveScheduler 来确保每次只运行一个任务。
+ExclusiveScheduler 执行的代码会在线程池中运行，但是使用了同一个 ExclusiveScheduler 对象的其他代码不能同时运行。
+
+2）ConcurrentExclusiveSchedulerPair 的另一个用法是作为限流调度器。
+创建的 ConcurrentExclusiveSchedulerPair 对象可以限制自身的并发数量。
+这时通常不使用 ExclusiveScheduler
+ 
+如果想在Completion属性上调用Wait，那么必须在调度程序上调用Complete()。对于数据流块，此行为是相同的；要依赖 Completion 属性，必须在块上调用 Complete()。
+ 
+3、SynchronizationContextTaskScheduler
+
+使用条件：只有当前线程的同步上下文不为null时，该方法才能正常使用。例如在UI线程（wpf、 winform、 asp.net）中，UI线程的同步上下文不为Null。
+控制台默认的当前线程同步上下文为null，如果给当前线程设置默认的同步上下文SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
+就可以正常使用该方法。如果控制台程序的线程未设置同步上下将引发【当前的 SynchronizationContext 不能用作 TaskScheduler】异常。
+
+默认的同步上下文将方法委托给线程池执行。
+使用方式：通过TaskScheduler.FromCurrentSynchronizationContext() 调用SynchronizationContextTaskScheduler。
+
+原理：初始化时候捕获当前的线程的同步上下文。将同步上下文封装入任务调度器形成新的任务调度器SynchronizationContextTaskScheduler。
+重写该任务调度器中的QueueTask方法，利用同步上下文的post方法将任务送到不同的处理程序，如果是winform的UI线程同步上下文的post方法，就将任务送到UI线程。
+如果是控制台线程（默认为null设置默认同步上下文后可以正常使用。默认同步上下文采用线程池线程）就将任务送入线程池处理。
+
+在winform中的同步上下文：WindowsFormsSynchronizationContext
+在wpf中的同步上下文：DispatcherSynchronizationContext
+在控制台\线程池\new thread 同步上下文：都默认为Null。
+可以给他们设置默认的同步上下文SynchronizationContext。SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
+
+internal sealed class SynchronizationContextTaskScheduler : TaskScheduler
+{
+
+//初始化时候 ，捕获当前线程的同步上下文  
+ internal SynchronizationContextTaskScheduler()
+        {
+            m_synchronizationContext = SynchronizationContext.Current ??
+                // make sure we have a synccontext to work with
+                throw new InvalidOperationException(SR.TaskScheduler_FromCurrentSynchronizationContext_NoCurrent);
+        }
+
+//其他代码
+private readonly SynchronizationContext m_synchronizationContext;
+protected internal override void QueueTask(Task task)
+        {
+            m_synchronizationContext.Post(s_postCallback, (object)task);
+        }
+		
+//其他代码
+///改变post的调度方法、 调用者线程执行各方面的任务操作
+
+  private static readonly SendOrPostCallback s_postCallback = static s =>
+        {
+            Debug.Assert(s is Task);
+            ((Task)s).ExecuteEntry(); //调用者线程执行各方面的任务操作
+        };
+ }
+ 
+ 
+这段代码是不阻塞UIThread的：
+ 
+	private void button1_Click(object sender, EventArgs e)
+         {
+             Task task = Task.Factory.StartNew(() =>
+             {
+                 //复杂操作，等待10s
+                 Thread.Sleep(10000);
+
+             }).ContinueWith((t) =>
+             {
+                 button1.Text = "hello world";
+             }, TaskScheduler.FromCurrentSynchronizationContext());
+         }
+		 
+4、自定义TaskScheduler　
+
+	/// <summary>
+    /// 每个Task一个Thread
+    /// </summary>
+    public class PerThreadTaskScheduler : TaskScheduler
+    {
+        protected override IEnumerable<Task> GetScheduledTasks()
+        {
+            return null;
+        }
+
+        protected override void QueueTask(Task task)
+        {
+            var thread = new Thread(() =>
+            {
+                TryExecuteTask(task);
+            });
+
+            thread.Start();
+        }
+
+        protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
+        {
+            throw new NotImplementedException();
+        }
+    }
