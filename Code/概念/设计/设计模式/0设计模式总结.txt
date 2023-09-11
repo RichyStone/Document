@@ -14,32 +14,32 @@ https://www.cnblogs.com/46cxf/p/13906835.html
 
 1.创建型模式（Creational Patterns）
 
-FACTORY（工厂模式）
-ABSTRACT FACTORY（抽象工厂模式）
-BUILDER（建造者模式）
-PROTOTYPE（原型模式）
-SINGLETON（单例模式）
+FACTORY							工厂模式
+ABSTRACT FACTORY				抽象工厂模式
+BUILDER							建造者模式
+PROTOTYPE						原型模式
+SINGLETON						单例模式
 
 2.结构型模式（Structural Patterns）
 
-ADAPTER（适配器模式）
-DECORATOR（装饰器模式）
-BRIDGE（桥接模式）
-COMPOSITE（组合模式）
-FACADE（外观模式）
-FLYWEIGHT（享元模式）
-PROXY:（代理模式）
+ADAPTER							适配器模式
+DECORATOR						装饰器模式
+BRIDGE							桥接模式
+COMPOSITE						组合模式
+FACADE							外观模式
+FLYWEIGHT						享元模式
+PROXY							代理模式
 
 3.行为型模式（Behavioral Patterns）
 
-CHAIN OF RESPONSIBILITY
-COMMAND
-INTERPRETER
-ITERATOR
-MEDIATOR
-MEMENTO
-OBSERVER
-STATE
-STRATEGY
-TEMPLATE METHOD
-VISITOR
+CHAIN OF RESPONSIBILITY			责任链模式
+COMMAND							命令模式
+INTERPRETER						解释器模式
+ITERATOR						迭代器模式
+MEDIATOR						中介者模式
+MEMENTO							备忘录模式
+OBSERVER						观察者模式
+STATE							状态者模式
+STRATEGY						策略者模式
+TEMPLATE METHOD					模板方法模式
+VISITOR							访问者模式
