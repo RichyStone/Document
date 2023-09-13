@@ -1,0 +1,32 @@
+数据绑定：
+
+1.定义
+数据绑定是 WPF 应用程序中的一种机制，它为 Windows 运行应用程序时提供了一种简单易用的方式来显示数据并与数据交互。在这种机制中，数据的管理与数据的方式完全分离。
+
+数据绑定允许数据在用户界面上的 UI 元素和数据对象之间流动。当建立绑定并且数据或您的业务模型发生变化时，它会自动将更新反映到 UI 元素，反之亦然。
+也可以不绑定到标准数据源，而是绑定到页面上的另一个元素。
+
+2.数据流向
+
+1)OneWay--对源属性的更改会自动更新目标属性，但对目标属性的更改不会传播回源属性。
+2)TwoWay--更改源属性或目标属性时会自动更新另一方。
+3)OneWayToSource --当目标属性更改时，它会更新源属性。
+4)OneTime --使源属性初始化目标属性，但不传播后续更改。
+
+3.触发源更新的因素
+如果 UpdateSourceTrigger 值为 UpdateSourceTrigger.PropertyChanged，则目标属性更改后，TwoWay 或 OneWayToSource 绑定的右箭头指向的值会立即更新。 但是，如果 UpdateSourceTrigger 值为 LostFocus，则仅当目标属性失去焦点时才会使用新值更新该值。
+
+4.绑定组件
+
+使用Binding对象建立绑定，且每个绑定通常具有四个组件：绑定目标、目标属性、绑定源以及指向要使用的源值的路径
+
+指定绑定源：
+
+1）设置 DataContext 属性
+2）从上级元素继承 DataContext 值
+3）设置 Binding.Source 属性
+4）使用 Binding.ElementName 属性--当希望绑定到应用程序上另一个元素的属性时
+5）使用Binding.RelativeSource 属性--当想要将元素的一个属性绑定到同一元素的另一个属性时，或者要在样式或模板中定义绑定
+
+
+参考：https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/data/?view=netdesktop-6.0

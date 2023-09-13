@@ -1,20 +1,60 @@
 依赖属性及附加属性：
-依赖的由来：
-在面向对象的世界里，属性大量存在，比如Button，就大约定义了70-80个属性来描述其状态。那么属性的不足又在哪里呢？
-当然，所谓的不足，要针对具体环境来说。拿Button来讲，它的继承树是Button->ButtonBase->ContentControl->Control->FrameworkElement->UIElement->Visual->DependencyObject->…
 
-每次继承，父类的私有字段都被继承下来。当然，这个继承是有意思的，不过以Button来说，大多数属性并没有被修改，仍然保持着父类定义时的默认值。通常情况，在整个Button对象的生命周期里，也只有少部分属性被修改，大多数属性一直保持着初始值。每个字段，都需要占用4K等不等的内存，这里，就出现了期望可以优化的地方：
-因继承而带来的对象膨胀。每次继承，父类的字段都被继承，这样，继承树的低端对象不可避免的膨胀。    
+一、依赖属性：
 
-大多数字段并没有被修改，一直保持着构造时的默认值，可否把这些字段从对象中剥离开来，减少对象的体积
+1.定义：
+在 WPF 应用程序中，依赖属性是一种特定类型的属性，它扩展了 CLR 属性。它利用了 WPF 属性系统中可用的特定功能。
+依赖属性就是一种自己可以没有值，并且可以通过绑定从其他数据源获取值。依赖属性可支持WPF中的样式设置、数据绑定、继承、动画及默认值。
+定义依赖属性的类必须从DependencyObject类继承。XAML 中使用的许多 UI 控件类都是从DependencyObject类派生的，它们支持依赖属性，例如 Button 类支持IsMouseOver依赖属性。
 
-有了以上的背景，依赖就出现了，微软设计了DependencyProperty类， 里面有着 public static DependencyProperty Register(string name, Type propertyType, Type ownerType, object defaultValue)方法来注册属性。然后又定义了一个DependencyObject的基类来消费这个属性。这样继承自DenpendencyObject的类就可以注册自己的依赖属性，属性是自己注册的，其实严格的说并不是自己的，所以节省了空间。注册的属性在DependencyProperty里面通过一个hash( internal static Dictionary<object, DependencyProperty> RegisteredDps = new Dictionary<object, DependencyProperty>())来维护。注册过的属性都存在这个hash里面。自此依赖我感觉的由来就清楚了，不是自己的属性，而是此属性要依赖于DependencyProperty的。
+2.应用场景：
+希望可在样式中设置属性。
+希望属性支持数据绑定。
+希望可使用动态资源引用设置属性。
+希望从元素树中的父元素自动继承属性值。
+希望属性可进行动画处理。
+希望属性系统在属性系统、环境或用户执行的操作或者读取并使用样式更改了属性以前的值时报告。
+希望使用已建立的、WPF 进程也使用的元数据约定，例如报告更改属性值时是否要求布局系统重新编写元素的可视化对象。
 
-依赖解释好了，那属性呢？其实属性就是对外暴漏接口罢了，注册依赖属性后就是给依赖属性赋值（set），或者问依赖属性取值（get），这些操作封装到了DependencyObject类里面，所有用过的属性的值都通过 List<EffectiveValueEntry> _effectiveValues = new List<EffectiveValueEntry>()来存储和维护。这样就不会污染最初的默认value。这里也就实现了某个属性变化的过程都可以DependencyObject里面的effectiveValues找到痕迹，这样也就支持了动画。获取和赋值都是通过EffectiveValueEntry这个入口来获得的。就此依赖属性设计好了。
-这样的设计听好了，但是我们想要求子类也有自己的默认属性，比如很多控件都有Name属性，但有时候并不希望大家的默认值是一样的，但是有共用同一个DP。这该怎么解决呢？
+3.依赖属性和其他CLR 属性之间的主要区别：
+CLR 属性可以通过使用getter和setter直接从类的私有成员读取/写入。相反，依赖属性不存储在本地对象中。
+依赖属性存储在由 DependencyObject 类提供的键/值对字典中。它还节省了大量内存，因为它在更改时存储属性。它也可以在 XAML 中绑定。
 
-要想支持不同的默认值，那么内部就要维护一个对应不同DependencyObjectType的一个List，可以根据传入的DependencyObject的类型来读取它对应的默认值。DP内需要维护一个自描述的List，按照微软的命名规则，添加新的类型属性元数据（PropertyMetadata）。其实在DependencyProperty里面添加了private List<PropertyMetadata> _metadataMap = new List<PropertyMetadata>();来维护元数据，实现对默认值的修改。
+4.依赖属性的特点
 
-附加属性说白了就是依赖属性的改造，只是封装不同，区别在于附加二字，其实就是有些对象不具备某些属性，有些对象具备这些属性，那么具备这些依赖属性的对象就可以某些属性附加到不具备这些属性的对象上。比如人没有年级，班级的属性，而学校有年级班级的属性，但是当人在学校学习的时候就具备了班级年级的属性，这个时候学校这个对象就可以附加给人这个对象班级年级的属性。这就是附加属性。
+1）属性变更通知
+无论什么时候，只要依赖属性的值发生改变，wpf就会自动根据属性的元数据触发一系列的动作，这些动作可以重新呈现UI元素，也可以更新当前的布局，刷新数据绑定等等，这种变更的通知最有趣的特点之一就是属性触发器，它可以在属性值改变的时候，执行一系列自定义的动作，而不需要更改任何其他的代码来实现。
 
-回想下依赖属性，依赖属性是对一个对象来说的，这个对象可以注册依赖属性，以后这个对象就具备了这个属性。而附加属性是对两个对象来说的，一个是附加对象，一个是被附加对象。是不是可以这样理解，附加对象给被附加对象注册了一个依赖属性罢了。但这个依赖属性依靠附加对象操作。
+2）属性值继承
+是指属性值自顶向下沿着元素树进行传递。
+
+3）节省内存空间
+依赖属性和CLR属性在内存的使用上是截然不同的，每个CLR属性都包含一个非static的字段，因此当我们实例化一个类型的时候，就会创建该类型所拥有的所有CLR属性，也就是说一个对象所占用的内存在调用new操作进行实例化的时候就已经决定了、而wpf允许对象在创建的时候并不包含用于存储数据的空间，只保留在需要用到数据的时候能够获得该默认值，即用其他对象数据或者实时分配空间的能力。
+
+5.自定义依赖属性
+
+快速定义依赖属性的快捷方式：
+输入propdp，连续按两下Tab健，自动生成定义依赖属性的语法。
+
+1）声明依赖属性变量。依赖属性的声明都是通过public static来公开一个静态变量，变量的类型必须是DependencyProperty
+2）在属性系统中进行注册。使用DependencyProperty.Register方法来注册依赖属性，或者是使用DependencyProperty.RegisterReadOnly方法来注册
+3）使用.NET属性包装依赖属性，在类上实现属性时，只要该类派生自 DependencyObject，便可以选择使用 DependencyProperty 标识符来标示属性，从而将其设置为依赖属性。
+
+二、附加属性
+
+1.定义
+附加属性作用于支持附加属性元素
+附加属性是由支持附加属性的父元素产生作用，支持附加属性的元素会继承所在的父元素
+附加属性的格式：AttachedPropertyProvider.PropertyName
+
+2.附加属性的特点
+
+1)特殊的依赖属性
+2)用于非定义该属性的类。例如Canvas.Left、Canvas.Top、Grid.Row、Grid.Column
+
+3.声明附加属性
+
+1）声明数据属性变量。 public static 的DependencyProperty类型的变量。
+2）在属性系统中进行注册，使用DependencyProperty.RegisterAttached()方法来注册，方法参数和注册依赖属性时Register()方法的参数一致。
+3）调用静态方法设置和获取属性值。通过调用DependencyObject的SetValue()和GetValue()方法来设置和获取属性的值。
+两个方法应该命名为SetPropertyName()方法和GetPropertyName()方法。
