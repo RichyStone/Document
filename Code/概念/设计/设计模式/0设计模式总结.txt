@@ -23,9 +23,9 @@ SINGLETON						单例模式
 2.结构型模式（Structural Patterns）
 
 ADAPTER							适配器模式
-DECORATOR						装饰器模式
 BRIDGE							桥接模式
 COMPOSITE						组合模式
+DECORATOR						装饰器模式
 FACADE							外观模式
 FLYWEIGHT						享元模式
 PROXY							代理模式

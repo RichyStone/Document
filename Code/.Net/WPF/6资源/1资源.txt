@@ -1,0 +1,67 @@
+资源：
+
+参考：https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/systems/xaml-resources-overview?view=netdesktop-6.0
+
+资源通常是与某个对象相关联的定义，这些对象只是您预计会经常使用不止一次。它能够在本地为控件或当前窗口或为整个应用程序全局存储数据。
+
+将对象定义为资源允许我们从另一个地方访问它。这意味着该对象可以被重用。资源在资源字典中定义，任何对象都可以定义为资源，有效地使其成为可共享的资产。为 XAML 资源指定了唯一键，使用该键，可以使用 StaticResource 标记扩展来引用它。
+
+一、使用 XAML 中的资源
+
+每个框架级元素（FrameworkElement 或 FrameworkContentElement）都具有 Resources 属性，该属性是包含已定义资源的 ResourceDictionary 类型。 你可以在任何元素上定义资源，例如 Button。 但是，最常在根元素上定义资源，本示例中的根元素为 Window。
+
+资源字典中的每个资源都必须具有唯一键。 在标记中定义资源时，可通过 x:Key 指令来分配唯一键。 通常情况下，这个键是一个字符串；但是，也可使用相应的标记扩展将其设置为其他对象类型。 资源的非字符串键用于 WPF 中的某些功能区，尤其是样式、组件资源和数据样式。
+
+你可以使用具有资源标记扩展语法（指定资源的键名）的已定义资源。 例如，将资源用作另一个元素上的属性的值。
+
+<Button Background="{StaticResource MyBrush}"/>
+<Ellipse Fill="{StaticResource MyBrush}"/>
+
+在前面的示例中，如果 XAML 加载程序处理 Button 上 Background 属性的值 {StaticResource MyBrush}，则资源查找逻辑会首先检查 Button 元素的资源字典。 如果 Button 没有资源键 MyBrush 的定义（在该示例中没有；其资源集合为空），则查找逻辑接下来会检查 Button 的父元素。 如果未在父级上定义资源，会继续向上检查对象的逻辑树，直到找到它。
+
+如果在根元素上定义资源，则逻辑树中的所有元素（如 Window 或 Page）都可以访问它。 而且，你可以重复使用相同的资源来设置接受与该资源所表示类型相同的类型的所有属性的值。 在前面的示例中，同一 MyBrush 资源设置两个不同的属性：Button.Background 和 Rectangle.Fill。
+
+二、静态和动态资源
+
+资源可引用为静态资源或动态资源。 可通过使用 StaticResource 标记扩展或 DynamicResource 标记扩展创建引用。 标记扩展是 XAML 的一项功能，可以通过使用标记扩展来处理属性字符串并将对象返回到 XAML 加载程序，从而指定对象引用。
+
+StaticResource 是一次性查找，而 DynamicResource 更像是数据绑定。它记住一个属性与一个特定的资源键相关联。如果与该键关联的对象发生变化，动态资源将更新目标属性。
+
+使用标记扩展时，通常会以字符串的形式提供一个或多个由该特定标记扩展处理的参数。 
+StaticResource 标记扩展通过在所有可用的资源字典中查找键值来处理键。处理在加载期间进行，即加载过程需要分配属性值时。 
+DynamicResource 标记扩展则通过创建表达式来处理键，而且表达式会保持未计算状态，直至应用运行为止。当应用实际运行时，表达式会进行计算以提供一个值。
+
+在引用某个资源时，下列注意事项可能会对于使用静态资源引用还是使用动态资源引用产生影响：
+
+确定如何为应用创建资源的整体设计（在每页上、在应用程序中、在宽松的 XAML 中或在仅包含资源的程序集中）时，请考虑以下事项：
+应用的功能。 实时更新资源是否为应用要求的一部分？
+该资源引用类型的相应查找行为。
+特定的属性或资源类型，以及这些类型的本机行为。
+
+三、隐式键
+
+尽管 ResourceDictionary 中的所有项都必须具有键，但这并不意味着所有资源都必须具有显式 x:Key。 多种对象类型在定义为资源时都支持隐式键，其键值会与另一属性的值绑定。 这类键被称为隐式键，而 x:Key 属性为显式键。 任何隐式键都可通过指定显式键来覆盖。
+
+关于资源，一个重要的方案就是用于定义 Style。 事实上，Style 几乎总会作为资源字典中的条目进行定义，因为样式在本质上可供重复使用。
+
+控件样式可通过隐式键来创建和引用。 用于定义控件默认外观的主题样式依赖于该隐式键。 从请求的角度来看，隐式键是控件本身的 Type。 从定义资源的角度来看，隐式键是样式的 TargetType。 因此，如果要创建自定义控件的主题或要创建会与现有主题样式交互的样式，则无需为该 Style 指定 x:Key 指令。 另外，如果想要使用主题样式，则根本无需指定任何样式。 例如，即使 Style 资源似乎没有键，以下样式定义仍起作用：
+
+<Style TargetType="Button">
+    <Setter Property="Background" Value="#4E1A3D" />
+    <Setter Property="Foreground" Value="White" />
+    <Setter Property="BorderThickness" Value="5" />
+    <Setter Property="BorderBrush">
+        <Setter.Value>
+            <LinearGradientBrush>
+                <GradientStop Offset="0.0" Color="#4E1A3D"/>
+                <GradientStop Offset="1.0" Color="Salmon"/>
+            </LinearGradientBrush>
+        </Setter.Value>
+    </Setter>
+</Style>
+
+该样式确实具有一个键：隐式键：System.Windows.Controls.Button 类型。 在标记中，可以直接将 TargetType 指定为类型名称（或者，可以选择使用 {x:Type...}，以返回 Type。
+
+通过 WPF 使用的默认主题样式机制，即使 Button 本身不尝试指定其 Style 属性或对样式的特定资源引用，该样式也将作为页面上 Button 的运行时样式应用。 在页面中定义的样式位于查找序列中的靠前位置（在主题字典样式之前），其所用的键与主题字典样式的键相同。 可以在页面上的任意位置指定 <Button>Hello</Button>，使用 Button 的 TargetType 定义的样式将应用于该按钮。 如果需要，仍可为此样式显式指定与 TargetType 的类型值相同的键，以求在标记中清楚明示，但这是可选的。
+
+如果 OverridesDefaultStyle 为 true，则样式的隐式键不会应用于控件。

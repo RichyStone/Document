@@ -1,6 +1,6 @@
 WPF：
+https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/?view=netdesktop-6.0
 https://www.gingerdoc.com/wpf/wpf_overview
-https://www.cnblogs.com/dotnet261010/category/935256.html
 
 WPF简介
 WPF：WPF即Windows Presentation Foundation，翻译为中文“Windows呈现基础”，是微软推出的基于Windows Vista的用户界面框架，属于.NET Framework 3.0的一部分。它提供了统一的编程模型、语言和框架，真正做到了分离界面设计人员与开发人员的工作；同时它提供了全新的多媒体交互用户图形界面。

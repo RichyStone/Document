@@ -20,13 +20,27 @@
 
 使用Binding对象建立绑定，且每个绑定通常具有四个组件：绑定目标、目标属性、绑定源以及指向要使用的源值的路径
 
-指定绑定源：
+5.指定绑定源：
 
 1）设置 DataContext 属性
 2）从上级元素继承 DataContext 值
 3）设置 Binding.Source 属性
 4）使用 Binding.ElementName 属性--当希望绑定到应用程序上另一个元素的属性时
-5）使用Binding.RelativeSource 属性--当想要将元素的一个属性绑定到同一元素的另一个属性时，或者要在样式或模板中定义绑定
+5）使用Binding.RelativeSource 属性-在样式或模板中定义绑定在 ControlTemplate 或 Style 中指定绑定时，可以使用 RelativeSource 属性，或想要将元素的一个属性绑定到同一元素的另一个属性时。
 
+6.指定指向值的路径
+
+虽然我们已强调要使用的值的 Path 是绑定的四个必需组件之一，但在要绑定到整个对象的方案中，要使用的值会与绑定源对象相同。 在这些情况下，可以不指定 Path。
+<ListBox ItemsSource="{Binding}"
+IsSynchronizedWithCurrentItem="true"/>
+
+以上示例使用空绑定语法：{Binding}。在此示例中，ListBox 从父元素继承 DataContext。
+未指定路径时，默认为绑定到整个对象。换句话说，此示例中的路径已省略，因为要将 ItemsSource 属性绑定到整个对象。
+除了绑定到集合以外，在希望绑定到整个对象，而不是仅绑定到对象的单个属性时，也可以使用此方案。
+
+7.绑定到集合
+绑定源对象可以被视为其属性包含数据的单个对象，也可以被视为通常组合在一起的多态对象的数据集合（例如数据库查询的结果）。例如，一种常见方案是使用 ItemsControl（例如 ListBox、ListView 或 TreeView）来显示数据集合。
+
+WPF 提供 ObservableCollection<T> 类，该类是公开 INotifyCollectionChanged 接口的数据集合的内置实现。 若要完全支持将数据值从源对象传输到目标，支持可绑定属性的集合中的每个对象还必须实现 INotifyPropertyChanged 接口。 
 
 参考：https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/data/?view=netdesktop-6.0

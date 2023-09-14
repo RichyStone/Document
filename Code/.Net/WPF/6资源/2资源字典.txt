@@ -1,0 +1,48 @@
+合并资源字典
+
+WPF资源支持合并资源字典功能。 此功能提供了一种方法，用于在已编译的 XAML 应用程序外部定义 WPF 应用程序的资源部分。 然后可以在应用程序之间共享资源，还可更方便地将资源隔离以进行本地化。
+
+一、创建合并字典
+
+<Page.Resources>
+  <ResourceDictionary>
+    <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="myresourcedictionary.xaml"/>
+      <ResourceDictionary Source="myresourcedictionary2.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+  </ResourceDictionary>
+</Page.Resources>
+
+通常x:Key 指令对于资源集合中的ResourceDictionary是必需的。 
+但是，MergedDictionaries 集合中的ResourceDictionary 引用是一个特殊情况，是为此合并资源字典方案保留的。 进一步讲，引入合并资源字典的 ResourceDictionary 不能有 x:Key 指令。
+通常情况下，MergedDictionaries 集合中的每个 ResourceDictionary 都指定一个 Source 属性。 Source 的值应是解析到待合并资源文件的位置的统一资源标识符 (URI)。 该 URI 的目标必须是另一个 XAML 文件，以 ResourceDictionary 作为其根元素。
+
+二、合并字典 URI
+
+可以通过几种技术来包括合并资源字典，具体视你所使用的统一资源标识符 (URI) 格式而定。 宽泛地讲，这些技术可以分为两个类别：作为项目的一部分编译的资源，以及未作为项目的一部分编译的资源。
+
+对于作为项目的一部分编译的资源，可使用引用资源位置的相对路径。 相对路径会在编辑期间计算。 必须将资源作为“资源”生成操作定义为项目的一部分。 
+如果将资源 .xaml 文件作为“资源”包括在项目中，则无需将资源文件复制到输出目录，此资源已包括在已编译的应用程序中。 也可以使用“内容”生成操作，但随后必须将文件复制到输出目录，还必须将相同路径关系中的资源文件部署到可执行文件。
+
+请勿使用“嵌入资源”生成操作。 WPF 应用程序支持该生成操作本身，但 Source 的解析不会纳入 ResourceManager，因此不能将单个资源从流中分离出来。
+
+三、代码中的资源
+
+1.从代码访问资源
+
+如果在代码中请求资源，标识 XAML 定义的资源的键也用于检索特定的资源。 从代码检索资源最简单的方法是从应用程序中的框架级对象调用 FindResource 或 TryFindResource 方法。 这两个方法之间的行为差异在于未找到所请求的键时所发生的情况。 FindResource 会引发异常。 TryFindResource 不会引发异常，但会返回 null。 每个方法都将资源键作为一个输入参数，并返回一个松散类型化对象。
+
+private void myButton_Click(object sender, RoutedEventArgs e)
+{
+    Button button = (Button)sender;
+    button.Background = (Brush)this.FindResource("RainbowBrush");
+}
+
+2.使用代码创建资源
+
+如果要通过代码创建整个 WPF 应用程序，可能还需要通过代码创建该应用程序中的任何资源。
+为此，应先新建一个 ResourceDictionary 实例，接着使用对 ResourceDictionary.Add 的连续调用将所有资源添加到字典中。
+然后，分配创建的 ResourceDictionary 来设置位于页面范围内的元素上的 Resources 属性，或设置 Application.Resources 属性。
+也可以将 ResourceDictionary 作为一个单独的对象来维护（而不将它添加到元素中）。
+但是，如果这样做，必须通过项键来访问其中的资源，就好像它是泛型字典一样。
+未附加到元素 Resources 属性的 ResourceDictionary 将不作为元素树的一部分存在，在查找序列中也不具有可供 FindResource 及相关方法使用的范围。
