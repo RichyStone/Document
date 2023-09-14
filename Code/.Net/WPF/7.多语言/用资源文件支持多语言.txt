@@ -1,0 +1,3 @@
+
+
+参考：https://www.gingerdoc.com/wpf/wpf_localization
