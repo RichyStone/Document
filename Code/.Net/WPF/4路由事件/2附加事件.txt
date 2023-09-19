@@ -1,0 +1,64 @@
+附加事件
+
+1.定义
+
+附加事件可用于在非元素类中定义新的路由事件，并在树中的任何元素上引发该事件。 为此，必须将附加事件注册为路由事件，并提供支持附加事件功能的特定支持代码。 由于附加事件注册为路由事件，因此在元素上引发时，它们会通过元素树传播。
+
+2.附加事件语法
+
+在 XAML 语法中，附加事件由其事件名称和所有者类型指定，格式为 <owner type>.<event name>。 由于事件名称使用其所有者类型的名称进行限定，因此语法允许将事件附加到可实例化的任何元素。 此语法也适用于附加到沿事件路由的任意元素的常规路由事件的处理程序。
+
+3.WPF 如何实现附加事件
+
+WPF 附加事件作为字段 RoutedEvent 支持的路由事件实现。 
+因此，附加事件在引发后通过元素树传播。 通常，引发附加事件的对象（称为事件源）是系统或服务源。 系统或服务源不是元素树的直接部分。 对于其他附加事件，事件源可能是树中的元素，例如复合控件中的组件。
+
+4.附加事件方案
+
+在 WPF 中，附加事件用于具有服务级别抽象的某些功能区域。 例如，WPF 使用由静态 Mouse 或 Validation 类启用的附加事件。 与服务交互或使用服务的类可以使用附加事件语法与事件交互，或者将附加事件显示为路由事件。 后一个选项是类集成服务功能的方式的一部分。
+
+WPF 输入系统广泛使用附加事件。 但是，几乎所有附加事件都通过基本元素显示为等效的非附加路由事件。 每个路由输入事件都是基元素类的成员，由 CLR 事件“包装器”提供支持。 你很少会直接使用或处理附加事件。 例如，与在 XAML 或代码隐藏中使用附加事件语法相比，通过等效 UIElement.MouseDown 路由事件处理 UIElement 上的基础附加 Mouse.MouseDown 事件更为容易。
+
+附加事件支持将来扩展输入设备，从而满足体系结构目的。 例如，新的输入设备只需引发 Mouse.MouseDown 即可模拟鼠标输入，并且无需从 Mouse 中派生即可执行此操作。 该方案涉及事件的代码处理，因为附加事件的 XAML 处理不相关。
+
+5.自定义附加事件
+
+如果从常见的 WPF 基类派生，可以通过在类中包含两个访问器方法来实现自定义附加事件。 这些方法是：
+
+Add<事件名称>Handler 方法，第一个参数是附加事件处理程序的元素，第二个参数是要添加的事件处理程序。 方法必须是 public 和 static，没有返回值。 
+该方法调用 AddHandler 基类方法，将路由事件和处理程序作为参数传入。 此方法支持将事件处理程序附加到元素的 XAML 属性语法。 此方法还允许代码访问附加事件的事件处理程序存储。
+
+Remove<事件名称>Handler 方法，第一个参数是附加事件处理程序的元素，第二个参数是要删除的事件处理程序。 方法必须是 public 和 static，没有返回值。 
+该方法调用 RemoveHandler 基类方法，将路由事件和处理程序作为参数传入。 此方法允许代码访问附加事件的事件处理程序存储。
+
+WPF 将附加事件实现为路由事件，因为 RoutedEvent 的标识符由 WPF 事件系统定义。 此外，路由事件是附加事件的 XAML 语言级别概念的自然扩展。 
+此实现策略将附加事件的处理限制为 UIElement 派生类或 ContentElement 派生类，因为只有这些类具有 AddHandler 实现。
+
+例如，以下代码定义 Clean 所有者类（不是元素类）上的 AquariumFilter 附加事件。 代码将附加事件定义为路由事件，并实现所需的访问器方法。
+
+public class AquariumFilter
+{
+    // Register a custom routed event using the bubble routing strategy.
+    public static readonly RoutedEvent CleanEvent = EventManager.RegisterRoutedEvent(
+        "Clean", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(AquariumFilter));
+
+    // Provide an add handler accessor method for the Clean event.
+    public static void AddCleanHandler(DependencyObject dependencyObject, RoutedEventHandler handler)
+    {
+        if (dependencyObject is not UIElement uiElement)
+            return;
+
+        uiElement.AddHandler(CleanEvent, handler);
+    }
+
+    // Provide a remove handler accessor method for the Clean event.
+    public static void RemoveCleanHandler(DependencyObject dependencyObject, RoutedEventHandler handler)
+    {
+        if (dependencyObject is not UIElement uiElement)
+            return;
+
+        uiElement.RemoveHandler(CleanEvent, handler);
+    }
+}
+
+RegisterRoutedEvent返回附加事件标识符的方法与注册非附加路由事件的方法相同。
