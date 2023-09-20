@@ -1,0 +1,37 @@
+ObservableObject
+
+1.定义
+ObservableObject这是通过实现INotifyPropertyChanged和INotifyPropertyChanging接口可观察的对象的基类。 它可以用作需要支持属性更改通知的各种对象的起点。
+
+2.工作原理
+ObservableObject 具有以下主要功能：
+
+1）它为INotifyPropertyChanging和INotifyPropertyChanged的公开事件提供了基本实现（OnPropertyChanged和OnPropertyChanging）。
+
+2）它提供了一系列 SetProperty 方法，可用于继承 ObservableObject的类型轻松设置属性值，并自动引发相应的事件。
+
+3）它提供了类似于 SetPropertyAndNotifyOnCompletion 方法， SetProperty 但能够设置 Task 属性并在分配的任务完成后自动引发通知事件。
+
+4）它公开了可在派生类型中重写的 OnPropertyChanged 和 OnPropertyChanging 方法，以自定义如何引发通知事件。
+
+3.处理 Task<T> 属性
+
+如果属性是一个 Task 属性，则还必须在任务完成后引发通知事件，以便正确更新绑定。例如，若要在任务所表示的操作上显示加载指示器或其他状态信息。 ObservableObject 具有此方案的 API：
+
+public class MyModel : ObservableObject
+{
+    private TaskNotifier<int>? requestTask;
+
+    public Task<int>? RequestTask
+    {
+        get => requestTask;
+        set => SetPropertyAndNotifyOnCompletion(ref requestTask, value);
+    }
+
+    public void RequestValue()
+    {
+        RequestTask = WebService.LoadMyValueAsync();
+    }
+}
+
+此处，该方法 SetPropertyAndNotifyOnCompletion<T>(ref TaskNotifier<T>, Task<T>, string) 将负责更新目标字段、监视新任务（如果存在）以及在该任务完成时引发通知事件。 这样，就可以只绑定到任务属性，并在其状态发生更改时收到通知。 这是一种特殊类型，它TaskNotifier<T>ObservableObject包装目标Task<T>实例并启用此方法所需的通知逻辑。 TaskNotifier如果只有常规Task类型，还可以直接使用该类型。

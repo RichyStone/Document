@@ -1,0 +1,17 @@
+INotifyPropertyChanged 属性
+
+该 INotifyPropertyChanged 类型是一个属性，允许将 MVVM 支持代码插入现有类型。 与其他相关属性 (ObservableObject 和 ObservableRecipient) 一起，其用途是支持开发人员，以防需要这些类型的相同功能，但目标类型已经从另一种类型实现。 由于 C# 不允许多个继承，因此这些属性可用于让 MVVM 工具包生成器将相同的代码直接添加到这些类型中，从而避开此限制。
+
+使用这些属性中的任何一个非常简单：只需将它们添加到分部类 ，相应的类型中的所有代码都将自动生成到该类型中。
+
+[INotifyPropertyChanged]
+public partial class MyViewModel : SomeOtherType
+{    
+}
+
+这将在类型中MyViewModel生成完整的INotifyPropertyChanged实现，并完成其他帮助程序 (例如SetProperty可用于减少详细程度) 。
+下面是各种属性的简要摘要：
+
+INotifyPropertyChanged：	实现接口并添加帮助程序方法来设置属性并引发事件。
+ObservableObject：			添加类型中的所有代码 ObservableObject 。 从概念上讲，它与 INotifyPropertyChanged主要区别是，它也是实现 INotifyPropertyChanging的。
+ObservableRecipient：		添加类型中的所有代码 ObservableRecipient 。 具体而言，这可以添加到从 ObservableValidator 中继承的类型来合并这两种类型。

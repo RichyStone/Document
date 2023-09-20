@@ -1,0 +1,41 @@
+MVVM 源生成器
+
+从版本 8.0 开始，MVVM 工具包包含全新的 Roslyn 源生成器，有助于在使用 MVVM 体系结构编写代码时大幅减少样板。 它们可简化需要设置可观察属性、命令等的方案。
+
+这意味着，在编写代码时，MVVM 工具包生成器现在将负责在后台为你生成其他代码，因此无需担心。 然后，此代码将编译并包含在应用程序中，因此最终结果与手动编写所有额外代码完全相同，但不必执行所有这些额外工作！
+
+例：
+
+1.Property
+
+private string? name;
+
+public string? Name
+{
+    get => name;
+    set => SetProperty(ref name, value);
+}
+
+=>
+
+[ObservableProperty]
+private string? name;
+
+2.Commond
+
+private void SayHello()
+{
+    Console.WriteLine("Hello");
+}
+
+private ICommand? sayHelloCommand;
+
+public ICommand SayHelloCommand => sayHelloCommand ??= new RelayCommand(SayHello);
+
+=》
+
+[RelayCommand]
+private void SayHello()
+{
+    Console.WriteLine("Hello");
+}
