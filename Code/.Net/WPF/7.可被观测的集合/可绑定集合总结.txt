@@ -1,3 +1,4 @@
+想被观测到必须实现INotiftChanged接口
 
 1.List/Array 
 
