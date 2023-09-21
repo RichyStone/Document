@@ -1,0 +1,96 @@
+Messenger
+
+1.定义
+
+接口IMessenger是可用于在不同对象之间交换消息的类型协定。 这可用于将应用程序的不同模块分离，而无需保留对所引用类型的强引用。 还可以将消息发送到特定通道，由令牌唯一标识，并在应用程序的不同部分中具有不同的信使。 
+
+MVVM Toolkit提供两种现装实现：WeakReferenceMessenger和StrongReferenceMessenger
+WeakReferenceMessenger在内部使用弱引用，为收件人提供自动内存管理，而StrongReferenceMessenger使用强引用，并且要求开发人员在不再需要接收者时手动取消订阅收件人。
+
+2.工作原理
+
+实现 IMessenger 的类型负责接收和消息处理。任何对象都可以使用消息处理程序将给定类型注册为收件人，每当实现IMessenger的实例发送该类型的消息时，都会调用该对象。 还可以通过特定通信通道发送消息，(唯一令牌) 标识的每个通道，以便多个模块可以交换同一类型的消息，而不会造成冲突。 在没有令牌的情况下发送的消息使用默认共享通道。
+
+可通过两种方式执行消息注册：通过 IRecipient<TMessage> 接口或使用充当消息处理程序的 MessageHandler<TRecipient, TMessage> 委托。
+第一个允许使用对扩展的单个调用注册所有处理程序，该扩展RegisterAll会自动注册所有声明的消息处理程序的收件人，
+而后者在需要更多灵活性或想要将简单的lambda 表达式用作消息处理程序时非常有用。
+
+StrongReferenceMessenger同时WeakReferenceMessenger公开一个Default属性，该属性提供内置于包中的线程安全实现。 如果需要，还可以创建多个信使实例，例如，如果将另一个信使实例注入到应用的不同模块中， (应用的不同模块，则在同一进程中运行的多个窗口) 。
+
+注意：由于类型WeakReferenceMessenger更易于使用，并且与库中信使类型MvvmLight的行为匹配，因此它是 MVVM Toolkit中类型使用ObservableRecipient的默认类型。
+
+1.发送和接收消息
+
+1）发送和接收
+// Create a message
+public class LoggedInUserChangedMessage : ValueChangedMessage<User>
+{
+    public LoggedInUserChangedMessage(User user) : base(user)
+    {        
+    }
+}
+
+// Register a message in some module
+WeakReferenceMessenger.Default.Register<LoggedInUserChangedMessage>(this, (r, m) =>
+{
+    // Handle the message here, with r being the recipient and m being the
+    // input message. Using the recipient passed as input makes it so that
+    // the lambda expression doesn't capture "this", improving performance.
+});
+
+// Send a message from some other module
+WeakReferenceMessenger.Default.Send(new LoggedInUserChangedMessage(user));
+
+2）注销
+不再需要收件人时，应取消注册，以便停止接收邮件：
+
+// Unregisters the recipient from a message type
+WeakReferenceMessenger.Default.Unregister<LoggedInUserChangedMessage>(this);
+
+// Unregisters the recipient from a message type in a specified channel
+WeakReferenceMessenger.Default.Unregister<LoggedInUserChangedMessage, int>(this, 42);
+
+// Unregister the recipient from all messages, across all channels
+WeakReferenceMessenger.Default.UnregisterAll(this);
+
+3）IRecipient
+也可以使用 IRecipient<TMessage> 接口注册消息处理程序。 在这种情况下，每个收件人都需要为给定消息类型实现接口，并提供 Receive(TMessage) 在接收消息时将调用的方法，如下所示：
+
+// Create a message
+public class MyRecipient : IRecipient<LoggedInUserChangedMessage>
+{
+    public void Receive(LoggedInUserChangedMessage message)
+    {
+        // Handle the message here...   
+    }
+}
+
+// Register that specific message...
+WeakReferenceMessenger.Default.Register<LoggedInUserChangedMessage>(this);
+
+// ...or alternatively, register all declared handlers
+WeakReferenceMessenger.Default.RegisterAll(this);
+
+// Send a message from some other module
+WeakReferenceMessenger.Default.Send(new LoggedInUserChangedMessage(user));
+
+2.回复消息
+
+可以使用RequestMessage<T>基类，如下所示：
+
+// Create a message
+public class LoggedInUserRequestMessage : RequestMessage<User>
+{
+}
+
+// Register the receiver in a module
+WeakReferenceMessenger.Default.Register<MyViewModel, LoggedInUserRequestMessage>(this, (r, m) =>
+{
+    // Assume that "CurrentUser" is a private member in our viewmodel.
+    // As before, we're accessing it through the recipient passed as
+    // input to the handler, to avoid capturing "this" in the delegate.
+    m.Reply(r.CurrentUser);
+});
+
+// Request the value from another module
+User user = WeakReferenceMessenger.Default.Send<LoggedInUserRequestMessage>();

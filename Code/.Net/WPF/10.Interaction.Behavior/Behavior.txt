@@ -1,0 +1,109 @@
+Interaction.Behavior
+
+1）清除Text示例：
+
+C#实现：
+ public class ClearTxtBehavior : Behavior<Button>
+ {
+
+     public TextBox Target
+     {
+         get { return (TextBox)GetValue(TargetProperty); }
+         set { SetValue(TargetProperty, value); }
+     }
+
+     public static readonly DependencyProperty TargetProperty =
+         DependencyProperty.Register("Target", typeof(TextBox), typeof(ClearTxtBehavior), new PropertyMetadata(null));
+
+     protected override void OnAttached()
+     {
+         base.OnAttached();
+         AssociatedObject.Click += ClearFuction;
+     }
+    
+     protected override void OnDetaching()
+     {
+         base.OnDetaching();
+         AssociatedObject.Click -= ClearFuction;
+     }
+
+     private void ClearFuction(object sender, RoutedEventArgs e)
+     {
+         Target?.Clear();
+     }
+
+ }
+ 
+XAML调用：
+ <TextBox
+     Name="PassWord"
+     Margin="5,2"
+     Text="{Binding Password}" />
+ <Button Content="Clear">
+     <i:Interaction.Behaviors>
+         <commonui:ClearTxtBehavior Target="{Binding ElementName=PassWord}" />
+     </i:Interaction.Behaviors>
+ </Button>
+ 
+2）滑轮增减数字示例：
+
+C#实现：
+   public class MouseWheelBehavior : Behavior<TextBox>
+  {
+      public double MaxValue { get; set; }
+
+      public double MinValue { get; set; }
+
+      public double Scale { get; set; } = 0.1;
+
+      public int DecimalPlace { get; set; }
+
+      protected override void OnAttached()
+      {
+          base.OnAttached();
+          AssociatedObject.MouseWheel += MouseWheelEvent;
+      }
+
+      protected override void OnDetaching()
+      {
+          base.OnDetaching();
+          AssociatedObject.MouseWheel -= MouseWheelEvent;
+      }
+
+      private void MouseWheelEvent(object sender, System.Windows.Input.MouseWheelEventArgs e)
+      {
+          if (!double.TryParse(AssociatedObject.Text, out var curValue)) return;
+
+          if (e.Delta > 0)
+              curValue += Scale;
+          else
+              curValue -= Scale;
+
+          if (curValue > MaxValue) curValue = MaxValue;
+
+          if (curValue < MinValue) curValue = MinValue;
+
+          AssociatedObject.Text = curValue.ToString($"F{DecimalPlace}");
+      }
+  }
+  
+XAML调用：
+
+  <TextBox>
+      <i:Interaction.Behaviors>
+          <commonui:MouseWheelBehavior
+              MaxValue="10.0"
+              MinValue="1.0"
+              Scale="0.2" />
+      </i:Interaction.Behaviors>
+  </TextBox>
+
+  <TextBox>
+      <i:Interaction.Behaviors>
+          <commonui:MouseWheelBehavior
+              DecimalPlace="0"
+              MaxValue="100"
+              MinValue="1"
+              Scale="5" />
+      </i:Interaction.Behaviors>
+  </TextBox>
