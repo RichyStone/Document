@@ -1,0 +1,39 @@
+throw的用法主要有以下几种：
+
+1、不推荐使用，这样会吃掉原始异常点，重置堆栈中的异常起始点：
+
+try
+{
+}
+catch (Exception ex)
+{
+    throw ex;
+	
+2、可追溯到原始异常点，不过编译器会警告，定义的ex未有使用：
+
+try
+{
+}
+catch (Exception ex)
+{
+    throw;
+
+3、不带异常参数的，这个同第二种其实一样，可捕获所有类型的异常，IDE不会告警：
+
+try
+{
+}
+catch 
+{
+    throw;
+}
+
+4、经过对异常重新包装，但是会保留原始异常点信息。推荐使用。
+
+try
+{
+}
+catch (Exception ex)
+{
+    throw new Exception("经过进一步包装的异常", ex);
+}
