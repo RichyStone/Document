@@ -24,7 +24,7 @@
 
 1）设置 DataContext 属性
 2）从上级元素继承 DataContext 值
-3）设置 Binding.Source 属性
+3）设置 Binding.Source 属性 绑定静态属性、Enum或常量用{x:Static}
 4）使用 Binding.ElementName 属性--当希望绑定到应用程序上另一个元素的属性时
 5）使用Binding.RelativeSource 属性-在样式或模板中定义绑定在 ControlTemplate 或 Style 中指定绑定时，可以使用 RelativeSource 属性，或想要将元素的一个属性绑定到同一元素的另一个属性时。
 
