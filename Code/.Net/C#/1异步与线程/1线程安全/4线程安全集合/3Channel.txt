@@ -1,0 +1,69 @@
+System.Threading.Channels 是.NET Core 3.0 后推出的新的集合类型, 具有异步API,高性能，线程安全等特点，它可以用来做消息队列，进行数据的生产和消费, 公开的 Writer 和 Reader api对应消息的生产者和消费者，也让Channel更加的简洁和易用，与Rabbit MQ 等其他队列不同的是，Channel 是进程内的队列。
+
+一、创建
+
+创建一个 channel 非常简单，Channel 类公开的API支持创建无限容量和有限容量的 channel
+
+// 创建有限容量的channel 
+var channel = Channel.CreateBounded<string>(100);
+
+// 创建无限容量的channel 
+var channel = Channel.CreateUnbounded<string>();
+ 
+这里需要注意的是，当你使用一个有限容量的 Channel 时，你需要指定容量的大小；
+还可以指定一个 BoundedChannelFullMode 的枚举类型，来告诉 channel 达到容量限制的时候，继续写入时应该怎么处理
+
+public enum BoundedChannelFullMode
+{ 
+    Wait, 
+    DropNewest,
+    DropOldest,
+    DropWrite
+}
+Wait是默认值，当 channel 容量满了以后，写入数据时会返回 false，直到channel有数据被消费了以后，才可以继续写入
+DropNewest移除最新的数据，也就是从队列尾部开始移除
+DropOldest移除最老的数据，也就是从队列头部开始移除
+DropWrite写入数据返回成功，但是转头就把刚才的数据丢了
+
+// 创建有限容量的channel, 并指定容量达到最大的策略
+var channel = Channel.CreateBounded<string>(new BoundedChannelOptions(100) 
+{ 
+    FullMode = BoundedChannelFullMode.Wait 
+});
+
+二、生产数据
+
+生产数据主要通过 Channel 提供的 Writer api, 常规的写入操作如下：
+
+await channel.Writer.WriteAsync("hello");
+Channel 还提供了 TryWrite() 方法，如果写入数据失败时会返回 false，WaitToWriteAsync() 方法会做非阻塞的等待，直到 Channel 允许写入新的数据时返回 true，同样的 Channel 关闭后会返回 false
+
+三、消费数据
+消费数据主要通过 Channel 提供的 Reader api, 常规的读取操作如下：
+
+var item = await channel.Reader.ReadAsync();
+同样的，Channel 提供了 TryRead() 尝试读取数据，WaitToReadAsync() 方法会做非阻塞的等待，直到 Channel 可以读取到数据时会返回 true，在 Channel 关闭后会返回 false， 
+
+另外可以通过 channel.Reader.Count 获取队列元素的数量。
+
+在实际的使用场景中，可能需要一些后台任务，长时间的进行消费，那么可以使用下边的方式
+while (await channel.Reader.WaitToReadAsync())
+{
+    while (channel.Reader.TryRead(out var item))
+    {
+        Console.WriteLine(item);
+    }
+}
+
+ReadAllAsync() 方法返回的是一个 IAsyncEnumerable<T> 对象，也可以用 await foreach 的方式来获取数据
+
+await foreach(var item in channel.Reader.ReadAllAsync())
+{
+    Console.WriteLine(item); 
+}
+
+四、单一生产者和消费者
+
+创建 Channel 时，可以设置 ChannelOptions 的 SingleWriter 和 SingleReader，来指定Channel单一的生产者和消费者，默认都是 false，当设置了 SingleWriter = true 时, 会限制同一个时间只能有一个生产者可以写入数据, SingleReader = true 是同样的。
+
+另外，如果只需要一个消费者的话，你应该设置 SingleReader = true, Channel 在内部做了一些优化，在读取时避免了锁操作，性能上有些许的提升。
