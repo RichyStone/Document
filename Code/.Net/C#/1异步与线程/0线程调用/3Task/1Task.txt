@@ -90,6 +90,9 @@ CancelAfter(TimeSpan)
 Dispose()
 释放 CancellationTokenSource 类的当前实例所使用的所有资源。
 
+Register()
+指定任务取消后的操作。
+
 五、属性：
 IsCompleted			是否完成
 Status				任务状态：RanToCompletion、Faulted、 Canceled等

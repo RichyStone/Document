@@ -13,10 +13,9 @@ BlockingCollection<T> 是一个线程安全集合类，可提供以下功能：
 	
 
 一、构造函数
+
 BlockingCollection<T>()									初始化 BlockingCollection<T> 类的新实例，该实例没有上限。
-
 BlockingCollection<T>(Int32)							初始化 BlockingCollection<T> 类的新实例，该实例具有指定的上限。
-
 BlockingCollection<T>(IProducerConsumerCollection<T>)	初始化 BlockingCollection<T> 类的新实例，使用提供的 IProducerConsumerCollection<T>作为其基础数据存储区。
 
 一、属性
