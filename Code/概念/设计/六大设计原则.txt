@@ -1,11 +1,11 @@
 六大设计原则主要是指：
 
-1.单一职责原则(Single Responsibility Principle)：一个类或接口只承担一个职责。
-2.开闭原则(Open Closed Principle)：对软件实体的改动，最好用扩展而非修改的方式。
-3.里氏替换原则(Liskov Substitution Principle)：在继承类时，务必重写（override）父类中所有的方法，尤其需要注意父类的protected方法（它们往往是让你重写的），子类尽量不要暴露自己的public方法供外界调用。
-4.迪米特法则(Law of Demeter)：又叫“最少知道法则”，尽量减少对象之间的交互，从而减小类之间的耦合。
-5.接口隔离原则(Interface Segregation Principle)：不要对外暴露没有实际意义的接口。
-6.依赖倒置原则(Dependence Inversion Principle)：高层模块不应该依赖于低层模块，而应该依赖于抽象。抽象不应依赖于细节，细节应依赖于抽象。
+1.单一职责原则(Single Responsibility Principle)		一个类或接口只承担一个职责。
+2.开闭原则(Open Closed Principle)					对软件实体的改动，最好用扩展而非修改的方式。
+3.里氏替换原则(Liskov Substitution Principle)		在继承类时，务必重写（override）父类中所有的方法，尤其需要注意父类的protected方法（它们往往是让你重写的），子类尽量不要暴露自己的public方法供外界调用。
+4.迪米特法则(Law of Demeter)						又叫“最少知道法则”，尽量减少对象之间的交互，从而减小类之间的耦合。
+5.接口隔离原则(Interface Segregation Principle)		不要对外暴露没有实际意义的接口。
+6.依赖倒置原则(Dependence Inversion Principle)		高层模块不应该依赖于低层模块，而应该依赖于抽象。抽象不应依赖于细节，细节应依赖于抽象。
 
 把这 6 个原则的首字母（里氏替换原则和迪米特法则的首字母重复，只取一个）联合起来就是：SOLID（稳定的），其代表的含义也就是把这 6 个原则结合使用的好处：建立稳定、灵活、健壮的设计。
 
