@@ -4,12 +4,12 @@
 
 VisualState名称		VisualStateGroup名称	描述
 
-普通				CommonStates			默认状态。
+Normal				CommonStates			默认状态。
 MouseOver			CommonStates			鼠标指针悬停在控件上方。
-已按下				CommonStates			已按下控件。
-已禁用				CommonStates			已禁用控件。
-已设定焦点			FocusStates				控件有焦点。
-失去焦点			FocusStates				控件没有焦点。
+Pressed				CommonStates			已按下控件。
+Disabled			CommonStates			已禁用控件。
+Focused				FocusStates				控件有焦点。
+Unfocused			FocusStates				控件没有焦点。
 
 通过在控件模板的根元素上定义 System.Windows.VisualStateManager，可以在控件进入特定状态时触发动画。 VisualStateManager 声明要监视的 VisualStateGroup 和 VisualState 的组合。 当控件进入受监视状态时，将启动 VisualStateManager 定义的动画。
 

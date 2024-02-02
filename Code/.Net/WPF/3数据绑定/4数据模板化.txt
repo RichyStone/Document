@@ -191,6 +191,16 @@ namespace SDKSample
   </ItemsControl.ItemContainerStyle>
 </ItemsControl>
 
+Template，ItemsPanel，ItemContainerStyle ，ItemTemplate四个属性辨析：
+ItemsControl，ListBox  等带有子项的控件四个重要属性解析；
+
+Template 				为控件模板，整个控件的外观，比如加入边框，边距，背景等修改；
+ItemsPanel 				是子项的容器，可以是Stackpanel ,Wrappanel,VirtualStackPanel等， 可以控制子项的排列方式；
+ItemContainerStyle 		子项的布局，显示与隐藏，背景；
+ItemTemplate			子项的数据模板，不能控制子项的显示和隐藏；在做过滤的功能时候需要使用ItemContainerStyle ；如果ItemContainerStyle定义了Template属性，则ItemTemplate定义的无效；
+
+原文链接：https://blog.csdn.net/jihuaguo88/article/details/114376077
+
 未在此处显示的 ItemsControl 的其他两个与样式相关的属性是 GroupStyle 和 GroupStyleSelector。
 
 6.对分层数据的支持

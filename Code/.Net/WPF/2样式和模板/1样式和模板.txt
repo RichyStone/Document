@@ -202,4 +202,4 @@ Control类
 
 　　    -ContentTemplate（DataTemplate类型）
 
-ControlTemplate内有一个ContentPresenter属性，这个ContentPresenter的ContentTemplate就是DataTemplate类型。
+ControlTemplate内有一个ContentPresenter属性，这个ContentPresenter的ContentTemplate属性就是DataTemplate类型。
