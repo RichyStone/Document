@@ -164,3 +164,8 @@ git push <alias/url> --all           	推送所有本地分支到远程仓库
 
 9.ssh密钥
 ssh-keygen.exe -t rsa -C "zhangsan@qq.com"
+
+七.标签操作
+
+删除标签：		git tag -d Release_1_0
+推送所有标签： 	git ls-remote --tags

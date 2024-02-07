@@ -123,7 +123,7 @@ public string? Name
     }
 }
 
-然后，生成的 ValidateProperty 调用将验证 属性并更新对象的状态 ObservableValidator ，以便 UI 组件可以对其进行响应并相应地显示任何验证错误。
+然后，生成的 ValidateProperty 调用将验证属性并更新对象的状态 ObservableValidator ，以便 UI 组件可以对其进行响应并相应地显示任何验证错误。
 
 注意：根据设计，只有继承自 ValidationAttribute 的字段属性才会转发到生成的属性。 这是专门为支持数据验证方案而进行的。 将忽略所有其他字段属性，因此目前无法在字段上添加其他自定义属性，并将它们也应用于生成的属性。 如果需要， (例如若要控制序列化) ，请考虑改用传统的手动属性。
 
