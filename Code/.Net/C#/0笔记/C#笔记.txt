@@ -312,8 +312,51 @@ null! 								抑制编译器判空警告
 public int Test { get; init; } 		只有初始化类时可赋值，初始化不可赋值
 INumber<T>							数字类型接口，int,float,decimal等
 when								Catch时判断、Switch Case判断
+countData[^1] = 0;					集合的倒数第一个，List有
+array[1..4] 						数组1到4的集合，List没有
 
 十七、冷知识
 
 goto 								可以跳出循环中的循环、可以goto到Switch Case中的case，条件是case后必须接值，不能接表达式：temp is not TestClass t
 sealed								密封类效率高
+
+十八、索引器
+
+element-type this[int index]
+{
+   // get 访问器
+   get
+   {
+      // 返回 index 指定的值
+   }
+
+   // set 访问器
+   set
+   {
+      // 设置 index 指定的值
+   }
+}
+
+例：
+ 
+	public string this[int index]
+      {
+         get
+         {
+            return ( tmp );
+         }
+         set
+         {
+            
+         }
+      }
+	  
+	  
+    public int this[string name]
+      {
+         get
+         {
+            return index;
+         }
+
+      }
