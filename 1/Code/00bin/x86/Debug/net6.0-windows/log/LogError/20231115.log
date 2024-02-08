@@ -1,0 +1,136 @@
+2023-11-15 10:23:03,224[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 368
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 251
+2023-11-15 10:39:45,944[17] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 368
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 251
+2023-11-15 10:39:49,076[1] ERROR 导出数据失败 
+System.IO.IOException: The process cannot access the file 'D:\FWMAutoTest\Code\bin\x86\Debug\net6.0-windows\Data\TempData.xlsx' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at Common.CommonTools.McsFile.Excel.ExcelHelper.NPOISaveFile(XSSFWorkbook workbook, String filePath) in D:\FWMAutoTest\Code\Common\CommonTools\McsFile\Excel\ExcelHelper.cs:line 154
+   at Common.CommonTools.McsFile.Excel.ExcelHelper.Export(DataTable dt, String strHeader, String filePath, String sheetName) in D:\FWMAutoTest\Code\Common\CommonTools\McsFile\Excel\ExcelHelper.cs:line 52
+   at FwmTestHelper.View.Chart.UcScottPlot.<>c__DisplayClass29_0.<SaveToLocal>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 349
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.View.Chart.UcScottPlot.SaveToLocal(String savePath, Double[] waveLengtData, Double[] powerData, Double[] timeData) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 327
+2023-11-15 10:51:48,905[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower()
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2()
+2023-11-15 10:51:58,505[1] ERROR 导出数据失败 
+System.IO.IOException: The process cannot access the file 'D:\FWMAutoTest\Code\bin\x86\Debug\net6.0-windows\Data\TempData.xlsx' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at Common.CommonTools.McsFile.Excel.ExcelHelper.NPOISaveFile(XSSFWorkbook workbook, String filePath) in D:\FWMAutoTest\Code\Common\CommonTools\McsFile\Excel\ExcelHelper.cs:line 154
+   at Common.CommonTools.McsFile.Excel.ExcelHelper.Export(DataTable dt, String strHeader, String filePath, String sheetName) in D:\FWMAutoTest\Code\Common\CommonTools\McsFile\Excel\ExcelHelper.cs:line 52
+   at FwmTestHelper.View.Chart.UcScottPlot.<>c__DisplayClass29_0.<SaveToLocal>b__0()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.View.Chart.UcScottPlot.SaveToLocal(String savePath, Double[] waveLengtData, Double[] powerData, Double[] timeData)
+2023-11-15 11:21:24,630[17] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 368
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 251
+2023-11-15 11:48:13,055[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 368
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 251
+2023-11-15 14:33:24,248[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 358
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__53_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 246
+2023-11-15 14:43:26,086[48] ERROR 非UI线程发生未处理错误 
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.HardWareStateVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 253
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_1(Object state)
+   at System.Threading.QueueUserWorkItemCallback.<>c.<.cctor>b__6_0(QueueUserWorkItemCallback quwi)
+   at System.Threading.ExecutionContext.RunForThreadPoolUnsafe[TState](ExecutionContext executionContext, Action`1 callback, TState& state)
+   at System.Threading.QueueUserWorkItemCallback.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+2023-11-15 17:41:06,428[20] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 113
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 163
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 317
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 219
+2023-11-15 18:06:59,341[1] ERROR 显示波长错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 218
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 179
+2023-11-15 18:07:04,170[1] ERROR 显示波长错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 218
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 179
+2023-11-15 18:07:11,023[1] ERROR 显示波长错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 218
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 179
+2023-11-15 18:29:14,022[19] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 113
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 163
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 317
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 219
+2023-11-15 19:48:21,569[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 113
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 163
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 317
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 219
+2023-11-15 19:50:01,187[7] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 113
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 163
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 317
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 219

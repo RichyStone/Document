@@ -1,0 +1,13 @@
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\bin\x86\Release\netstandard2.0\Libs\Semight.Fwm.Connection.GP_IBConnectionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.deps.json
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.pdb
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.csproj.CopyComplete
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AQ6151InteractionLib.pdb

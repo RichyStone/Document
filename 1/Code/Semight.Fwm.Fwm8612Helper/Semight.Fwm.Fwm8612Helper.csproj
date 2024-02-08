@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <BaseOutputPath>..\00bin</BaseOutputPath>
+    <AssemblyVersion>1.7.98.128</AssemblyVersion>
+    <FileVersion>1.7.98.128</FileVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LogConfig\**" />
+    <EmbeddedResource Remove="LogConfig\**" />
+    <None Remove="LogConfig\**" />
+    <Page Remove="LogConfig\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Libs\NationalInstruments.Common.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libs\NationalInstruments.Common.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Costura.Fody" Version="5.7.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.Wpf.Core" Version="0.9.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\01Semight.Fwm.Common\UITools\Semight.Fwm.Common.CommonUILib\Semight.Fwm.Common.CommonUILib.csproj" />
+    <ProjectReference Include="..\01Semight.Fwm.Common\Utility\Semight.Fwm.Common.CommonUtility\Semight.Fwm.Common.CommonUtility.csproj" />
+    <ProjectReference Include="..\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\Semight.Fwm.HardWare.HardwarePlatform.csproj" />
+    <ProjectReference Include="..\04Semight.Fwm.Algorithm\Semight.Fwm.Algorithm.WaveLengthAlgorithm\Semight.Fwm.Algorithm.WaveLengthAlgorithm.csproj" />
+    <ProjectReference Include="..\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\Semight.Fwm.CustomUserControl.WaveLengthChart.csproj" />
+    <ProjectReference Include="..\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthParamUI\Semight.Fwm.CustomUserControl.WaveLengthParam.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NationalInstruments.Common">
+      <HintPath>Libs\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

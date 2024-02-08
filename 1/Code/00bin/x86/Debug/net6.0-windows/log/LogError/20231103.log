@@ -1,0 +1,334 @@
+2023-11-03 09:23:48,727[1] ERROR UI线程发生未处理错误 
+System.InvalidOperationException: The collection has been marked as complete with regards to additions.
+   at System.Collections.Concurrent.BlockingCollection`1.TryAddWithNoTimeValidation(T item, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Collections.Concurrent.BlockingCollection`1.TryAdd(T item)
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 52
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-03 09:23:51,144[1] ERROR 非UI线程发生未处理错误 
+System.InvalidOperationException: The collection has been marked as complete with regards to additions.
+   at System.Collections.Concurrent.BlockingCollection`1.TryAddWithNoTimeValidation(T item, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Collections.Concurrent.BlockingCollection`1.TryAdd(T item)
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 52
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-03 13:49:31,410[16] ERROR 获取测量温度错误 
+System.TimeoutException: SendMessage Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 216
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 140
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1076
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 616
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 95
+2023-11-03 13:49:44,393[19] ERROR 测量波长错误 
+System.Exception: 不存在None段Thin参数！
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.SaveAlgoFizeauParam(WaveBand waveBand, WLThickNess widthType) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 481
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 400
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-03 13:49:44,434[20] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:49:44,434[21] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:49:44,434[22] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:49:44,434[23] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:49:55,042[19] ERROR 测量波长错误 
+System.Exception: 不存在None段Thin参数！
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.SaveAlgoFizeauParam(WaveBand waveBand, WLThickNess widthType) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 481
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 400
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-03 13:49:55,076[20] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:49:55,076[22] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:49:55,076[21] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:49:55,076[16] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:50:24,950[16] ERROR 获取波长值失败 
+System.Exception: There are errors in the obtained data!
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 347
+2023-11-03 13:50:24,962[16] ERROR 测量波长错误 
+System.Exception: There are errors in the obtained data!
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 347
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 261
+2023-11-03 13:50:24,989[21] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:50:24,989[19] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:50:24,989[20] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:50:24,989[22] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:50:27,157[23] ERROR 获取波长值失败 
+System.Exception: There are errors in the obtained data!
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 347
+2023-11-03 13:50:27,168[23] ERROR 测量波长错误 
+System.Exception: There are errors in the obtained data!
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 347
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 261
+2023-11-03 13:50:27,198[26] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:50:27,198[27] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:50:27,198[24] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:50:27,198[25] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:52:03,950[26] ERROR 获取波长值失败 
+System.Exception: There are errors in the obtained data!
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 347
+2023-11-03 13:52:03,962[26] ERROR 测量波长错误 
+System.Exception: There are errors in the obtained data!
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 347
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 261
+2023-11-03 13:52:04,001[21] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:52:04,001[25] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:52:04,004[24] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:52:04,004[22] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:54:44,108[19] ERROR 测量波长错误 
+System.Exception: 不存在None段Thin参数！
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.SaveAlgoFizeauParam(WaveBand waveBand, WLThickNess widthType) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 481
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 400
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-03 13:54:44,203[21] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:54:44,203[20] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:54:44,203[22] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:54:44,203[23] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:56:42,213[20] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:56:42,221[21] ERROR 波长结果显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthResultVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 549
+2023-11-03 13:56:42,221[22] ERROR 原始数据显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CCDDataVisual(BlockingCollection`1 queue, Action`2 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 517
+2023-11-03 13:56:42,221[19] ERROR 波长表格显示错误 
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Collections.Concurrent.BlockingCollection`1.TryTakeWithNoTimeValidation(T& item, Int32 millisecondsTimeout, CancellationToken cancellationToken, CancellationTokenSource combinedTokenSource)
+   at System.Collections.Concurrent.BlockingCollection`1.Take(CancellationToken cancellationToken)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.WaveLengthGridVisual(BlockingCollection`1 queue, Action`1 action, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 581
+2023-11-03 13:56:47,120[23] ERROR 获取波长值失败 
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.NetworkStream'.
+   at System.Net.Sockets.NetworkStream.<ThrowIfDisposed>g__ThrowObjectDisposedException|63_0()
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at ConnectionAssistantLib.ConnectionHelper.<>c__DisplayClass7_0.<SendMessageWithReply>b__0() in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 196
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 218
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 140
+   at FWM8612InteractionLib.FWM8612API.MeasureWLAndPower() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 865
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 342
+2023-11-03 13:56:47,154[23] ERROR 测量波长错误 
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.NetworkStream'.
+   at System.Net.Sockets.NetworkStream.<ThrowIfDisposed>g__ThrowObjectDisposedException|63_0()
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at ConnectionAssistantLib.ConnectionHelper.<>c__DisplayClass7_0.<SendMessageWithReply>b__0() in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 196
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 218
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 140
+   at FWM8612InteractionLib.FWM8612API.MeasureWLAndPower() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 865
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetWaveLengthFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 342
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 261

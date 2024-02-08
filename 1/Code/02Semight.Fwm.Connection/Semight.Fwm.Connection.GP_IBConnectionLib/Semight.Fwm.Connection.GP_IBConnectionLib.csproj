@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <FileVersion>1.1.1.2</FileVersion>
+    <AssemblyVersion>1.1.1.2</AssemblyVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Libs\NationalInstruments.Common.dll" />
+    <None Remove="Libs\NationalInstruments.VisaNS.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libs\NationalInstruments.Common.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\NationalInstruments.VisaNS.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NationalInstruments.Common">
+      <HintPath>CommunicateLibs\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.VisaNS">
+      <HintPath>CommunicateLibs\NationalInstruments.VisaNS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

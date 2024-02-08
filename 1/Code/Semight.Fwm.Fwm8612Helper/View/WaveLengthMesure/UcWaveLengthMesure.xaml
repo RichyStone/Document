@@ -1,0 +1,105 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.Fwm8612Helper.View.WaveLengthMesure.UcWaveLengthMesure"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View.WaveLengthMesure"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource Locator}, Path=WaveLengthMeasureViewModel}"
+    d:DesignHeight="50"
+    d:DesignWidth="750"
+    Tag="{Binding InstrumentTag, Mode=OneWayToSource}"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <GroupBox Header="{Binding InstrumentTag}">
+        <StackPanel Orientation="Horizontal">
+
+            <Ellipse
+                Width="13"
+                Height="13"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Fill="{Binding Connected, Mode=OneWay, Converter={StaticResource bool2ColorConverter}}" />
+
+            <ToggleButton Width="100" Command="{Binding ConnectionChangeCommand}" IsChecked="{Binding Connected, Mode=OneWay}">
+                <ToggleButton.Style>
+                    <Style TargetType="ToggleButton">
+                        <Style.Setters>
+                            <Setter Property="Margin" Value="10,5" />
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Content" Value="DisConnect" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Content" Value="Connect" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ToggleButton.Style>
+            </ToggleButton>
+
+            <ToggleButton Width="100" Command="{Binding MeasureStateChangeCommand}" IsChecked="{Binding IsMeasuring, Mode=OneWay}">
+                <ToggleButton.Style>
+                    <Style TargetType="ToggleButton">
+                        <Style.Setters>
+                            <Setter Property="Margin" Value="10,5" />
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Content" Value="StopMeasure" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Content" Value="StartMeasure" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ToggleButton.Style>
+            </ToggleButton>
+
+            <Button
+                Width="150"
+                Margin="10,5"
+                HorizontalAlignment="Left"
+                Command="{Binding OpenWaveLengthChartWindowCommand}"
+                Content="WaveLengthChart" />
+
+            <Button
+                Width="100"
+                Margin="10,5"
+                HorizontalAlignment="Left"
+                Command="{Binding OpenParamWindowCommand}"
+                Content="Parameters" />
+
+            <Button
+                Width="100"
+                Margin="10,5"
+                HorizontalAlignment="Left"
+                Command="{Binding OpenIpSettingWindowCommand}"
+                Content="IpSettings" />
+
+            <Button
+                Width="100"
+                Margin="10,5"
+                HorizontalAlignment="Left"
+                Command="{Binding OpenSystemSettingWindowCommand}"
+                Content="SystemSettings" />
+        </StackPanel>
+    </GroupBox>
+</UserControl>

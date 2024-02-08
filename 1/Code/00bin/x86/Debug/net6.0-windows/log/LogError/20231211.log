@@ -1,0 +1,129 @@
+2023-12-11 18:24:32,629[1] ERROR UI线程发生未处理错误 
+System.Exception: Instrument not found
+   at Semight.Fwm.HardWare.AT4304InteractionLib.Inst_ST_OptAtt.OpenDevice(UInt32 deviceID, UInt32 port) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.AT4304InteractionLib\Inst_ST_OptAtt.cs:line 153
+   at Semight.Fwm.HardWare.AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.AT4304InteractionLib\AT4304_API.cs:line 59
+   at Semight.Fwm.Fwm8612Helper.ViewModel.MainViewModel.Loaded(UCLogViewer logViewer) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\MainViewModel.cs:line 71
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-12-11 18:24:35,096[1] ERROR 非UI线程发生未处理错误 
+System.Exception: Instrument not found
+   at Semight.Fwm.HardWare.AT4304InteractionLib.Inst_ST_OptAtt.OpenDevice(UInt32 deviceID, UInt32 port) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.AT4304InteractionLib\Inst_ST_OptAtt.cs:line 153
+   at Semight.Fwm.HardWare.AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.AT4304InteractionLib\AT4304_API.cs:line 59
+   at Semight.Fwm.Fwm8612Helper.ViewModel.MainViewModel.Loaded(UCLogViewer logViewer) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\MainViewModel.cs:line 71
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at Semight.Fwm.Fwm8612Helper.App.Main()
+2023-12-11 18:30:07,152[1] ERROR UI线程发生未处理错误 
+System.IO.FileNotFoundException: Could not load file or assembly 'Inst_ST_OptAtt, Version=1.0.4.7, Culture=neutral, PublicKeyToken=null'. 系统找不到指定的文件。
+File name: 'Inst_ST_OptAtt, Version=1.0.4.7, Culture=neutral, PublicKeyToken=null'
+   at Semight.Fwm.HardWare.AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.MainViewModel.Loaded(UCLogViewer logViewer) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\MainViewModel.cs:line 71
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-12-11 18:30:55,151[1] ERROR 非UI线程发生未处理错误 
+System.IO.FileNotFoundException: Could not load file or assembly 'Inst_ST_OptAtt, Version=1.0.4.7, Culture=neutral, PublicKeyToken=null'. 系统找不到指定的文件。
+File name: 'Inst_ST_OptAtt, Version=1.0.4.7, Culture=neutral, PublicKeyToken=null'
+   at Semight.Fwm.HardWare.AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.MainViewModel.Loaded(UCLogViewer logViewer) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\MainViewModel.cs:line 71
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at Semight.Fwm.Fwm8612Helper.App.Main()
+2023-12-11 18:33:27,754[1] ERROR UI线程发生未处理错误 
+System.Exception: Instrument not found
+   at LX.TestLibrary.Inst_ST_OptAtt..ctor(UInt32 deviceID, UInt32 port)
+   at Semight.Fwm.HardWare.AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.AT4304InteractionLib\AT4304_API.cs:line 33
+   at Semight.Fwm.Fwm8612Helper.ViewModel.MainViewModel.Loaded(UCLogViewer logViewer) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\MainViewModel.cs:line 71
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-12-11 18:33:27,931[1] ERROR 非UI线程发生未处理错误 
+System.Exception: Instrument not found
+   at LX.TestLibrary.Inst_ST_OptAtt..ctor(UInt32 deviceID, UInt32 port)
+   at Semight.Fwm.HardWare.AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.AT4304InteractionLib\AT4304_API.cs:line 33
+   at Semight.Fwm.Fwm8612Helper.ViewModel.MainViewModel.Loaded(UCLogViewer logViewer) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\MainViewModel.cs:line 71
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at Semight.Fwm.Fwm8612Helper.App.Main()

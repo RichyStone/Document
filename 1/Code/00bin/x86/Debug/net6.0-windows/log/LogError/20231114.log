@@ -1,0 +1,46 @@
+2023-11-14 10:44:22,392[9] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 59
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 35
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 182
+2023-11-14 11:05:27,775[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 59
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 35
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 182
+2023-11-14 11:09:44,877[20] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 505
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 405
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 269
+2023-11-14 11:10:26,018[24] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 370
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 253
+2023-11-14 11:11:07,282[41] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 370
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 253
+2023-11-14 17:01:48,932[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 244

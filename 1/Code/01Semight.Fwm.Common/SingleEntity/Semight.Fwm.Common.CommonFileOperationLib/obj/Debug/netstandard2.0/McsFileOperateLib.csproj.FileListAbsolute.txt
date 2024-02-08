@@ -1,0 +1,10 @@
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\bin\Debug\netstandard2.0\McsFileOperateLib.deps.json
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\bin\Debug\netstandard2.0\McsFileOperateLib.dll
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\bin\Debug\netstandard2.0\McsFileOperateLib.pdb
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.AssemblyInfo.cs
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.dll
+D:\FWMAutoTest\Code\Common\McsFileOperateLib\obj\Debug\netstandard2.0\McsFileOperateLib.pdb

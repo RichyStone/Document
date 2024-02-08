@@ -1,0 +1,10 @@
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\bin\Debug\netstandard2.0\WaveLengthModel.deps.json
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\bin\Debug\netstandard2.0\WaveLengthModel.dll
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\bin\Debug\netstandard2.0\WaveLengthModel.pdb
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.AssemblyInfo.cs
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.dll
+D:\FWMAutoTest\Code\WaveLengthCommon\WaveLengthModel\obj\Debug\netstandard2.0\WaveLengthModel.pdb

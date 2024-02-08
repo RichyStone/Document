@@ -1,0 +1,73 @@
+2023-10-30 17:32:44,071[8] ERROR 读取功率校准参数失败 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadPowerParamFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 818
+2023-10-30 17:32:44,269[8] ERROR 获取下位机参数失败 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadPowerParamFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadAllLowerComputerParam() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 753
+2023-10-30 17:32:44,280[8] ERROR 初始化下位机失败 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadPowerParamFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadAllLowerComputerParam() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 753
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 124
+2023-10-30 17:33:05,839[1] ERROR UI线程发生未处理错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadPowerParamFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadAllLowerComputerParam() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 753
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 124
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<>c__DisplayClass10_0.<ConnectionChange>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 94
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 103
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-10-30 17:33:05,945[1] ERROR 非UI线程发生未处理错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadPowerParamFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ReadAllLowerComputerParam() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 753
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 124
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<>c__DisplayClass10_0.<ConnectionChange>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 94
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 103
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at FwmTestHelper.App.Main()

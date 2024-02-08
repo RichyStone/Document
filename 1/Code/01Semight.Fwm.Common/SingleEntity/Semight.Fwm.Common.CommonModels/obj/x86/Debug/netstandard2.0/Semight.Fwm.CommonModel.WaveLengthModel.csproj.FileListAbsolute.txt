@@ -1,0 +1,10 @@
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\bin\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.deps.json
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\bin\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.dll
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\bin\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.pdb
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.dll
+D:\Semight.Fwm.Fwm8612AteHelper\Code\05Semight.Fwm.CommonModel\Semight.Fwm.CommonModel.WaveLengthModel\obj\x86\Debug\netstandard2.0\Semight.Fwm.CommonModel.WaveLengthModel.pdb

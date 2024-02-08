@@ -1,0 +1,117 @@
+2023-12-12 11:24:01,532[18] ERROR 测量波长错误 
+System.AggregateException: One or more errors occurred. (Read Error, Win32Error:GetOverlappedResult Ep 0x81 
+31:连到系统上的设备没有发挥作用。
+)
+ ---> System.Exception: Read Error, Win32Error:GetOverlappedResult Ep 0x81 
+31:连到系统上的设备没有发挥作用。
+
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.ReceiveData(Int32 replyLength, CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 210
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.<>c__DisplayClass6_0.<SendMessageWithData>b__0() in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 124
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithData(String msg, Int32 replyLength, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 129
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 144
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.ReadCCD_SingleN() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 207
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 340
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 242
+2023-12-12 11:24:01,532[16] ERROR 获取TCM温度错误 
+System.Exception: Write Error, Win32Error:PipeTransferSubmit Ep 0x01 
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.Send(String str) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 123
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 162
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 116
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 838
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 645
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 200
+2023-12-12 11:24:03,861[16] ERROR 获取TCM温度错误 
+System.Exception: Write Error, Win32Error:PipeTransferSubmit Ep 0x01 
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.Send(String str) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 123
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 162
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 116
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 838
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 645
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 200
+2023-12-12 11:24:05,919[16] ERROR 获取TCM温度错误 
+System.Exception: Write Error, Win32Error:PipeTransferSubmit Ep 0x01 
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.Send(String str) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 123
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 162
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 116
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 838
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 645
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 200
+2023-12-12 11:24:07,981[16] ERROR 获取TCM温度错误 
+System.Exception: Write Error, Win32Error:PipeTransferSubmit Ep 0x01 
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.Send(String str) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 123
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 162
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 116
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 838
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 645
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 200
+2023-12-12 11:24:10,041[16] ERROR 获取TCM温度错误 
+System.Exception: Write Error, Win32Error:PipeTransferSubmit Ep 0x01 
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.Send(String str) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 123
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 162
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 116
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 838
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 645
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 200
+2023-12-12 14:23:18,651[1] ERROR 连接或断连出现报错 
+System.AggregateException: One or more errors occurred. (由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。)
+ ---> System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at Semight.Fwm.Connection.ConnectionAssistantLib.Net.NetCommunicator.ReceiveMessage(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\Net\NetCommunicator.cs:line 149
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.<>c__DisplayClass7_0.<SendMessageWithReply>b__0() in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 165
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 171
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 116
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 448
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Initial() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 146
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 127
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__6_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 71
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 80
+2023-12-12 14:23:46,762[1] ERROR 连接或断连出现报错 
+System.Exception: Device Not Found.
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.Connect() in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 49
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.<StartConnect>b__3_0() in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 40
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 49
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.Connect(String serial) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 67
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 103
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__6_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 71
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 80

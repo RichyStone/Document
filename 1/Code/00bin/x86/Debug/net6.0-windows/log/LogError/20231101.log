@@ -1,0 +1,42 @@
+2023-11-01 18:00:27,975[3] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-01 18:00:54,908[6] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-01 18:01:55,304[7] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-01 18:12:03,545[8] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-01 18:15:31,923[8] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-01 18:18:29,459[8] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-01 18:34:09,566[5] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 

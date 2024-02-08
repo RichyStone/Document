@@ -1,0 +1,462 @@
+2023-11-23 09:30:19,638[1] ERROR UI线程发生未处理错误 
+System.ArgumentException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+ ---> NationalInstruments.VisaNS.VisaException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+   --- End of inner exception stack trace ---
+   at NationalInstruments.VisaNS.Internal.ErrorChecker.CheckStatusAndThrow(Int32 status, VisaHandle visaObject)
+   at NationalInstruments.VisaNS.Session..ctor(String resourceName, AccessModes accessMode, Int32 openTimeout, String expectedResourceName)
+   at NationalInstruments.VisaNS.MessageBasedSession..ctor(String resourceName)
+   at GP_IBConnectionLib.GP_IB.GPIBCommunicator.Connect() in D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\GP-IB\GPIBCommunicator.cs:line 35
+   at HP8153AInteractionLib.HP8153A_API.Connect(GP_IBCommunicationMode mode, String connectionStr) in D:\FWMAutoTest\Code\HardWare\HP8153ALib\HP8153A_API.cs:line 26
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 76
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-23 09:30:21,250[1] ERROR 非UI线程发生未处理错误 
+System.ArgumentException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+ ---> NationalInstruments.VisaNS.VisaException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+   --- End of inner exception stack trace ---
+   at NationalInstruments.VisaNS.Internal.ErrorChecker.CheckStatusAndThrow(Int32 status, VisaHandle visaObject)
+   at NationalInstruments.VisaNS.Session..ctor(String resourceName, AccessModes accessMode, Int32 openTimeout, String expectedResourceName)
+   at NationalInstruments.VisaNS.MessageBasedSession..ctor(String resourceName)
+   at GP_IBConnectionLib.GP_IB.GPIBCommunicator.Connect() in D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\GP-IB\GPIBCommunicator.cs:line 35
+   at HP8153AInteractionLib.HP8153A_API.Connect(GP_IBCommunicationMode mode, String connectionStr) in D:\FWMAutoTest\Code\HardWare\HP8153ALib\HP8153A_API.cs:line 26
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 76
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-23 09:31:44,677[1] ERROR UI线程发生未处理错误 
+System.ArgumentException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+ ---> NationalInstruments.VisaNS.VisaException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+   --- End of inner exception stack trace ---
+   at NationalInstruments.VisaNS.Internal.ErrorChecker.CheckStatusAndThrow(Int32 status, VisaHandle visaObject)
+   at NationalInstruments.VisaNS.Session..ctor(String resourceName, AccessModes accessMode, Int32 openTimeout, String expectedResourceName)
+   at NationalInstruments.VisaNS.MessageBasedSession..ctor(String resourceName)
+   at GP_IBConnectionLib.GP_IB.GPIBCommunicator.Connect() in D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\GP-IB\GPIBCommunicator.cs:line 35
+   at HP8153AInteractionLib.HP8153A_API.Connect(GP_IBCommunicationMode mode, String connectionStr) in D:\FWMAutoTest\Code\HardWare\HP8153ALib\HP8153A_API.cs:line 26
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 76
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-23 09:31:44,749[1] ERROR 非UI线程发生未处理错误 
+System.ArgumentException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+ ---> NationalInstruments.VisaNS.VisaException: 接口类型非法，但未配置指定的接口数量。  VISA error code -1073807195 (0xBFFF00A5), ErrorInterfaceNumberNotConfigured
+   --- End of inner exception stack trace ---
+   at NationalInstruments.VisaNS.Internal.ErrorChecker.CheckStatusAndThrow(Int32 status, VisaHandle visaObject)
+   at NationalInstruments.VisaNS.Session..ctor(String resourceName, AccessModes accessMode, Int32 openTimeout, String expectedResourceName)
+   at NationalInstruments.VisaNS.MessageBasedSession..ctor(String resourceName)
+   at GP_IBConnectionLib.GP_IB.GPIBCommunicator.Connect() in D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\GP-IB\GPIBCommunicator.cs:line 35
+   at HP8153AInteractionLib.HP8153A_API.Connect(GP_IBCommunicationMode mode, String connectionStr) in D:\FWMAutoTest\Code\HardWare\HP8153ALib\HP8153A_API.cs:line 26
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 76
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-23 10:36:50,180[41] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: Y data must not contain NaN
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-23 18:49:46,599[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:49:48,707[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:52:25,040[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:52:38,645[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:53:01,744[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:53:19,598[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:53:35,643[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:55:25,247[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:56:37,616[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 18:56:50,756[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (226, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 226, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension) in D:\FWMAutoTest\Code\Common\CommonTools\Serialize\XmlSerializeHelper.cs:line 66
+   at WaveLengthParamUI.Tools.ParamLocalHandler.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\ParamLocalHandler.cs:line 26
+2023-11-23 19:03:44,803[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 145
+2023-11-23 19:06:17,743[9] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 147
+2023-11-23 19:07:04,050[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 147
+2023-11-23 19:08:34,271[1] ERROR 写入菲索参数失败 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.QueryOPC() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 184
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(FizeauParam param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 1000
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 982
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:08:37,351[30] ERROR 获取TCM温度错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 834
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 606
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-23 19:08:49,008[1] ERROR 写入菲索参数失败 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.QueryOPC() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 184
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(FizeauParam param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 1000
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 982
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:08:50,993[30] ERROR 获取TCM温度错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 834
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 606
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-23 19:15:52,104[1] ERROR 写入菲索参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 981
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:16:24,000[1] ERROR 写入菲索参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 981
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:17:54,806[1] ERROR 写入菲索参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 981
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:18:30,809[1] ERROR 写入菲索参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 981
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:20:05,124[1] ERROR 写入菲索参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 981
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:20:45,350[1] ERROR 写入菲索参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetFizeauParam(List`1 param) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 981
+   at WaveLengthParamUI.Tools.HardWareManager.WriteFizeauParamCallBack(List`1 param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 33
+   at WaveLengthCommonUI.ViewModel.SingleEntity.FizeauViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\FizeauViewModel.cs:line 65
+2023-11-23 19:36:46,938[1] ERROR 写入多峰参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetMultiPeaksParam(MultiPeaksParam multiPeaksParam) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 1411
+   at WaveLengthParamUI.Tools.HardWareManager.WriteMultiPeaksParamCallBack(MultiPeaksParam param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 45
+   at WaveLengthCommonUI.ViewModel.SingleEntity.MultiPeaksViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\MultiPeaksViewModel.cs:line 64
+2023-11-23 19:37:29,562[1] ERROR 写入多峰参数失败 
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at FWM8612InteractionLib.FWM8612_API.SetMultiPeaksParam(MultiPeaksParam multiPeaksParam) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 1411
+   at WaveLengthParamUI.Tools.HardWareManager.WriteMultiPeaksParamCallBack(MultiPeaksParam param) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\Tools\HardWareManager.cs:line 45
+   at WaveLengthCommonUI.ViewModel.SingleEntity.MultiPeaksViewModel.WriteParamFuction(Object recipient, MessagerTransData message) in D:\FWMAutoTest\Code\WaveLengthCommonUI\WaveLengthParamUI\ViewModel\SingleEntity\MultiPeaksViewModel.cs:line 64
+2023-11-23 20:09:48,510[36] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-23 20:16:07,866[24] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-23 20:25:00,699[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 147

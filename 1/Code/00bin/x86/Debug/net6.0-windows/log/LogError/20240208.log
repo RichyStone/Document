@@ -1,0 +1,13 @@
+2024-02-08 13:40:00,509[1] ERROR 导出数据失败 
+System.InvalidOperationException: Enumeration has not started. Call MoveNext.
+   at System.SZGenericArrayEnumerator`1.get_Current()
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.SaveToLocal(String savePath, ICollection`1 waveLengtData, ICollection`1 powerData, ICollection`1 timeData) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 399
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.<>c__DisplayClass30_1.<ExportData>b__0() in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 364
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.ExportData(String path) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 362

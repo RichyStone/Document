@@ -1,0 +1,114 @@
+2023-12-26 11:51:51,261[1] ERROR UI线程发生未处理错误 
+System.Threading.Channels.ChannelClosedException: The channel has been closed.
+   at System.Threading.Channels.ChannelWriter`1.Complete(Exception error)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.ClearCollection() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 459
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-12-26 11:51:51,407[1] ERROR 非UI线程发生未处理错误 
+System.Threading.Channels.ChannelClosedException: The channel has been closed.
+   at System.Threading.Channels.ChannelWriter`1.Complete(Exception error)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.ClearCollection() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 459
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at Semight.Fwm.Fwm8612Helper.App.Main()
+2023-12-26 13:31:18,327[1] ERROR UI线程发生未处理错误 
+System.Threading.Channels.ChannelClosedException: The channel has been closed.
+   at System.Threading.Channels.ChannelWriter`1.Complete(Exception error)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.ClearCollection() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 461
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-12-26 13:31:18,440[1] ERROR 非UI线程发生未处理错误 
+System.Threading.Channels.ChannelClosedException: The channel has been closed.
+   at System.Threading.Channels.ChannelWriter`1.Complete(Exception error)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.ClearCollection() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 461
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at Semight.Fwm.Fwm8612Helper.App.Main()
+2023-12-26 13:32:45,856[7] ERROR 非UI线程发生未处理错误 
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.get_Token()
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.<TurnSwitchVisualThread>b__30_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 349
+   at System.Threading.Thread.StartHelper.Callback(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Thread.StartCallback()
+2023-12-26 13:34:57,771[1] ERROR 写入设定发生错误 
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.Cancel()
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.TurnSwitchVisualThread(Boolean onOff) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 346
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.PowerUnitChangedHandler(Object sender, MessagerTransData`1 messagerTransData) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 191
+   at CommunityToolkit.Mvvm.Messaging.Internals.MessageHandlerDispatcher.For`2.Invoke(Object recipient, Object message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.SendAll[TMessage](ReadOnlySpan`1 pairs, Int32 i, TMessage message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.Send[TMessage,TToken](TMessage message, TToken token)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.PowerUnitViewModel.SetPowerUnit(PowerUnit powerUnit) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\PowerUnitViewModel.cs:line 120
+2023-12-26 13:35:08,088[1] ERROR 写入设定发生错误 
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.Cancel()
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.TurnSwitchVisualThread(Boolean onOff) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 346
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.PowerUnitChangedHandler(Object sender, MessagerTransData`1 messagerTransData) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 186
+   at CommunityToolkit.Mvvm.Messaging.Internals.MessageHandlerDispatcher.For`2.Invoke(Object recipient, Object message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.SendAll[TMessage](ReadOnlySpan`1 pairs, Int32 i, TMessage message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.Send[TMessage,TToken](TMessage message, TToken token)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.PowerUnitViewModel.SetPowerUnit(PowerUnit powerUnit) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\PowerUnitViewModel.cs:line 120
+2023-12-26 13:35:11,889[1] ERROR 写入设定发生错误 
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.Cancel()
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.TurnSwitchVisualThread(Boolean onOff) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 346
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.PowerUnitChangedHandler(Object sender, MessagerTransData`1 messagerTransData) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 186
+   at CommunityToolkit.Mvvm.Messaging.Internals.MessageHandlerDispatcher.For`2.Invoke(Object recipient, Object message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.SendAll[TMessage](ReadOnlySpan`1 pairs, Int32 i, TMessage message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.Send[TMessage,TToken](TMessage message, TToken token)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.PowerUnitViewModel.SetPowerUnit(PowerUnit powerUnit) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\PowerUnitViewModel.cs:line 120

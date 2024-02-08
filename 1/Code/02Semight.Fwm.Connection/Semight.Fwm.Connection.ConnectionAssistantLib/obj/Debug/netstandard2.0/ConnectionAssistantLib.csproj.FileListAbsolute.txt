@@ -1,0 +1,10 @@
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\bin\Debug\netstandard2.0\ConnectionAssistantLib.deps.json
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\bin\Debug\netstandard2.0\ConnectionAssistantLib.dll
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\bin\Debug\netstandard2.0\ConnectionAssistantLib.pdb
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.AssemblyInfo.cs
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.dll
+D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\obj\Debug\netstandard2.0\ConnectionAssistantLib.pdb

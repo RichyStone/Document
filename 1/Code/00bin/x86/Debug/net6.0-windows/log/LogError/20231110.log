@@ -1,0 +1,241 @@
+2023-11-10 10:55:11,303[1] ERROR UI线程发生未处理错误 
+System.IndexOutOfRangeException: Cannot find column 1.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.<>c__DisplayClass32_1.<SaveToLocal>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 418
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.SaveToLocal(Double[] waveLengtData, Double[] powerData, Double[] timeData) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 397
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-10 10:55:11,303[15] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 160
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 183
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 340
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 248
+2023-11-10 10:55:14,299[1] ERROR 导出失败 
+System.IndexOutOfRangeException: Cannot find column 1.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.<>c__DisplayClass32_1.<SaveToLocal>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 418
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.SaveToLocal(Double[] waveLengtData, Double[] powerData, Double[] timeData) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 397
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.MessageBox(HandleRef hWnd, String text, String caption, Int32 type)
+   at System.Windows.MessageBox.ShowCore(IntPtr owner, String messageBoxText, String caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult, MessageBoxOptions options)
+   at System.Windows.MessageBox.Show(String messageBoxText, String caption, MessageBoxButton button, MessageBoxImage icon)
+   at FwmTestHelper.CommonBusiness.MessageBoxHelper.MessageBoxHelper.SuccessBox(String message, String caption) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\MessageBoxHelper\MessageBoxHelper.cs:line 14
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.BtnExportClick(Object sender, RoutedEventArgs e) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 239
+2023-11-10 11:05:21,440[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 160
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 183
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 340
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 248
+2023-11-10 11:07:28,403[6] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 160
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 183
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 340
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 248
+2023-11-10 11:18:35,481[17] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 160
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 183
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower()
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2()
+2023-11-10 11:18:37,375[1] ERROR 导出数据失败 
+System.IO.IOException: The process cannot access the file 'D:\FWMAutoTest\Code\bin\x86\Debug\net6.0-windows\Data\TempData.xlsx' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at Common.CommonTools.McsFile.Excel.ExcelHelper.NPOISaveFile(XSSFWorkbook workbook, String filePath) in D:\FWMAutoTest\Code\Common\CommonTools\McsFile\Excel\ExcelHelper.cs:line 191
+   at Common.CommonTools.McsFile.Excel.ExcelHelper.Export(DataTable dt, String strHeader, String filePath, String sheetName) in D:\FWMAutoTest\Code\Common\CommonTools\McsFile\Excel\ExcelHelper.cs:line 52
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.<>c__DisplayClass32_1.<SaveToLocal>b__0()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.SaveToLocal(Double[] waveLengtData, Double[] powerData, Double[] timeData)
+2023-11-10 11:21:48,796[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 160
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 183
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 340
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 248
+2023-11-10 12:00:43,507[10] ERROR 测量波长错误 
+System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 147
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 183
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 341
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 249
+2023-11-10 14:31:31,524[8] ERROR 测量波长错误 
+System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.
+   at FWM8612InteractionLib.FWM8612API.ResolveCCDData(Byte[] bytes) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 112
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 79
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 337
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 245
+2023-11-10 15:05:10,773[17] ERROR 测量波长错误 
+System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.
+   at System.String.Concat(String str0, String str1, String str2, String str3)
+   at FWM8612InteractionLib.FWM8612API.ResolveHardWareData(Byte[] bytes) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 126
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 89
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 340
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 246
+2023-11-10 15:20:38,060[9] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 471
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 376
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__42_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 256
+2023-11-10 16:11:59,926[16] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 162
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 358
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 257
+2023-11-10 17:07:54,432[16] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 500
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 405
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-10 17:08:09,590[40] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 500
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 405
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-10 18:04:35,592[18] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 500
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 405
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-10 18:04:45,679[44] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 500
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 405
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 267
+2023-11-10 19:43:39,002[9] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 59
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 35
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 165
+2023-11-10 19:44:25,135[17] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 162
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 369
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 257
+2023-11-10 19:58:53,857[15] ERROR 获取测量温度错误 
+System.IO.IOException: Unable to write data to the transport connection: 远程主机强迫关闭了一个现有的连接。.
+ ---> System.Net.Sockets.SocketException (10054): 远程主机强迫关闭了一个现有的连接。
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 192
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 19:58:55,951[15] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 20:00:39,621[43] ERROR 测量波长错误 
+System.Net.Sockets.SocketException (10053): 你的主机中的软件中止了一个已建立的连接。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 153
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 368
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__50_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 257
+2023-11-10 20:00:40,764[42] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 20:00:42,779[42] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 20:00:44,793[42] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 20:00:46,812[42] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 20:00:48,828[42] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 745
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass12_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 96
+2023-11-10 20:01:11,271[1] ERROR 连接或断连出现报错 
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.Cancel()
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ConnectionStateChangedHandler(Object sender, MessagerTransData`1 transData) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 47
+   at CommunityToolkit.Mvvm.Messaging.Internals.MessageHandlerDispatcher.For`2.Invoke(Object recipient, Object message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.SendAll[TMessage](ReadOnlySpan`1 pairs, Int32 i, TMessage message)
+   at CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.Send[TMessage,TToken](TMessage message, TToken token)
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 112

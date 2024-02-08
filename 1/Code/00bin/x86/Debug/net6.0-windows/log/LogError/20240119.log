@@ -1,0 +1,103 @@
+2024-01-19 11:05:46,236[9] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.RefrenshChartView(Int32 count) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 190
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 157
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.<RefreshVisual>b__27_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 349
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 337
+2024-01-19 16:09:29,717[9] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.RefrenshChartView(Int32 count) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 190
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 157
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.<RefreshVisual>b__27_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 352
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 340
+2024-01-19 16:53:07,415[1] ERROR 导出数据失败 
+System.IO.IOException: 文件名、目录名或卷标语法不正确。 : 'D:\Semight.Fwm.Fwm8612\Code\00bin\x86\Debug\net6.0-windows\Data\TempData_2024\1\19 16:52:48.xlsx'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at Semight.Fwm.Common.CommonFileOperationLib.Excel.ExcelHelper.NPOISaveFile(XSSFWorkbook workbook, String filePath) in D:\Semight.Fwm.Fwm8612\Code\01Semight.Fwm.Common\SingleEntity\Semight.Fwm.Common.CommonFileOperationLib\Excel\ExcelHelper.cs:line 154
+   at Semight.Fwm.Common.CommonFileOperationLib.Excel.ExcelHelper.Export(DataTable dt, String strHeader, String filePath, String sheetName) in D:\Semight.Fwm.Fwm8612\Code\01Semight.Fwm.Common\SingleEntity\Semight.Fwm.Common.CommonFileOperationLib\Excel\ExcelHelper.cs:line 52
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.SaveToLocal(String savePath, Double[] waveLengtData, Double[] powerData, Double[] timeData) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 348
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.<>c__DisplayClass30_0.<ExportData>b__0() in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 308
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.ExportData(String path) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 306
+2024-01-19 16:53:15,568[1] ERROR UI线程发生未处理错误 
+System.IO.IOException: 文件名、目录名或卷标语法不正确。 : 'D:\Semight.Fwm.Fwm8612\Code\00bin\x86\Debug\net6.0-windows\Data\TempData_2024\1\19 16:52:48.csv'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamWriter.ValidateArgsAndOpenPath(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.SaveToLocalSw(String savePath, Double[] waveLengtData, Double[] powerData, Double[] timeData) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 374
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.ExportData(String path) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 315
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2024-01-19 16:53:15,573[1] ERROR 非UI线程发生未处理错误 
+System.IO.IOException: 文件名、目录名或卷标语法不正确。 : 'D:\Semight.Fwm.Fwm8612\Code\00bin\x86\Debug\net6.0-windows\Data\TempData_2024\1\19 16:52:48.csv'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamWriter.ValidateArgsAndOpenPath(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.SaveToLocalSw(String savePath, Double[] waveLengtData, Double[] powerData, Double[] timeData) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 374
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.ExportData(String path) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcScottPlot.xaml.cs:line 315
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at Semight.Fwm.Fwm8612Helper.App.Main()

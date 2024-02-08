@@ -1,0 +1,202 @@
+2023-10-26 11:34:47,751[1] ERROR 读取本地下位机参数失败 
+System.Exception: 文件路径不存在:D:\FWMAutoTest\Code\bin\x86\Debug\net6.0-windows\Param\.xml
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:34:50,664[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (22, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 22, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:34:53,573[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (22, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 22, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:35:07,920[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (22, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 22, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:36:42,429[1] ERROR 读取本地下位机参数失败 
+System.Exception: 文件路径不存在:D:\FWMAutoTest\Code\bin\x86\Debug\net6.0-windows\Param\.xml
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:37:22,149[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (22, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 22, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:37:26,202[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (22, 22).
+ ---> System.Xml.XmlException: Data at the root level is invalid. Line 22, position 22.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlReader.ReadEndElement()
+   at System.Xml.Serialization.XmlSerializationReader.ReadEndElement()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:38:01,445[1] ERROR 读取本地下位机参数失败 
+System.Exception: 文件路径不存在:D:\FWMAutoTest\Code\bin\x86\Debug\net6.0-windows\Param\.xml
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 11:47:04,566[1] ERROR 读取本地下位机参数失败 
+System.InvalidOperationException: There is an error in XML document (48, 8).
+ ---> System.InvalidOperationException: Instance validation error: 'CL' is not a valid value for WaveBand.
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read6_WaveBand(String s)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read8_FizeauParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read13_LowerComputerParam(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderLowerComputerParam.Read14_LowerComputerParam()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at Common.CommonTools.Serialize.XmlSerializeHelper.ReadFile[TObject](String filePath, TObject& obj, String extension)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.LCParamBulider.ReadParamFromLocal(String readName) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\LCParamBuilder.cs:line 551
+2023-10-26 15:13:07,244[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: 不存在None段Thin参数！
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.SaveAlgoFizeauParam(WaveBand waveBand, WLWidthType widthType) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 456
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 375
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 257
+2023-10-26 15:19:38,027[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 566
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 338
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-10-26 15:25:43,108[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: 不存在None段Thin参数！
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.SaveAlgoFizeauParam(WaveBand waveBand, WLWidthType widthType) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 456
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 375
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 257
+2023-10-26 15:48:16,827[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: 不存在None段Thin参数！
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.SaveAlgoFizeauParam(WaveBand waveBand, WLWidthType widthType) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 459
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 378
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 257
+2023-10-26 15:59:25,355[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 566
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 338
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-10-26 16:01:46,752[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 566
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 338
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-10-26 16:06:28,091[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 566
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 338
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-10-26 16:12:50,010[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 566
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 341
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-10-26 16:21:35,686[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 566
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 338
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-10-26 16:28:21,108[1] ERROR 断开下位机连接失败:Object reference not set to an instance of an object.
+   at FWM8612InteractionLib.FWM8612API.Close() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 60
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Disconnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 172 
+2023-10-26 16:28:23,847[1] ERROR AQ6151断连失败 
+System.IO.FileNotFoundException: Could not load file or assembly 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'. 系统找不到指定的文件。
+File name: 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'
+   at FWMDataSavingAssistant.WM_AQ6151.WM_AQ6151BAPI.Close()
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.Disconnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 88
+2023-10-26 16:30:11,305[1] ERROR 断开下位机连接失败:Object reference not set to an instance of an object.
+   at FWM8612InteractionLib.FWM8612API.Close() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 60
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Disconnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 172 
+2023-10-26 16:30:13,698[1] ERROR AQ6151断连失败 
+System.IO.FileNotFoundException: Could not load file or assembly 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'. 系统找不到指定的文件。
+File name: 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'
+   at FWMDataSavingAssistant.WM_AQ6151.WM_AQ6151BAPI.Close()
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.Disconnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 88
+2023-10-26 16:30:20,751[1] ERROR AQ6151断连失败 
+System.IO.FileNotFoundException: Could not load file or assembly 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'. 系统找不到指定的文件。
+File name: 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'
+   at FWMDataSavingAssistant.WM_AQ6151.WM_AQ6151BAPI.Close()
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.Disconnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 88
+2023-10-26 16:32:45,358[.NET Long Running Task] ERROR 获取测量温度错误 
+System.AggregateException: One or more errors occurred. (Cannot access a disposed object.
+Object name: 'System.Net.Sockets.NetworkStream'.)
+ ---> System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.NetworkStream'.
+   at System.Net.Sockets.NetworkStream.<ThrowIfDisposed>g__ThrowObjectDisposedException|63_0()
+   at System.Net.Sockets.NetworkStream.get_DataAvailable()
+   at FWM8612InteractionLib.FWM8612API.QueryValue() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 107
+   at FWM8612InteractionLib.FWM8612API.GetTCM_HeaterState() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1833
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<>c__DisplayClass33_0.<CheckMeasureTemperature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 206
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait(TimeSpan timeout)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CheckMeasureTemperature(Int32 loopTime, Int32 timeOut) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 200
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<ShowTemprature>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 89
+2023-10-26 16:34:50,190[.NET Long Running Task] ERROR 测量波长错误 
+System.Exception: Net Port Read Error:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN(List`1& lstData) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 562
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower(List`1& data) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 339
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__34_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 244

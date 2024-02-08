@@ -1,0 +1,12 @@
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\bin\Debug\netstandard2.0\AQ6151InteractionLib.deps.json
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\bin\Debug\netstandard2.0\AQ6151InteractionLib.dll
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\bin\Debug\netstandard2.0\AQ6151InteractionLib.pdb
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\bin\Debug\netstandard2.0\GP_IBConnectionLib.dll
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.AssemblyInfo.cs
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.csproj.CopyComplete
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.dll
+D:\FWMAutoTest\Code\HardWare\AQ6151InteractionLib\obj\Debug\netstandard2.0\AQ6151InteractionLib.pdb

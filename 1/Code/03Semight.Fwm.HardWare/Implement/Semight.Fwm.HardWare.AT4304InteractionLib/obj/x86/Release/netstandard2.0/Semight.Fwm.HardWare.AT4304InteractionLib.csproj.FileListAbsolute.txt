@@ -1,0 +1,11 @@
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\bin\x86\Release\netstandard2.0\Libs\LX_VOA.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.deps.json
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.pdb
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.AT4304InteractionLib.pdb

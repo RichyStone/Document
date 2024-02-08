@@ -1,0 +1,76 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems.UcCalibrationSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource Locator}, Path=CalibrationSettingViewModel}"
+    d:DesignHeight="200"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <GroupBox Header="Auto Calibration">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Margin="10,2,0,2" Orientation="Horizontal">
+                    <TextBlock Text="Last Calibration Time" />
+                    <TextBox Margin="10,0,0,0" Text="{Binding LastCalibrationTime}" />
+                    <Button
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        Command="{Binding ReadLastCalibrationTimeCommand}"
+                        Content="Read" />
+                </StackPanel>
+
+                <Grid Margin="10,2,0,2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Margin="0,2" Orientation="Horizontal">
+                        <TextBlock Text="Auto Calibration Cycle" />
+                        <TextBox Margin="10,0,0,0" Text="{Binding AutoCalibrationCycle}" />
+                        <Button Margin="10,0,0,0" Command="{Binding ReadAutoCalibrationCycleCommand}" Content="Read" />
+                        <Button Margin="10,0,0,0" Command="{Binding WriteAutoCalibrationCycleCommand}" Content="Write" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Margin="0,2" Orientation="Vertical">
+                        <CheckBox
+                            Margin="0,2"
+                            HorizontalAlignment="Left"
+                            Command="{Binding AutoOnOffChangedCommand}"
+                            IsChecked="{Binding AutoOn}">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter Property="Content" Value="Auto On" />
+                                        </Trigger>
+                                        <Trigger Property="IsChecked" Value="False">
+                                            <Setter Property="Content" Value="Auto Off" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ToggleButton.Style>
+                        </CheckBox>
+                        <Button
+                            Margin="0,2"
+                            HorizontalAlignment="Left"
+                            Command="{Binding ManualCalibrationOnceCommand}"
+                            Content="Manual Calibration Once" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

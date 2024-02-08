@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ia8kqFotusCduSOKi43VhgXlzgbYE8AFGC467CRt/fSGc4abGKJN+Pm+MpqrYHAGVbPPLZ08hNo/pSDFH8P1QA==",
+  "success": true,
+  "projectFilePath": "D:\\Semight.Fwm.Fwm8612\\Code\\03Semight.Fwm.HardWare\\Implement\\Semight.Fwm.HardWare.HP8164AInteractionLib\\Semight.Fwm.HardWare.HP8164AInteractionLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

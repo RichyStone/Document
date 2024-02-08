@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BtSh20r02Wd265XvLQQPsYIpQGQjRuPZ64b1g/XofC6Oe8YHRfSdd7RS1DG8OMO92IH9j7rgJmcSUYX+tpTd4A==",
+  "success": true,
+  "projectFilePath": "D:\\Semight.Fwm.Fwm8612\\Code\\01Semight.Fwm.Common\\UITools\\Semight.Fwm.Common.CommonUILib\\Semight.Fwm.Common.CommonUILib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
+  ],
+  "logs": []
+}

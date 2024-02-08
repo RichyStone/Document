@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Semight.Fwm.Connection.ConnectionAssistantLib">
+      <HintPath>Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

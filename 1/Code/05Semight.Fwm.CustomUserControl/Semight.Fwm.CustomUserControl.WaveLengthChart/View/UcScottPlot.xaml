@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:plot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel
+            Height="100"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+            <TextBlock x:Name="CurX" Margin="5,0" />
+            <TextBlock x:Name="CurWavelength" Margin="5,0" />
+            <TextBlock x:Name="CurPower" Margin="5,0" />
+        </StackPanel>
+        <plot:WpfPlot x:Name="WaveChart" Margin="5,13,5,0" />
+    </Grid>
+</UserControl>

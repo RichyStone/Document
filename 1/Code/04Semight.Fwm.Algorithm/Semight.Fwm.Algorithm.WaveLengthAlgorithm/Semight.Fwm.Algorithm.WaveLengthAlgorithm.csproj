@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.2.2.2</AssemblyVersion>
+    <FileVersion>1.2.2.2</FileVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Libs\BadpixelAlgo\Wavemeter2023B.dll" />
+    <None Remove="Libs\BadpixelAlgo\Wavemeter2023B.h" />
+    <None Remove="Libs\BadpixelAlgo\Wavemeter2023B.lib" />
+    <None Remove="Libs\HuaWeiAlgo\wavemeter20220726.dll" />
+    <None Remove="Libs\HuaWeiAlgo\wavemeter20220726.h" />
+    <None Remove="Libs\HuaWeiAlgo\wavemeter20220726.lib" />
+    <None Remove="Libs\OridinaryAlgo\wavemeter_toolsbox.dll" />
+    <None Remove="Libs\OridinaryAlgo\wavemeter_toolsbox.h" />
+    <None Remove="Libs\OridinaryAlgo\wavemeter_toolsbox.lib" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libs\BadpixelAlgo\Wavemeter2023B.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\BadpixelAlgo\Wavemeter2023B.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\BadpixelAlgo\Wavemeter2023B.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\HuaWeiAlgo\wavemeter20220726.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\HuaWeiAlgo\wavemeter20220726.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\HuaWeiAlgo\wavemeter20220726.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\OridinaryAlgo\wavemeter_toolsbox.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\OridinaryAlgo\wavemeter_toolsbox.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\OridinaryAlgo\wavemeter_toolsbox.lib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\01Semight.Fwm.Common\SingleEntity\Semight.Fwm.Common.CommonModels\Semight.Fwm.Common.CommonModels.csproj" />
+  </ItemGroup>
+
+</Project>

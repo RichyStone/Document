@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.5.22.27</AssemblyVersion>
+    <FileVersion>1.5.22.27</FileVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Semight.Fwm.Common.CommonModels">
+      <HintPath>Libs\Semight.Fwm.Common.CommonModels.dll</HintPath>
+    </Reference>
+    <Reference Include="Semight.Fwm.Connection.ConnectionAssistantLib">
+      <HintPath>Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

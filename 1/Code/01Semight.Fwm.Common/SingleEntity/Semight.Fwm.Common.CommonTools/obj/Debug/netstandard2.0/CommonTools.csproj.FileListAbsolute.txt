@@ -1,0 +1,10 @@
+D:\FWMAutoTest\Code\Common\CommonTools\bin\Debug\netstandard2.0\CommonTools.deps.json
+D:\FWMAutoTest\Code\Common\CommonTools\bin\Debug\netstandard2.0\CommonTools.dll
+D:\FWMAutoTest\Code\Common\CommonTools\bin\Debug\netstandard2.0\CommonTools.pdb
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.AssemblyInfo.cs
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.dll
+D:\FWMAutoTest\Code\Common\CommonTools\obj\Debug\netstandard2.0\CommonTools.pdb

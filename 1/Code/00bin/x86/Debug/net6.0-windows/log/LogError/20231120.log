@@ -1,0 +1,250 @@
+2023-11-20 10:57:44,555[8] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 10:57:50,663[1] ERROR 连接或断连出现报错 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 105
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 97
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 106
+2023-11-20 10:58:37,995[16] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 10:58:41,947[1] ERROR 连接或断连出现报错 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 105
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 97
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 106
+2023-11-20 10:59:19,527[19] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 11:00:31,705[10] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 50
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 41
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 150
+2023-11-20 11:00:51,150[7] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 50
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 41
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 150
+2023-11-20 11:01:04,782[6] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 11:01:22,542[1] ERROR 连接或断连出现报错 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 105
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 97
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 106
+2023-11-20 11:01:38,765[6] ERROR 初始化硬件失败！ 
+System.IO.IOException: Unable to write data to the transport connection: 远程主机强迫关闭了一个现有的连接。.
+ ---> System.Net.Sockets.SocketException (10054): 远程主机强迫关闭了一个现有的连接。
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at ConnectionAssistantLib.Net.NetWork.Send(Byte[] data) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 102
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 167
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 11:01:44,270[1] ERROR 连接或断连出现报错 
+System.IO.IOException: Unable to write data to the transport connection: 远程主机强迫关闭了一个现有的连接。.
+ ---> System.Net.Sockets.SocketException (10054): 远程主机强迫关闭了一个现有的连接。
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at ConnectionAssistantLib.Net.NetWork.Send(Byte[] data) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 102
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 167
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 105
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 97
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 106
+2023-11-20 11:02:06,043[8] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 11:02:13,459[1] ERROR 连接或断连出现报错 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 105
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 97
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 106
+2023-11-20 11:03:24,829[9] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 11:03:32,355[1] ERROR 连接或断连出现报错 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 105
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__10_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 97
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 106
+2023-11-20 11:04:32,316[8] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.Receive(Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 132
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 90
+   at FWM8612InteractionLib.FWM8612API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 406
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 133
+2023-11-20 11:33:49,659[27] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 454
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 354
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 231
+2023-11-20 11:34:28,004[50] ERROR 测量波长错误 
+System.AggregateException: One or more errors occurred. (Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.)
+ ---> System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.ThrowObjectDisposedException()
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetWork.ReceiveData(Int32 replyLength, CancellationToken cancellationToken) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetWork.cs:line 159
+   at ConnectionAssistantLib.ConnectionContext.<>c__DisplayClass6_0.<SendMessageWithData>b__0() in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 131
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithData(String msg, Int32 replyLength, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 136
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 118
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 165
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 317
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 219
+2023-11-20 11:34:38,030[28] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 454
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 354
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 231
+2023-11-20 11:38:18,394[25] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 454
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 354
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 231
+2023-11-20 11:38:46,901[55] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: xMax must be greater than xMin
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-20 11:39:18,910[68] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithData(String msg, Int32 replyLength, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 134
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 118
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 165
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 317
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 219

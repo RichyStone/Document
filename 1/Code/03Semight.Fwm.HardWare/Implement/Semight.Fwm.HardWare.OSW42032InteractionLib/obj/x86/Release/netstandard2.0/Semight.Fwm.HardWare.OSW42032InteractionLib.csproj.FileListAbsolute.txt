@@ -1,0 +1,13 @@
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\bin\x86\Release\netstandard2.0\Libs\Semight.Fwm.Connection.ConnectionAssistantLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.deps.json
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.pdb
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.csproj.CopyComplete
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.HardWare.OSW42032InteractionLib.pdb

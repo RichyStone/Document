@@ -1,0 +1,12 @@
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\bin\Debug\netstandard2.0\OSW42032InteractionLib.deps.json
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\bin\Debug\netstandard2.0\OSW42032InteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\bin\Debug\netstandard2.0\OSW42032InteractionLib.pdb
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\bin\Debug\netstandard2.0\ConnectionAssistantLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.csproj.AssemblyReference.cache
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.AssemblyInfoInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.AssemblyInfo.cs
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.csproj.CoreCompileInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.csproj.CopyComplete
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\OSW42032InteractionLib\obj\Debug\netstandard2.0\OSW42032InteractionLib.pdb

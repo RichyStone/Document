@@ -1,0 +1,484 @@
+2023-11-22 14:25:04,837[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:25:17,558[23] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:25:37,597[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:26:03,773[9] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:26:48,135[9] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:27:12,193[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:27:41,483[9] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 14:28:02,896[8] ERROR 初始化硬件失败！ 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:30:19,317[8] ERROR 初始化硬件失败！ 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:32:09,916[5] ERROR 初始化硬件失败！ 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:35:06,953[1] ERROR 获取仪表信息发生错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FwmTestHelper.ViewModel.HardWare.Setting.HardWareSnViewModel.InitialIDN() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\Setting\HardWareSnViewModel.cs:line 57
+2023-11-22 14:35:11,070[1] ERROR 获取设定发生错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetExpoTimeAdaptive() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 591
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetExpoTimeAdaptive() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 697
+   at FwmTestHelper.ViewModel.HardWare.Setting.ExposureSettingViewModel.InitialExpoSettings() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\Setting\ExposureSettingViewModel.cs:line 117
+2023-11-22 14:35:20,611[1] ERROR 读取设定发生错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTrigFrequency() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 524
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTrigFrequency() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 652
+   at FwmTestHelper.ViewModel.HardWare.Setting.TriggerSettingViewModel.InitialTriggerSetting() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\Setting\TriggerSettingViewModel.cs:line 183
+2023-11-22 14:35:20,783[1] ERROR 获取设定发生错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.QueryLastCalibrationTime() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 376
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.QueryLastCalibrationTime() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 739
+   at FwmTestHelper.ViewModel.HardWare.Setting.CalibrationSettingViewModel.IntialCalibrationSetting() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\Setting\CalibrationSettingViewModel.cs:line 186
+2023-11-22 14:35:38,546[21] ERROR 获取TCM温度错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 626
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-22 14:35:40,574[21] ERROR 获取TCM温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 155
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 626
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-22 14:35:42,604[21] ERROR 获取TCM温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 155
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 626
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-22 14:35:44,631[21] ERROR 获取TCM温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 155
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 626
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-22 14:35:46,667[21] ERROR 获取TCM温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 155
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 818
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 626
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.ShowTemprature(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 199
+2023-11-22 14:36:05,057[9] ERROR 初始化硬件失败！ 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:38:09,435[8] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetCommunicator.ReceiveMessage(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetCommunicator.cs:line 149
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 166
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:39:00,097[8] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetCommunicator.ReceiveMessage(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetCommunicator.cs:line 149
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 166
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:39:04,611[1] ERROR 连接或断连出现报错 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetCommunicator.ReceiveMessage(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetCommunicator.cs:line 149
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 166
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 106
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__6_0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 71
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FwmTestHelper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 80
+2023-11-22 14:40:12,610[8] ERROR 初始化硬件失败！ 
+System.Net.Sockets.SocketException (10060): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.Net.NetCommunicator.ReceiveMessage(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\Net\NetCommunicator.cs:line 149
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 167
+   at FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 112
+   at FWM8612InteractionLib.FWM8612_API.MacDefault() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 428
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.InitialHardWare() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 134
+2023-11-22 14:41:00,084[5] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 15:15:59,452[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at FWM8612InteractionLib.FWM8612_API.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612_API.cs:line 42
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 151
+2023-11-22 15:17:10,523[30] ERROR 测量波长错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WaveLengthAlgo.Calculate_wavelength_231122.<Calculate_231122_THIN>g__FindMaxElement|0_3(Double[] x, Double y)
+   at WaveLengthAlgo.Calculate_wavelength_231122.Calculate_231122_THIN(Double[]& Intensity1, Double[]& F_Results, Int32& elements1, Double& pixelsize1, Double& Zero_point1, Double& wedge_spacing1, Double& wedge_angle1)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 399
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 232
+2023-11-22 15:19:05,346[40] ERROR 测量波长错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WaveLengthAlgo.Calculate_wavelength_231122.<Calculate_231122_THIN>g__FindMaxElement|0_3(Double[] x, Double y)
+   at WaveLengthAlgo.Calculate_wavelength_231122.Calculate_231122_THIN(Double[]& Intensity1, Double[]& F_Results, Int32& elements1, Double& pixelsize1, Double& Zero_point1, Double& wedge_spacing1, Double& wedge_angle1)
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 399
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 232
+2023-11-22 16:20:31,110[1] ERROR UI线程发生未处理错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at OSW42032InteractionLib.OSW42032_API.QueryCurChannel() in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 137
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-22 16:20:31,199[1] ERROR 非UI线程发生未处理错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at OSW42032InteractionLib.OSW42032_API.QueryCurChannel() in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 137
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-22 16:22:14,121[1] ERROR UI线程发生未处理错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at OSW42032InteractionLib.OSW42032_API.QueryCurChannel() in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 137
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-22 16:22:14,199[1] ERROR 非UI线程发生未处理错误 
+System.TimeoutException: Acquire Message Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionContext.SendMessageWithReply(String msg, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 170
+   at OSW42032InteractionLib.OSW42032_API.QueryCurChannel() in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 137
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-22 16:29:02,774[1] ERROR UI线程发生未处理错误 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at OSW42032InteractionLib.OSW42032_API.Connect(Int32 vid, Int32 pid) in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 55
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-22 16:29:08,397[1] ERROR 非UI线程发生未处理错误 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at OSW42032InteractionLib.OSW42032_API.Connect(Int32 vid, Int32 pid) in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 55
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-22 16:57:17,224[1] ERROR UI线程发生未处理错误 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at OSW42032InteractionLib.OSW42032_API.Connect(Int32 vid, Int32 pid) in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 55
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 78
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-22 16:57:17,424[1] ERROR 非UI线程发生未处理错误 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionContext.StartConnect(Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionContext.cs:line 47
+   at OSW42032InteractionLib.OSW42032_API.Connect(Int32 vid, Int32 pid) in D:\FWMAutoTest\Code\HardWare\OSW42032InteractionLib\OSW42032_API.cs:line 55
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 78
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2023-11-22 17:55:56,089[1] ERROR UI线程发生未处理错误 
+System.InvalidOperationException: A task may only be disposed if it is in a completion state (RanToCompletion, Faulted or Canceled).
+   at System.Threading.Tasks.Task.Dispose(Boolean disposing)
+   at System.Threading.Tasks.Task.Dispose()
+   at AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut) in D:\FWMAutoTest\Code\HardWare\AT4304InteractionLib\AT4304_API.cs:line 76
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 72
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-22 17:55:58,766[1] ERROR 非UI线程发生未处理错误 
+System.InvalidOperationException: A task may only be disposed if it is in a completion state (RanToCompletion, Faulted or Canceled).
+   at System.Threading.Tasks.Task.Dispose(Boolean disposing)
+   at System.Threading.Tasks.Task.Dispose()
+   at AT4304InteractionLib.AT4304_API.Connect(UInt32 port, Int32 timeOut) in D:\FWMAutoTest\Code\HardWare\AT4304InteractionLib\AT4304_API.cs:line 76
+   at FwmTestHelper.ViewModel.MainViewModel.Loaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 72
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\01Semight.Fwm.Common\SingleEntity\Semight.Fwm.Common.CommonModels\Semight.Fwm.Common.CommonModels.csproj" />
+    <ProjectReference Include="..\..\..\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\Semight.Fwm.Connection.ConnectionAssistantLib.csproj" />
+    <ProjectReference Include="..\..\..\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\Semight.Fwm.Connection.GP_IBConnectionLib.csproj" />
+    <ProjectReference Include="..\..\Implement\Semight.Fwm.HardWare.AQ6151InteractionLib\Semight.Fwm.HardWare.AQ6151InteractionLib.csproj" />
+    <ProjectReference Include="..\..\Implement\Semight.Fwm.HardWare.AT4304InteractionLib\Semight.Fwm.HardWare.AT4304InteractionLib.csproj" />
+    <ProjectReference Include="..\..\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\Semight.Fwm.HardWare.FWM8612InteractionLib.csproj" />
+    <ProjectReference Include="..\..\Implement\Semight.Fwm.HardWare.HP8153AInteractionLib\Semight.Fwm.HardWare.HP8153AInteractionLib.csproj" />
+    <ProjectReference Include="..\..\Implement\Semight.Fwm.HardWare.HP8164AInteractionLib\Semight.Fwm.HardWare.HP8164AInteractionLib.csproj" />
+    <ProjectReference Include="..\..\Implement\Semight.Fwm.HardWare.OSW42032InteractionLib\Semight.Fwm.HardWare.OSW42032InteractionLib.csproj" />
+  </ItemGroup>
+
+</Project>

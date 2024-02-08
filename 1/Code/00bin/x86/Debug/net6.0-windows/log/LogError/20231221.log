@@ -1,0 +1,184 @@
+2023-12-21 14:50:41,438[17] ERROR 测量波长错误 
+System.AggregateException: One or more errors occurred. (Safe handle has been closed.
+Object name: 'SafeHandle'.)
+ ---> System.ObjectDisposedException: Safe handle has been closed.
+Object name: 'SafeHandle'.
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at LibUsbDotNet.Internal.Kernel32.DeviceIoControlAsObject(SafeHandle hDevice, Int32 IoControlCode, Object InBuffer, Int32 nInBufferSize, IntPtr OutBuffer, Int32 nOutBufferSize, Int32& pBytesReturned, IntPtr Overlapped)
+   at LibUsbDotNet.Internal.LibUsb.LibUsbDriverIO.UsbIOSync(SafeHandle dev, Int32 code, Object inBuffer, Int32 inSize, IntPtr outBuffer, Int32 outSize, Int32& ret)
+   at LibUsbDotNet.Internal.LibUsb.LibUsbAPI.AbortPipe(SafeHandle interfaceHandle, Byte pipeID)
+   at LibUsbDotNet.Internal.OverlappedTransferContext.Wait(Int32& transferredCount, Boolean cancel)
+   at LibUsbDotNet.Main.UsbTransfer.SyncTransfer(UsbTransfer transferContext, IntPtr buffer, Int32 offset, Int32 length, Int32 timeout, Int32 isoPacketSize, Int32& transferLength)
+   at LibUsbDotNet.Main.UsbEndpointBase.Transfer(IntPtr buffer, Int32 offset, Int32 length, Int32 timeout, Int32& transferLength)
+   at LibUsbDotNet.Main.UsbEndpointBase.Transfer(Object buffer, Int32 offset, Int32 length, Int32 timeout, Int32& transferLength)
+   at LibUsbDotNet.UsbEndpointReader.Read(Byte[] buffer, Int32 offset, Int32 count, Int32 timeout, Int32& transferLength)
+   at LibUsbDotNet.UsbEndpointReader.Read(Byte[] buffer, Int32 timeout, Int32& transferLength)
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.ReceiveData(Int32 replyLength, CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 208
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.<>c__DisplayClass6_0.<SendMessageWithData>b__0() in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 124
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithData(String msg, Int32 replyLength, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 129
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 145
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.ReadCCD_SingleN() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 208
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 341
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-12-21 14:51:02,793[1] ERROR 连接或断连出现报错 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetPowerCompensate() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 1215
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.ReadLowerComputerParam() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 885
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Initial() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 148
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 107
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__6_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 71
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 80
+2023-12-21 14:51:26,012[1] ERROR 连接或断连出现报错 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetPowerCompensate() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 1215
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.ReadLowerComputerParam() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 885
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Initial() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 148
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 107
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__6_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 71
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 80
+2023-12-21 14:52:00,155[1] ERROR 连接或断连出现报错 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetPowerCompensate() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 1215
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.ReadLowerComputerParam() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 885
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Initial() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 148
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 107
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.<ConnectionChange>b__6_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 71
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Semight.Fwm.Fwm8612Helper.ViewModel.WaveLengthMesure.WaveLengthMeasureViewModel.ConnectionChange() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\WaveLengthMesure\WaveLengthMeasureViewModel.cs:line 80
+2023-12-21 14:53:25,483[1] ERROR 获取仪表信息发生错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.HardWareSnViewModel.InitialIDN() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\HardWareSnViewModel.cs:line 58
+2023-12-21 14:55:34,540[17] ERROR 测量波长错误 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConvertToWedge(FizeauParam param) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 521
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.AlgoThinResult(Double[]& thinIntensity, Double[]& results, FizeauParam thinParam, AlgoVersion algoVersion) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 465
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 411
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 377
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 255
+2023-12-21 14:56:19,138[31] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 429
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 377
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 255
+2023-12-21 14:57:23,296[30] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 429
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 377
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 255
+2023-12-21 14:57:30,498[44] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 429
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 377
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 255
+2023-12-21 14:57:34,992[48] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 429
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 377
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 255
+2023-12-21 15:04:53,359[32] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 429
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 377
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 255
+2023-12-21 15:05:55,197[31] ERROR 测量波长错误 
+System.AggregateException: One or more errors occurred. (Safe handle has been closed.
+Object name: 'SafeHandle'.)
+ ---> System.ObjectDisposedException: Safe handle has been closed.
+Object name: 'SafeHandle'.
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at LibUsbDotNet.Internal.Kernel32.DeviceIoControlAsObject(SafeHandle hDevice, Int32 IoControlCode, Object InBuffer, Int32 nInBufferSize, IntPtr OutBuffer, Int32 nOutBufferSize, Int32& pBytesReturned, IntPtr Overlapped)
+   at LibUsbDotNet.Internal.LibUsb.LibUsbDriverIO.UsbIOSync(SafeHandle dev, Int32 code, Object inBuffer, Int32 inSize, IntPtr outBuffer, Int32 outSize, Int32& ret)
+   at LibUsbDotNet.Internal.LibUsb.LibUsbAPI.AbortPipe(SafeHandle interfaceHandle, Byte pipeID)
+   at LibUsbDotNet.Internal.OverlappedTransferContext.Wait(Int32& transferredCount, Boolean cancel)
+   at LibUsbDotNet.Main.UsbTransfer.SyncTransfer(UsbTransfer transferContext, IntPtr buffer, Int32 offset, Int32 length, Int32 timeout, Int32 isoPacketSize, Int32& transferLength)
+   at LibUsbDotNet.Main.UsbEndpointBase.Transfer(IntPtr buffer, Int32 offset, Int32 length, Int32 timeout, Int32& transferLength)
+   at LibUsbDotNet.Main.UsbEndpointBase.Transfer(Object buffer, Int32 offset, Int32 length, Int32 timeout, Int32& transferLength)
+   at LibUsbDotNet.UsbEndpointReader.Read(Byte[] buffer, Int32 offset, Int32 count, Int32 timeout, Int32& transferLength)
+   at LibUsbDotNet.UsbEndpointReader.Read(Byte[] buffer, Int32 timeout, Int32& transferLength)
+   at Semight.Fwm.Connection.ConnectionAssistantLib.USB.USBCommunicator.ReceiveData(Int32 replyLength, CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\USB\USBCommunicator.cs:line 208
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.<>c__DisplayClass6_0.<SendMessageWithData>b__0() in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 124
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Semight.Fwm.Connection.ConnectionAssistantLib.ConnectionContext.SendMessageWithData(String msg, Int32 replyLength, Int32 timeOut) in D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\ConnectionContext.cs:line 129
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 145
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.ReadCCD_SingleN() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 208
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 341
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 243
+2023-12-21 15:07:59,478[1] ERROR 获取仪表信息发生错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.HardWareSnViewModel.InitialIDN() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\HardWareSnViewModel.cs:line 58
+2023-12-21 15:08:21,074[1] ERROR 获取仪表信息发生错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.HardWareSnViewModel.InitialIDN() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\HardWareSnViewModel.cs:line 58
+2023-12-21 15:10:25,275[1] ERROR 获取仪表信息发生错误 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.HardWareSnViewModel.InitialIDN() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\HardWareSnViewModel.cs:line 58
+2023-12-21 15:10:56,848[16] ERROR 测量波长错误 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConvertToWedge(FizeauParam param) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 522
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.AlgoThinResult(Double[]& thinIntensity, Double[]& results, FizeauParam thinParam, AlgoVersion algoVersion) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 466
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 412
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 378
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 256
+2023-12-21 15:11:24,516[16] ERROR 测量波长错误 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConvertToWedge(FizeauParam param) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 522
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.AlgoThinResult(Double[]& thinIntensity, Double[]& results, FizeauParam thinParam, AlgoVersion algoVersion) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 466
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 412
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 378
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 256
+2023-12-21 15:13:52,041[27] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 430
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 378
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 256
+2023-12-21 15:13:59,536[24] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 430
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 378
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 256
+2023-12-21 15:14:19,850[47] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为NaN
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 430
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean compensate) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 378
+   at Semight.Fwm.Fwm8612Helper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__36_2() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 256

@@ -1,0 +1,12 @@
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\bin\Debug\netstandard2.0\HP8153AInteractionLib.deps.json
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\bin\Debug\netstandard2.0\HP8153AInteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\bin\Debug\netstandard2.0\HP8153AInteractionLib.pdb
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\bin\Debug\netstandard2.0\GP_IBConnectionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.csproj.AssemblyReference.cache
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.AssemblyInfoInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.AssemblyInfo.cs
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.csproj.CoreCompileInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.csproj.CopyComplete
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\HP8153ALib\obj\Debug\netstandard2.0\HP8153AInteractionLib.pdb

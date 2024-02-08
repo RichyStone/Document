@@ -1,0 +1,10 @@
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\bin\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.deps.json
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\bin\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\bin\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.pdb
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.ConnectionAssistantLib\obj\Release\netstandard2.0\Semight.Fwm.Connection.ConnectionAssistantLib.pdb

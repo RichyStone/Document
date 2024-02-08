@@ -1,0 +1,88 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.Fwm8612Helper.View.HardWare.UcHardwareSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sub="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems"
+    DataContext="{Binding Source={StaticResource Locator}, Path=HardwareParamViewModel}"
+    d:DesignHeight="900"
+    d:DesignWidth="500"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <Style x:Key="btnEllipse" TargetType="Button">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="ToolTip" Value="Refresh Settings" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Foreground" Value="DimGray" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="True">
+                                            <Setter Property="Foreground" Value="#2F7FC1" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                    <Grid>
+                                        <Ellipse
+                                            Width="20"
+                                            Height="20"
+                                            Stroke="{TemplateBinding Foreground}"
+                                            StrokeThickness="2" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="10"
+                                            Text="Re" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border BorderBrush="AliceBlue" BorderThickness="1" CornerRadius="3">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+
+                <Button
+                    Margin="0,0,10,10"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Command="{Binding RefreshCommand}"
+                    Style="{StaticResource btnEllipse}" />
+
+                <DockPanel Margin="0,10" LastChildFill="False">
+                    <sub:UcHardWareSN DockPanel.Dock="Top" />
+                    <sub:UcExposureSetting DockPanel.Dock="Top" />
+                    <sub:UcAverageSetting DockPanel.Dock="Top" />
+                    <sub:UcWaveLengthUnit DockPanel.Dock="Top" />
+                    <sub:UcPowerUnit DockPanel.Dock="Top" />
+                    <sub:UcLaserMode DockPanel.Dock="Top" />
+                    <sub:UcTriggerSetting DockPanel.Dock="Top" />
+                    <sub:UcCalibrationSetting DockPanel.Dock="Top" />
+                </DockPanel>
+            </Grid>
+        </ScrollViewer>
+    </Border>
+</UserControl>

@@ -1,0 +1,13 @@
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\bin\Debug\netstandard2.0\Libs\LX_VOA.dll
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\bin\Debug\netstandard2.0\AT4304InteractionLib.deps.json
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\bin\Debug\netstandard2.0\AT4304InteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\bin\Debug\netstandard2.0\AT4304InteractionLib.pdb
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\bin\Debug\netstandard2.0\CommonTools.dll
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.csproj.AssemblyReference.cache
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.AssemblyInfoInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.AssemblyInfo.cs
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.csproj.CoreCompileInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.csproj.CopyComplete
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\AT4304InteractionLib\obj\Debug\netstandard2.0\AT4304InteractionLib.pdb

@@ -1,0 +1,17 @@
+D:\FWMAutoTest\Code\Common\CommonUILib\bin\Debug\net6.0-windows\CommonUILib.deps.json
+D:\FWMAutoTest\Code\Common\CommonUILib\bin\Debug\net6.0-windows\CommonUILib.dll
+D:\FWMAutoTest\Code\Common\CommonUILib\bin\Debug\net6.0-windows\CommonUILib.pdb
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CustomUserControl\Log\UCLogViewer.g.cs
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib_MarkupCompile.cache
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib_MarkupCompile.lref
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CustomUserControl\Log\UCLogViewer.baml
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.g.resources
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.AssemblyInfo.cs
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.dll
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\refint\CommonUILib.dll
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\CommonUILib.pdb
+D:\FWMAutoTest\Code\Common\CommonUILib\obj\Debug\net6.0-windows\ref\CommonUILib.dll

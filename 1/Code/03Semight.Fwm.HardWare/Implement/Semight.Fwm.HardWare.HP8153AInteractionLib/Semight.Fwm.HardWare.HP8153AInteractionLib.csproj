@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Libs\Semight.Fwm.Connection.GP_IBConnectionLib.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libs\Semight.Fwm.Connection.GP_IBConnectionLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Semight.Fwm.Connection.GP_IBConnectionLib">
+      <HintPath>Libs\Semight.Fwm.Connection.GP_IBConnectionLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

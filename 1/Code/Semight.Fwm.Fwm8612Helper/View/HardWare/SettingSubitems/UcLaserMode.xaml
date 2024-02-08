@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems.UcLaserMode"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource Locator}, Path=LaserModeViewModel}"
+    d:DesignHeight="200"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <GroupBox Header="Cavity Type">
+            <StackPanel Orientation="Vertical">
+                <RadioButton Margin="10,2,0,2" Content="NarrowBand" IsChecked="{Binding NarrowBandChecked}" />
+                <RadioButton Margin="10,2,0,2" Content="BroadBand" IsChecked="{Binding BroadBandChecked}" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

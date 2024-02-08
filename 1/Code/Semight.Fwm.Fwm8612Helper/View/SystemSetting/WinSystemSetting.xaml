@@ -1,0 +1,65 @@
+﻿<Window
+    x:Class="Semight.Fwm.Fwm8612Helper.View.SystemSetting.WinSystemSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View.SystemSetting"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WinSystemSetting"
+    DataContext="{Binding Source={StaticResource Locator}, Path=SystemSettingViewModel}"
+    Width="1000"
+    Height="700"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <DockPanel Margin="10,5" LastChildFill="False">
+
+        <GroupBox Margin="10,5" DockPanel.Dock="Top" Header="Equipment Setting">
+            <StackPanel Orientation="Vertical">
+                <CheckBox Margin="10,2" Content="SaveDataToLocalAuto" IsChecked="{Binding Source={StaticResource Config}, Path=SoftwareSetting.SaveDataToLocalAuto, Mode=TwoWay}" />
+                <RadioButton
+                    Margin="10,2"
+                    Content="LowerComputerCalculate"
+                    GroupName="calculateType"
+                    IsChecked="{Binding Source={StaticResource Config}, Path=SoftwareSetting.LowerComputerCalculate, Mode=TwoWay}" />
+                <StackPanel Margin="10,2" Orientation="Horizontal">
+                    <RadioButton
+                        x:Name="rbSelfCalcalate"
+                        VerticalAlignment="Center"
+                        Content="UpperComputerCalculate"
+                        GroupName="calculateType"
+                        IsChecked="{Binding Source={StaticResource Config}, Path=SoftwareSetting.UpperComputerCalculate, Mode=TwoWay}" />
+                    <CheckBox
+                        Margin="10,0"
+                        VerticalAlignment="Center"
+                        Content="FitStatus"
+                        IsChecked="{Binding Source={StaticResource Config}, Path=SoftwareSetting.FitStatus, Mode=TwoWay}"
+                        Visibility="{Binding ElementName=rbSelfCalcalate, Path=IsChecked, Converter={StaticResource positiveBool2VisibleConverter}}" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <local:UcLaserOprate DockPanel.Dock="Top" />
+
+        <local:UcGain DockPanel.Dock="Top" />
+
+        <local:UcAdcSetting DockPanel.Dock="Top" />
+
+        <Button
+            Width="50"
+            Margin="10,5"
+            HorizontalAlignment="Right"
+            Command="{Binding SaveSystemSettingCommand}"
+            Content="Save"
+            DockPanel.Dock="Bottom" />
+    </DockPanel>
+</Window>

@@ -1,0 +1,109 @@
+2023-11-02 09:09:26,365[9] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-02 09:10:12,760[8] ERROR 连接下位机失败:由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.170.7:8807
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 45
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 37
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 154 
+2023-11-02 14:15:22,130[8] ERROR 连接下位机失败:Could not load type 'Common.CommonTools.ExtensionMethods.ExtensionAdapter' from assembly 'CommonTools, Version=2.3.3.23285, Culture=neutral, PublicKeyToken=null'.
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout)
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:15:32,000[5] ERROR 连接下位机失败:Could not load type 'Common.CommonTools.ExtensionMethods.ExtensionAdapter' from assembly 'CommonTools, Version=2.3.3.23285, Culture=neutral, PublicKeyToken=null'.
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout)
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:15:34,257[5] ERROR 连接下位机失败:Could not load type 'Common.CommonTools.ExtensionMethods.ExtensionAdapter' from assembly 'CommonTools, Version=2.3.3.23285, Culture=neutral, PublicKeyToken=null'.
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout)
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:15:36,836[5] ERROR 连接下位机失败:Could not load type 'Common.CommonTools.ExtensionMethods.ExtensionAdapter' from assembly 'CommonTools, Version=2.3.3.23285, Culture=neutral, PublicKeyToken=null'.
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout)
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:15:51,083[8] ERROR 连接下位机失败:Could not load type 'Common.CommonTools.ExtensionMethods.ExtensionAdapter' from assembly 'CommonTools, Version=2.3.3.23285, Culture=neutral, PublicKeyToken=null'.
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout)
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:15:53,884[8] ERROR 连接下位机失败:Could not load type 'Common.CommonTools.ExtensionMethods.ExtensionAdapter' from assembly 'CommonTools, Version=2.3.3.23285, Culture=neutral, PublicKeyToken=null'.
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout)
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:26:31,543[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 60
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:27:05,192[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 60
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:31:01,142[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 60
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:38:09,304[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 63
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:49:49,492[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 63
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:49:59,341[14] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 63
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:50:12,786[14] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 63
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 14:50:37,003[14] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 63
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 38
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 163 
+2023-11-02 15:31:41,658[3] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 162 
+2023-11-02 15:34:35,934[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 162 
+2023-11-02 15:35:36,947[5] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 162 
+2023-11-02 15:38:42,860[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 162 
+2023-11-02 15:40:12,940[8] ERROR 连接下位机失败:Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 162 
+2023-11-02 15:41:28,506[8] ERROR 初始化下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 162
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 113
+2023-11-02 15:44:24,417[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 161
+2023-11-02 17:31:05,329[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort)
+2023-11-02 17:32:07,182[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 56
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 30
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 161

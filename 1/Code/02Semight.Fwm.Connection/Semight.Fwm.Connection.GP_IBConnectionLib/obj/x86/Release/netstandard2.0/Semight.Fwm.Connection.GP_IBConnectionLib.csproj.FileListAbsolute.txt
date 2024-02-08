@@ -1,0 +1,15 @@
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\Libs\NationalInstruments.Common.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\Libs\NationalInstruments.VisaNS.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.deps.json
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.pdb
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\NationalInstruments.Common.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\bin\x86\Release\netstandard2.0\NationalInstruments.VisaNS.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.csproj.CopyComplete
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.dll
+D:\Semight.Fwm.Fwm8612\Code\02Semight.Fwm.Connection\Semight.Fwm.Connection.GP_IBConnectionLib\obj\x86\Release\netstandard2.0\Semight.Fwm.Connection.GP_IBConnectionLib.pdb

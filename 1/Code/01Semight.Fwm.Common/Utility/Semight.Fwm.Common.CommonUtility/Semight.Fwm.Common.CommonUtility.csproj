@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SingleEntity\Semight.Fwm.Common.CommonFileOperationLib\Semight.Fwm.Common.CommonFileOperationLib.csproj" />
+    <ProjectReference Include="..\..\SingleEntity\Semight.Fwm.Common.CommonModels\Semight.Fwm.Common.CommonModels.csproj" />
+    <ProjectReference Include="..\..\SingleEntity\Semight.Fwm.Common.CommonTools\Semight.Fwm.Common.CommonTools.csproj" />
+  </ItemGroup>
+
+</Project>

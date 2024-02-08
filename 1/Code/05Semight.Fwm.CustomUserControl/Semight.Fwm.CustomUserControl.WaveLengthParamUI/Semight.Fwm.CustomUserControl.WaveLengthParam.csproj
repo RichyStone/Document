@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AssemblyVersion>1.1.1.2</AssemblyVersion>
+    <FileVersion>1.1.1.2</FileVersion>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\01Semight.Fwm.Common\UITools\Semight.Fwm.Common.CommonUILib\Semight.Fwm.Common.CommonUILib.csproj" />
+    <ProjectReference Include="..\..\01Semight.Fwm.Common\Utility\Semight.Fwm.Common.CommonUtility\Semight.Fwm.Common.CommonUtility.csproj" />
+    <ProjectReference Include="..\..\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\Semight.Fwm.HardWare.FWM8612InteractionLib.csproj" />
+  </ItemGroup>
+
+</Project>

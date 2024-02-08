@@ -1,0 +1,15 @@
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\Libs\NationalInstruments.Common.dll
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\Libs\NationalInstruments.VisaNS.dll
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\GP_IBConnectionLib.deps.json
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\GP_IBConnectionLib.dll
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\GP_IBConnectionLib.pdb
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\NationalInstruments.Common.dll
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\bin\Debug\netstandard2.0\NationalInstruments.VisaNS.dll
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.csproj.AssemblyReference.cache
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.AssemblyInfoInputs.cache
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.AssemblyInfo.cs
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.csproj.CoreCompileInputs.cache
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.csproj.CopyComplete
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.dll
+D:\FWMAutoTest\Code\Connection\GP_IBConnectionLib\obj\Debug\netstandard2.0\GP_IBConnectionLib.pdb

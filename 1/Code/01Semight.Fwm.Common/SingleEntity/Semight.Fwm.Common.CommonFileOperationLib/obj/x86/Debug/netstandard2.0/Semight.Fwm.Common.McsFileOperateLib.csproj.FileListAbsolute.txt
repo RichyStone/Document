@@ -1,0 +1,10 @@
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\bin\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.deps.json
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\bin\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.dll
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\bin\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.pdb
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.csproj.AssemblyReference.cache
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.AssemblyInfoInputs.cache
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.AssemblyInfo.cs
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.csproj.CoreCompileInputs.cache
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.dll
+D:\Semight.Fwm.Fwm8612AteHelper\Code\01Semight.Fwm.Common\Semight.Fwm.Common.McsFileOperateLib\obj\x86\Debug\netstandard2.0\Semight.Fwm.Common.McsFileOperateLib.pdb

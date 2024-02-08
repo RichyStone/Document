@@ -1,0 +1,1016 @@
+2023-11-09 14:36:24,006[1] ERROR UI线程发生未处理错误 
+System.Runtime.InteropServices.COMException (0x80070008): 内存资源不足，无法处理此命令。 (0x80070008)
+   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(Int32 errorCode, IntPtr errorInfo)
+   at MS.Internal.Text.TextInterface.Native.Util.ConvertHresultToException(Int32 hr)
+   at MS.Internal.Text.TextInterface.FontFace.TryGetFontTable(OpenTypeTableTag openTypeTableTag, Byte[]& tableData)
+   at MS.Internal.FontCache.FontFaceLayoutInfo.GetFontTable(OpenTypeTableTag openTypeTableTag)
+   at MS.Internal.FontCache.GsubGposTables..ctor(FontFaceLayoutInfo layout)
+   at MS.Internal.FontCache.FontFaceLayoutInfo.ComputeTypographyAvailabilities()
+   at System.Windows.Media.Typeface.CheckFastPathNominalGlyphs(CharacterBufferRange charBufferRange, Double emSize, Single pixelsPerDip, Double scalingFactor, Double widthMax, Boolean keepAWord, Boolean numberSubstitution, CultureInfo cultureInfo, TextFormattingMode textFormattingMode, Boolean isSideways, Boolean breakOnTabs, Int32& stringLengthFit)
+   at MS.Internal.TextFormatting.SimpleRun.CreateSimpleTextRun(CharacterBufferRange charBufferRange, TextRun textRun, TextFormatterImp formatter, Int32 widthLeft, Boolean emergencyWrap, Boolean breakOnTabs, Double pixelsPerDip)
+   at MS.Internal.TextFormatting.SimpleRun.Create(FormatSettings settings, CharacterBufferRange charString, TextRun textRun, Int32 cp, Int32 cpFirst, Int32 runLength, Int32 widthLeft, Int32 idealRunOffsetUnRounded, Double pixelsPerDip)
+   at MS.Internal.TextFormatting.SimpleTextLine.Create(FormatSettings settings, Int32 cpFirst, Int32 paragraphWidth, Double pixelsPerDip)
+   at MS.Internal.TextFormatting.TextFormatterImp.FormatLineInternal(TextSource textSource, Int32 firstCharIndex, Int32 lineLength, Double paragraphWidth, TextParagraphProperties paragraphProperties, TextLineBreak previousLineBreak, TextRunCache textRunCache)
+   at MS.Internal.TextFormatting.TextFormatterImp.FormatLine(TextSource textSource, Int32 firstCharIndex, Double paragraphWidth, TextParagraphProperties paragraphProperties, TextLineBreak previousLineBreak, TextRunCache textRunCache)
+   at System.Windows.Controls.TextBlock.MeasureOverride(Size constraint)
+   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+   at System.Windows.UIElement.Measure(Size availableSize)
+   at System.Windows.Controls.Canvas.MeasureOverride(Size constraint)
+   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+   at System.Windows.UIElement.Measure(Size availableSize)
+   at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+   at System.Windows.UIElement.Measure(Size availableSize)
+   at System.Windows.ContextLayoutManager.UpdateLayout()
+   at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-09 14:36:24,027[1] ERROR 非UI线程发生未处理错误 
+System.Runtime.InteropServices.COMException (0x80070008): 内存资源不足，无法处理此命令。 (0x80070008)
+   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(Int32 errorCode, IntPtr errorInfo)
+   at MS.Internal.Text.TextInterface.Native.Util.ConvertHresultToException(Int32 hr)
+   at MS.Internal.Text.TextInterface.FontFace.TryGetFontTable(OpenTypeTableTag openTypeTableTag, Byte[]& tableData)
+   at MS.Internal.FontCache.FontFaceLayoutInfo.GetFontTable(OpenTypeTableTag openTypeTableTag)
+   at MS.Internal.FontCache.GsubGposTables..ctor(FontFaceLayoutInfo layout)
+   at MS.Internal.FontCache.FontFaceLayoutInfo.ComputeTypographyAvailabilities()
+   at System.Windows.Media.Typeface.CheckFastPathNominalGlyphs(CharacterBufferRange charBufferRange, Double emSize, Single pixelsPerDip, Double scalingFactor, Double widthMax, Boolean keepAWord, Boolean numberSubstitution, CultureInfo cultureInfo, TextFormattingMode textFormattingMode, Boolean isSideways, Boolean breakOnTabs, Int32& stringLengthFit)
+   at MS.Internal.TextFormatting.SimpleRun.CreateSimpleTextRun(CharacterBufferRange charBufferRange, TextRun textRun, TextFormatterImp formatter, Int32 widthLeft, Boolean emergencyWrap, Boolean breakOnTabs, Double pixelsPerDip)
+   at MS.Internal.TextFormatting.SimpleRun.Create(FormatSettings settings, CharacterBufferRange charString, TextRun textRun, Int32 cp, Int32 cpFirst, Int32 runLength, Int32 widthLeft, Int32 idealRunOffsetUnRounded, Double pixelsPerDip)
+   at MS.Internal.TextFormatting.SimpleTextLine.Create(FormatSettings settings, Int32 cpFirst, Int32 paragraphWidth, Double pixelsPerDip)
+   at MS.Internal.TextFormatting.TextFormatterImp.FormatLineInternal(TextSource textSource, Int32 firstCharIndex, Int32 lineLength, Double paragraphWidth, TextParagraphProperties paragraphProperties, TextLineBreak previousLineBreak, TextRunCache textRunCache)
+   at MS.Internal.TextFormatting.TextFormatterImp.FormatLine(TextSource textSource, Int32 firstCharIndex, Double paragraphWidth, TextParagraphProperties paragraphProperties, TextLineBreak previousLineBreak, TextRunCache textRunCache)
+   at System.Windows.Controls.TextBlock.MeasureOverride(Size constraint)
+   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+   at System.Windows.UIElement.Measure(Size availableSize)
+   at System.Windows.Controls.Canvas.MeasureOverride(Size constraint)
+   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+   at System.Windows.UIElement.Measure(Size availableSize)
+   at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+   at System.Windows.UIElement.Measure(Size availableSize)
+   at System.Windows.ContextLayoutManager.UpdateLayout()
+   at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   at MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Threading.DispatcherOperation.Invoke()
+   at System.Windows.Threading.Dispatcher.ProcessQueue()
+   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at FwmTestHelper.App.Main()
+2023-11-09 15:04:42,321[8] ERROR 连接下位机失败 
+System.TimeoutException: Connection Failed : Time Limit Exceeded! 
+   at ConnectionAssistantLib.ConnectionHelper.StartConnect(String strIP, Int32 Port, Int32 timeout) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 59
+   at FWM8612InteractionLib.FWM8612API.Connect(String strIP, Int32 Port) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 35
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.ConnectLowerComputer(String lcIP, Int32 lcPort) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 153
+2023-11-09 15:43:55,680[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:43:57,141[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:43:58,479[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:43:59,807[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:01,079[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:02,345[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:03,633[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:04,911[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:06,247[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:07,554[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:08,892[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:10,197[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:11,498[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:12,830[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:14,141[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:15,446[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:16,770[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:18,071[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:19,394[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:20,734[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:22,076[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:23,379[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:24,701[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:25,984[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:27,336[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:28,615[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:29,911[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:31,226[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:32,547[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:33,859[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:35,180[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:36,487[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:37,801[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:39,114[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:40,438[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:41,747[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:43,026[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:44,364[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:45,701[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:47,047[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:48,372[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:49,665[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:50,972[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:52,286[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:53,587[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:54,867[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:56,173[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:57,495[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:44:58,822[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:00,150[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:01,482[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:02,780[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:04,094[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:05,437[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:06,740[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:08,039[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:45:08,773[1] ERROR UI线程发生未处理错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoY>b__66_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoY(Int32 yAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Settings.RememberAxisLimits()
+   at ScottPlot.Settings.MouseDown(Single mouseDownX, Single mouseDownY)
+   at ScottPlot.Control.ControlBackEnd.MouseDown(InputState input)
+   at ScottPlot.WpfPlot.OnMouseDown(MouseButtonEventArgs e)
+   at System.Windows.UIElement.OnMouseDownThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-09 15:45:08,781[1] ERROR 非UI线程发生未处理错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoY>b__66_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoY(Int32 yAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Settings.RememberAxisLimits()
+   at ScottPlot.Settings.MouseDown(Single mouseDownX, Single mouseDownY)
+   at ScottPlot.Control.ControlBackEnd.MouseDown(InputState input)
+   at ScottPlot.WpfPlot.OnMouseDown(MouseButtonEventArgs e)
+   at System.Windows.UIElement.OnMouseDownThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at FwmTestHelper.App.Main()
+2023-11-09 15:46:08,984[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:46:10,379[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:46:11,861[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:46:13,139[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197
+2023-11-09 15:47:00,784[1] ERROR 显示波长错误 
+System.InvalidOperationException: xs and ys must all have same length
+   at ScottPlot.Plottable.ScatterPlot.ValidateData(Boolean deep)
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.RefrenshChartView() in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 125
+   at FwmTestHelper.View.CustomUserControl.UcScottPlot.AddPoint(Double power, Double wavelength) in D:\FWMAutoTest\Code\FwmTestHelper\View\CustomUserControl\UcScottPlot.xaml.cs:line 197

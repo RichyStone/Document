@@ -1,0 +1,16 @@
+2024-01-24 16:42:12,848[9] ERROR 波长折线图刷新发生错误 
+System.ArgumentException: At least one object must implement IComparable.
+   at System.Collections.Comparer.Compare(Object a, Object b)
+   at System.Linq.Enumerable.Min[TSource](IEnumerable`1 source, IComparer`1 comparer)
+   at System.Linq.Enumerable.Min[TSource](IEnumerable`1 source)
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcOxyPlot.RefreshChartView() in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcOxyPlot.xaml.cs:line 177
+   at Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcOxyPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\Semight.Fwm.Fwm8612\Code\05Semight.Fwm.CustomUserControl\Semight.Fwm.CustomUserControl.WaveLengthChart\View\UcOxyPlot.xaml.cs:line 144
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.<RefreshVisual>b__27_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 343
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 329

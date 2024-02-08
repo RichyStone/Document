@@ -1,0 +1,88 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.CustomUserControl.WaveLengthParam.View.SingleEntity.UcMultiPeaks"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resource/ParamUIResource.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid TextElement.FontSize="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Margin="10,5"
+            Orientation="Vertical">
+            <CheckBox
+                Margin="0,5"
+                Content="MultiPeaksFlag"
+                IsChecked="{Binding BindingParam.MultiPeaksFlag}" />
+            <CheckBox
+                Margin="0,5"
+                Content="SIDMultiPeaksFlag"
+                IsChecked="{Binding BindingParam.SIDMultiPeaksFlag}" />
+        </StackPanel>
+
+        <DataGrid
+            Grid.Row="1"
+            Margin="0,10"
+            HorizontalAlignment="Left"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            CanUserReorderColumns="False"
+            ItemsSource="{Binding BindingParam.Peaks}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding ChannelIndex}"
+                    ElementStyle="{StaticResource gridTextStyle}"
+                    Header="Channel"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Node}"
+                    ElementStyle="{StaticResource gridTextStyle}"
+                    Header="Node" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Nd_th}"
+                    ElementStyle="{StaticResource gridTextStyle}"
+                    Header="Nd_th" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Pv_th}"
+                    ElementStyle="{StaticResource gridTextStyle}"
+                    Header="Pv_th" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Nd_sth}"
+                    ElementStyle="{StaticResource gridTextStyle}"
+                    Header="Nd_sth" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

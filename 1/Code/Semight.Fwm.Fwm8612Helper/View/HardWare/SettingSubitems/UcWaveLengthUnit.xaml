@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems.UcWaveLengthUnit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare.SettingSubitems"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource Locator}, Path=WaveLengthUnitViewModel}"
+    d:DesignHeight="200"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+
+        <GroupBox Header="WaveLength Unit">
+            <StackPanel Orientation="Vertical">
+                <RadioButton Margin="10,2,0,2" Content="WaveLength[nm]" IsChecked="{Binding NmChecked}" />
+                <RadioButton Margin="10,2,0,2" Content="Frea[THz]" IsChecked="{Binding THzChecked}" />
+                <RadioButton Margin="10,2,0,2" Content="WaveLength[Cm-1]" IsChecked="{Binding CmChecked}" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

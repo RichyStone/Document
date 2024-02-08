@@ -1,0 +1,38 @@
+2023-11-29 10:41:00,219[1] ERROR UI线程发生未处理错误 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AQ6151InteractionLib.AQ6151B_API.Close() in D:\FWM8612ATEHelper\Code\HardWare\AQ6151InteractionLib\AQ6151B_API.cs:line 34
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.DisConnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 67
+   at FwmTestHelper.ViewModel.MainViewModel.Unloaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.Window.OnClosing(CancelEventArgs e)
+   at System.Windows.Window.WmClose()
+   at System.Windows.Window.WindowFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.PublicHooksFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-29 10:41:00,371[1] ERROR 非UI线程发生未处理错误 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AQ6151InteractionLib.AQ6151B_API.Close() in D:\FWM8612ATEHelper\Code\HardWare\AQ6151InteractionLib\AQ6151B_API.cs:line 34
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.DisConnect() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 67
+   at FwmTestHelper.ViewModel.MainViewModel.Unloaded() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\MainViewModel.cs:line 75
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.Window.OnClosing(CancelEventArgs e)
+   at System.Windows.Window.WmClose()
+   at System.Windows.Window.WindowFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.PublicHooksFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)

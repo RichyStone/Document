@@ -1,0 +1,12 @@
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\bin\Debug\netstandard2.0\HP8164AInteractionLib.deps.json
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\bin\Debug\netstandard2.0\HP8164AInteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\bin\Debug\netstandard2.0\HP8164AInteractionLib.pdb
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\bin\Debug\netstandard2.0\GP_IBConnectionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.csproj.AssemblyReference.cache
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.AssemblyInfoInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.AssemblyInfo.cs
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.csproj.CoreCompileInputs.cache
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.csproj.CopyComplete
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.dll
+D:\FWM8612ATEHelper\Code\HardWare\HP8164AInteractionLib\obj\Debug\netstandard2.0\HP8164AInteractionLib.pdb

@@ -1,0 +1,123 @@
+﻿<Window
+    x:Class="Semight.Fwm.Fwm8612Helper.View.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:LogUc="http://Semight//Fwm//CommonUILib/UIResource/UserControl/LogView"
+    xmlns:chart="clr-namespace:Semight.Fwm.Fwm8612Helper.View.Chart"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hardware="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare"
+    xmlns:hwState="clr-namespace:Semight.Fwm.Fwm8612Helper.View.HardWare.State"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Semight.Fwm.Fwm8612Helper.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:measure="clr-namespace:Semight.Fwm.Fwm8612Helper.View.WaveLengthMesure"
+    Title="MainWindow"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainViewModel}"
+    Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}"
+    Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}}"
+    WindowState="Maximized"
+    WindowStyle="SingleBorderWindow"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--  StyleDic  -->
+                <ResourceDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=Logger}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction Command="{Binding UnloadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  硬件设定  -->
+        <hardware:UcHardwareSetting Grid.Column="0" />
+
+        <GridSplitter
+            Grid.Column="1"
+            Width="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Stretch" />
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <!--  主功能  -->
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+                <measure:UcWaveLengthMesure Tag="FWM8612" />
+            </StackPanel>
+
+            <!--  Chart  -->
+            <Border
+                Grid.Row="1"
+                Margin="5,2"
+                Padding="5"
+                BorderBrush="DimGray"
+                BorderThickness="1"
+                CornerRadius="2">
+                <chart:UcCavityChart />
+            </Border>
+
+            <!--  波长结果  -->
+            <TabControl Grid.Row="2" BorderThickness="0">
+                <TabItem Header="WaveLengthResult">
+                    <StackPanel
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal"
+                        TextElement.FontSize="25"
+                        TextElement.Foreground="#2F7FC1">
+                        <TextBlock Margin="100,0">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="WaveLength : {0} {1}">
+                                    <Binding Path="WaveLength" />
+                                    <Binding Path="WaveLengthUnit" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Margin="100,0">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="Power : {0} {1}">
+                                    <Binding Path="Power" />
+                                    <Binding Path="PowerUnit" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Log">
+                    <LogUc:UCLogViewer x:Name="Logger" />
+                </TabItem>
+            </TabControl>
+
+            <!--  状态栏  -->
+            <StackPanel
+                Grid.Row="3"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Orientation="Horizontal">
+                <hwState:UcTemperature />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

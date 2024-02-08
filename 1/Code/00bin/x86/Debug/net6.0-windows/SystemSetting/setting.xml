@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoftwareSetting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SaveDataToLocalAuto>true</SaveDataToLocalAuto>
+  <LowerComputerCalculate>false</LowerComputerCalculate>
+  <UpperComputerCalculate>true</UpperComputerCalculate>
+  <FitStatus>true</FitStatus>
+</SoftwareSetting>

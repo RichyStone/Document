@@ -1,0 +1,81 @@
+2023-11-21 17:38:21,026[41] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: Y data must not contain NaN
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-21 17:41:26,214[17] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为-2.3139907837329456E+66
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 454
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 354
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 231
+2023-11-21 17:41:29,020[36] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为-2.3139907837329456E+66
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 454
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 354
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 231
+2023-11-21 17:42:02,757[44] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: Y data must not contain NaN
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-21 17:42:14,302[30] ERROR 波长折线图刷新发生错误 
+System.InvalidOperationException: Y data must not contain NaN
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimitsThrowOnNaN()
+   at ScottPlot.Plottable.ScatterPlot.GetAxisLimits()
+   at ScottPlot.Settings.<>c.<AxisAutoX>b__65_2(IPlottable x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at ScottPlot.Settings.AxisAutoX(Int32 xAxisIndex, Nullable`1 margin)
+   at ScottPlot.Settings.AxisAutoUnsetAxes(Nullable`1 horizontalMargin, Nullable`1 verticalMargin)
+   at ScottPlot.Plot.SetAxisLimits(Nullable`1 xMin, Nullable`1 xMax, Nullable`1 yMin, Nullable`1 yMax, Int32 xAxisIndex, Int32 yAxisIndex)
+   at ScottPlot.Plot.SetAxisLimitsX(Double xMin, Double xMax, Int32 xAxisIndex)
+   at FwmTestHelper.View.Chart.UcScottPlot.RefrenshChartView(Int32 count) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 216
+   at FwmTestHelper.View.Chart.UcScottPlot.NewDataHandler(Double power, Double wavelength, Boolean refresh) in D:\FWMAutoTest\Code\FwmTestHelper\View\Chart\UcScottPlot.xaml.cs:line 175
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.<>c__DisplayClass39_0.<RefreshVisual>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 424
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at FwmTestHelper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 422
+2023-11-21 17:42:56,736[30] ERROR 测量波长错误 
+System.Exception: 验证当前波段错误，计算波长值为-2.3139907837329456E+66
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.RangeChecked(Double[] thinIntensity) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 454
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.CalculateWaveLength(Int32[] thinIntensity, Int32[] thickIntensity, CavityType cavityType, Boolean fit) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 354
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__33_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 231

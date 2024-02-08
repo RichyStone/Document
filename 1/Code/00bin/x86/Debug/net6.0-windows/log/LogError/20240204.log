@@ -1,0 +1,301 @@
+2024-02-04 13:15:57,824[1] ERROR 获取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetFPGA_IntergrationTime() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 585
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.GetFPGA_IntergrationTime() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 233
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.ExposureSettingViewModel.InitialExpoSettings() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\ExposureSettingViewModel.cs:line 121
+2024-02-04 13:15:59,140[1] ERROR 获取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetCalculatingAverage() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 820
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.GetAverageCount() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 167
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.AverageSettingViewModel.InitialAverage() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\AverageSettingViewModel.cs:line 78
+2024-02-04 13:15:59,168[1] ERROR 读取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetWaveLengthUnit() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 712
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.GetWaveLengthUnit() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 183
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.WaveLengthUnitViewModel.InitialWaveLengthUnit() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\WaveLengthUnitViewModel.cs:line 104
+2024-02-04 13:15:59,199[1] ERROR 读取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetPowerUnit() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 666
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.GetPowerUnit() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 187
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.PowerUnitViewModel.InitialPowerUnit() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\PowerUnitViewModel.cs:line 95
+2024-02-04 13:15:59,228[1] ERROR 获取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetWaveThickness() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 770
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.GetWaveBand() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 195
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.LaserModeViewModel.InitialWaveBand() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\LaserModeViewModel.cs:line 115
+2024-02-04 13:16:00,476[1] ERROR 读取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.GetTrigMode() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 514
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.GetTrigMode() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 207
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.TriggerSettingViewModel.InitialTriggerSetting() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\TriggerSettingViewModel.cs:line 194
+2024-02-04 13:16:00,506[1] ERROR 获取设定发生错误 
+System.Exception: Connection was Broke!
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.AcquireMessage(String commandMsg, Int32 timeout) in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 109
+   at Semight.Fwm.HardWare.FWM8612InteractionLib.FWM8612_API.QueryLastCalibrationTime() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Implement\Semight.Fwm.HardWare.FWM8612InteractionLib\FWM8612_API.cs:line 402
+   at Semight.Fwm.HardWare.HardwarePlatform.FWM8612.FWM8612Context.QueryLastCalibrationTime() in D:\Semight.Fwm.Fwm8612\Code\03Semight.Fwm.HardWare\Platform\Semight.Fwm.HardWare.HardwarePlatform\FWM8612\FWM8612Context.cs:line 290
+   at Semight.Fwm.Fwm8612Helper.ViewModel.HardWare.Setting.CalibrationSettingViewModel.IntialCalibrationSetting() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\HardWare\Setting\CalibrationSettingViewModel.cs:line 187
+2024-02-04 17:17:17,536[19] ERROR CCD数据显示发生错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.NewDataHandler(Double[], Double[], Boolean)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.RefreshChart(Int32[] dataThin, Int32[] dataThick)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.<>c__DisplayClass15_0.<ShowCavityData>b__0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\CavityChartViewModel.cs:line 158
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.ShowCavityData(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\CavityChartViewModel.cs:line 158
+2024-02-04 17:24:17,455[19] ERROR CCD数据显示发生错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.NewDataHandler(Double[], Double[], Boolean)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.RefreshChart(Int32[] dataThin, Int32[] dataThick)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.<>c__DisplayClass15_0.<ShowCavityData>b__0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\CavityChartViewModel.cs:line 158
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.ShowCavityData(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\CavityChartViewModel.cs:line 158
+2024-02-04 17:26:43,947[6] ERROR 波长折线图刷新发生错误 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.<RefreshVisual>b__28_0() in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 345
+   at System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   at System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- End of stack trace from previous location ---
+   at System.Windows.Threading.DispatcherOperation.Wait(TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherOperation operation, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback, DispatcherPriority priority, CancellationToken cancellationToken, TimeSpan timeout)
+   at System.Windows.Threading.Dispatcher.Invoke(Action callback)
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.WaveLengthChartViewModel.RefreshVisual(CancellationToken cancellationToken) in D:\Semight.Fwm.Fwm8612\Code\Semight.Fwm.Fwm8612Helper\ViewModel\Chart\WaveLengthChartViewModel.cs:line 343
+2024-02-04 17:36:20,086[1] ERROR UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2024-02-04 17:36:20,141[1] ERROR 非UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2024-02-04 17:36:40,083[1] ERROR UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2024-02-04 17:36:40,121[1] ERROR 非UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2024-02-04 17:37:43,644[1] ERROR UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2024-02-04 17:37:43,689[1] ERROR 非UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+2024-02-04 17:38:35,426[1] ERROR UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2024-02-04 17:38:35,470[1] ERROR 非UI线程发生未处理错误 
+System.MissingMethodException: Method not found: 'Void Semight.Fwm.CustomUserControl.WaveLengthChart.View.UcScottPlot.InitialChartView(System.String, System.String, System.String, System.String, Int32, Int32)'.
+   at Semight.Fwm.Fwm8612Helper.ViewModel.Chart.CavityChartViewModel.Loaded()
+   at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
+   at Microsoft.Xaml.Behaviors.InvokeCommandAction.Invoke(Object parameter)
+   at Microsoft.Xaml.Behaviors.TriggerBase.InvokeActions(Object parameter)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEvent(EventArgs eventArgs)
+   at Microsoft.Xaml.Behaviors.EventTriggerBase.OnEventImpl(Object sender, EventArgs eventArgs)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   at System.Windows.Interop.HwndTarget.OnResize()
+   at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.DefWndProcWrapper(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)

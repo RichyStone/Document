@@ -1,0 +1,75 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "Semight.Fwm.Connection.GP_IBConnectionLib/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "NationalInstruments.Common": "19.1.40.49152",
+          "NationalInstruments.VisaNS": "13.0.45.167"
+        },
+        "runtime": {
+          "Semight.Fwm.Connection.GP_IBConnectionLib.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "NationalInstruments.Common/19.1.40.49152": {
+        "runtime": {
+          "NationalInstruments.Common.dll": {
+            "assemblyVersion": "19.1.40.49152",
+            "fileVersion": "19.1.40.49152"
+          }
+        }
+      },
+      "NationalInstruments.VisaNS/13.0.45.167": {
+        "runtime": {
+          "NationalInstruments.VisaNS.dll": {
+            "assemblyVersion": "13.0.45.167",
+            "fileVersion": "13.0.45.167"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Semight.Fwm.Connection.GP_IBConnectionLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "NationalInstruments.Common/19.1.40.49152": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NationalInstruments.VisaNS/13.0.45.167": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

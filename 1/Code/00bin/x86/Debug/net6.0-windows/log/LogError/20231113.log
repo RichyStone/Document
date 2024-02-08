@@ -1,0 +1,295 @@
+2023-11-13 13:51:48,572[24] ERROR AQ6151连接失败 
+System.IO.FileNotFoundException: Could not load file or assembly 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'. 系统找不到指定的文件。
+File name: 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'
+   at FWMDataSavingAssistant.WM_AQ6151.WM_AQ6151BAPI.Connect(String TcpIP)
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 59
+2023-11-13 13:51:55,237[19] ERROR AQ6151连接失败 
+System.IO.FileNotFoundException: Could not load file or assembly 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'. 系统找不到指定的文件。
+File name: 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'
+   at FWMDataSavingAssistant.WM_AQ6151.WM_AQ6151BAPI.Connect(String TcpIP)
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 59
+2023-11-13 13:52:04,325[17] ERROR 获取测量温度错误 
+System.IO.IOException: Unable to write data to the transport connection: 远程主机强迫关闭了一个现有的连接。.
+ ---> System.Net.Sockets.SocketException (10054): 远程主机强迫关闭了一个现有的连接。
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 192
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 793
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass18_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 162
+2023-11-13 13:52:06,443[17] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 793
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass18_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 162
+2023-11-13 13:52:08,469[17] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 793
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass18_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 162
+2023-11-13 13:52:10,492[17] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 793
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass18_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 162
+2023-11-13 13:52:12,116[19] ERROR AQ6151连接失败 
+System.IO.FileNotFoundException: Could not load file or assembly 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'. 系统找不到指定的文件。
+File name: 'NationalInstruments.Common, Version=13.0.40.168, Culture=neutral, PublicKeyToken=dc6ad606294fc298'
+   at FWMDataSavingAssistant.WM_AQ6151.WM_AQ6151BAPI.Connect(String TcpIP)
+   at FwmTestHelper.CommonBusiness.HardWare.AQ6151.AQ6151Context.Connect(String ip, Int32 port) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\AQ6151\AQ6151Context.cs:line 59
+2023-11-13 13:52:12,517[17] ERROR 获取测量温度错误 
+System.Exception: 连接已断开
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithReply(String msg, Int64& elapsedTime, Int32 timeOut) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 185
+   at FWM8612InteractionLib.FWM8612API.AcquireMessage(String commandMsg, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 156
+   at FWM8612InteractionLib.FWM8612API.GetTCM_Temperature(Int32 num) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 1112
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetTCM_Temperature(Int32 index) in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 793
+   at FwmTestHelper.ViewModel.HardWare.Setting.TemperatureViewModel.<>c__DisplayClass18_0.<ShowTemprature>b__0() in D:\FWMAutoTest\Code\FwmTestHelper\ViewModel\HardWare\State\TemperatureViewModel.cs:line 162
+2023-11-13 14:16:23,422[18] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 162
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 369
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 252
+2023-11-13 14:19:59,599[18] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 369
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 252
+2023-11-13 15:39:02,861[1] ERROR UI线程发生未处理错误 
+System.InvalidOperationException: 无法解析属性路径“ForeGrond”中的所有属性引用。请确认适用的对象支持这些属性。
+   at System.Windows.Media.Animation.Storyboard.VerifyPathIsAnimatable(PropertyPath path)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.BeginCommon(DependencyObject containingObject, INameScope nameScope, HandoffBehavior handoffBehavior, Boolean isControllable, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Begin(DependencyObject targetObject, INameScope nameScope, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Invoke(FrameworkElement fe, FrameworkContentElement fce, Style targetStyle, FrameworkTemplate frameworkTemplate, Int64 layer)
+   at System.Windows.StyleHelper.InvokeEventTriggerActions(FrameworkElement fe, FrameworkContentElement fce, Style ownerStyle, FrameworkTemplate frameworkTemplate, Int32 childIndex, RoutedEvent Event)
+   at System.Windows.StyleHelper.ExecuteEventTriggerActionsOnContainer(Object sender, RoutedEventArgs e)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnChecked(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   at System.Windows.DependencyObject.SetCurrentValueInternal(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Primitives.ToggleButton.OnToggle()
+   at System.Windows.Controls.Primitives.ToggleButton.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-13 15:39:02,918[1] ERROR 非UI线程发生未处理错误 
+System.InvalidOperationException: 无法解析属性路径“ForeGrond”中的所有属性引用。请确认适用的对象支持这些属性。
+   at System.Windows.Media.Animation.Storyboard.VerifyPathIsAnimatable(PropertyPath path)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.BeginCommon(DependencyObject containingObject, INameScope nameScope, HandoffBehavior handoffBehavior, Boolean isControllable, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Begin(DependencyObject targetObject, INameScope nameScope, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Invoke(FrameworkElement fe, FrameworkContentElement fce, Style targetStyle, FrameworkTemplate frameworkTemplate, Int64 layer)
+   at System.Windows.StyleHelper.InvokeEventTriggerActions(FrameworkElement fe, FrameworkContentElement fce, Style ownerStyle, FrameworkTemplate frameworkTemplate, Int32 childIndex, RoutedEvent Event)
+   at System.Windows.StyleHelper.ExecuteEventTriggerActionsOnContainer(Object sender, RoutedEventArgs e)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnChecked(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   at System.Windows.DependencyObject.SetCurrentValueInternal(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Primitives.ToggleButton.OnToggle()
+   at System.Windows.Controls.Primitives.ToggleButton.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at FwmTestHelper.App.Main()
+2023-11-13 15:40:30,309[1] ERROR UI线程发生未处理错误 
+System.InvalidOperationException: “System.Windows.Media.Animation.ColorAnimation”动画对象不能用于动画属性“Foreground”，因为它是不兼容的类型“System.Windows.Media.Brush”。
+   at System.Windows.Media.Animation.Storyboard.VerifyAnimationIsValid(DependencyProperty targetProperty, AnimationClock animationClock)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.BeginCommon(DependencyObject containingObject, INameScope nameScope, HandoffBehavior handoffBehavior, Boolean isControllable, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Begin(DependencyObject targetObject, INameScope nameScope, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Invoke(FrameworkElement fe, FrameworkContentElement fce, Style targetStyle, FrameworkTemplate frameworkTemplate, Int64 layer)
+   at System.Windows.StyleHelper.InvokeEventTriggerActions(FrameworkElement fe, FrameworkContentElement fce, Style ownerStyle, FrameworkTemplate frameworkTemplate, Int32 childIndex, RoutedEvent Event)
+   at System.Windows.StyleHelper.ExecuteEventTriggerActionsOnContainer(Object sender, RoutedEventArgs e)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnChecked(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   at System.Windows.DependencyObject.SetCurrentValueInternal(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Primitives.ToggleButton.OnToggle()
+   at System.Windows.Controls.Primitives.ToggleButton.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2023-11-13 15:40:30,343[1] ERROR 非UI线程发生未处理错误 
+System.InvalidOperationException: “System.Windows.Media.Animation.ColorAnimation”动画对象不能用于动画属性“Foreground”，因为它是不兼容的类型“System.Windows.Media.Brush”。
+   at System.Windows.Media.Animation.Storyboard.VerifyAnimationIsValid(DependencyProperty targetProperty, AnimationClock animationClock)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)
+   at System.Windows.Media.Animation.Storyboard.BeginCommon(DependencyObject containingObject, INameScope nameScope, HandoffBehavior handoffBehavior, Boolean isControllable, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Begin(DependencyObject targetObject, INameScope nameScope, Int64 layer)
+   at System.Windows.Media.Animation.BeginStoryboard.Invoke(FrameworkElement fe, FrameworkContentElement fce, Style targetStyle, FrameworkTemplate frameworkTemplate, Int64 layer)
+   at System.Windows.StyleHelper.InvokeEventTriggerActions(FrameworkElement fe, FrameworkContentElement fce, Style ownerStyle, FrameworkTemplate frameworkTemplate, Int32 childIndex, RoutedEvent Event)
+   at System.Windows.StyleHelper.ExecuteEventTriggerActionsOnContainer(Object sender, RoutedEventArgs e)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnChecked(RoutedEventArgs e)
+   at System.Windows.Controls.Primitives.ToggleButton.OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   at System.Windows.DependencyObject.SetCurrentValueInternal(DependencyProperty dp, Object value)
+   at System.Windows.Controls.Primitives.ToggleButton.OnToggle()
+   at System.Windows.Controls.Primitives.ToggleButton.OnClick()
+   at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   at System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   at System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   at System.Windows.Input.InputManager.ProcessStagingArea()
+   at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at System.Windows.Threading.Dispatcher.Run()
+   at System.Windows.Application.RunDispatcher(Object ignore)
+   at System.Windows.Application.RunInternal(Window window)
+   at System.Windows.Application.Run()
+   at FwmTestHelper.App.Main()
+2023-11-13 17:03:02,218[25] ERROR 测量波长错误 
+System.TimeoutException: Acquire Data Failed : Time Limit Exceeded!
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 165
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 369
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 252
+2023-11-13 17:05:37,994[17] ERROR 测量波长错误 
+System.Net.Sockets.SocketException (10053): 你的主机中的软件中止了一个已建立的连接。
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at ConnectionAssistantLib.ConnectionHelper.SendMessageWithData(String msg, Int64& elapsedTime, Int32 timeOut, Int32 replyLength) in D:\FWMAutoTest\Code\Connection\ConnectionAssistantLib\ConnectionHelper.cs:line 153
+   at FWM8612InteractionLib.FWM8612API.AcquireData(String commandMsg, Int32 replyLength, Int32 timeout) in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 186
+   at FWM8612InteractionLib.FWM8612API.ReadCCD_SingleN() in D:\FWMAutoTest\Code\HardWare\FWM8612InteractionLib\FWM8612API.cs:line 75
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.GetCavityDataFromLower() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 369
+   at FwmTestHelper.CommonBusiness.HardWare.FWM8612.FWM8612Context.<StartMeasure>b__57_2() in D:\FWMAutoTest\Code\FwmTestHelper\CommonBusiness\HardWare\FWM8612\FWM8612Context.cs:line 252

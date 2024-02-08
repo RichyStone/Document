@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<AssemblyVersion>1.4.9.14</AssemblyVersion>
+		<FileVersion>1.4.9.14</FileVersion>
+		<AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+		<Version>$(AssemblyVersion)</Version>
+		<Authors>shijiafu</Authors>
+		<Product>通用工具包（Log/Cofig/Office）</Product>
+		<Platforms>AnyCPU;x86</Platforms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Log\LogConfigHtmVersion\log4net.config" />
+		<None Remove="Log\LogConfigTxtVersion\log4net.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Log\LogConfigHtmVersion\log4net.config">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Log\LogConfigTxtVersion\log4net.config">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="log4net" Version="2.0.15" />
+	</ItemGroup>
+
+</Project>
