@@ -284,8 +284,6 @@ Conditional特性修饰的方法，返回值必须为Void;
 
 当编译器遇到#if语句后，将先检查相关的符号是否存在，如果符号存在，就只编译#if块中的代码。否则，编译器会忽略所有的代码，直到遇到匹配的#endif指令为止。一般是在调试时定义符号DEBUG，把不同的调试相关代码放在#if子句中。在完成了调试后，就把#define语句注释掉，所有的调试代码会奇迹般地消失，可执行文件也会变小，最终用户不会被这些调试信息弄糊涂(显然，要做更多的测试，确保代码在没有定义DEBUG的情况下也能工作)。这项技术在C和C++编程中非常普通，称为条件编译(conditional compilation)。
 
-
-
 十四、序列化与反序列化
 　
 在.NET Framework 3.0之前，提供了3中序列化器，序列化器理解为把可序列化的类型序列化成XML的类。这三种序列化器分别是BinaryFormatter、SoapFormatter和XmlSerializer类。下面分别介绍下这3种序列化器。
@@ -293,6 +291,7 @@ Conditional特性修饰的方法，返回值必须为Void;
 BinaryFormatter类：把.NET Object序列化成二进制格式。在这个过程，对象的公共字段和私有字段以及类名称（包括类的程序集名），将转换成成字节流。
 SoapFormatter类：把.NET Object序列化成SOAP格式，SOAP是一种轻量、简单的，基于XML的协议。只序列化字段，包括公共字段和私有字段。
 XmlSerializer类：该类仅仅序列化公共字段和属性，且不保存类型的保真度。
+
 　　对于这三种序列化机制，BinaryFormatter二进制序列化的优点是：性能高，但是不能跨平台。而SoapFormatter，XmlSerializer的优点是：跨平台、互操作性好，并且可读性强，但是传输性能不及BinaryFormatter。
 
 　　在.NET原有的序列化机制中，BinaryFormatter和SoapFormatter除了要序列化对象的状态信息外，还会将程序集和版本信息持久化到流中，因为只有这样才能保证对象呗反序列为正确的对象类型副本，这就要求客户端必须拥有原有的.NET 程序集，不能满足跨平台的需求。所以WCF不得不定义自己的序列化机制来满足面向服务的需求。

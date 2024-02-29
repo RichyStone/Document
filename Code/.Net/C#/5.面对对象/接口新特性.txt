@@ -1,0 +1,165 @@
+
+新特性：
+
+接口可以有属性
+接口可以有索引器
+接口可以有事件
+
+接口方法可以有默认实现（C#8.0）
+接口可以有非公共成员（C#8.0）
+接口可以有静态成员（C#8.0）
+接口可以有抽象静态成员（C#11.0）
+接口可以有虚静态成员（C#11.0）
+
+1.属性/索引器/事件
+
+在类中实现自动属性/事件，后台会自动生成对应的字段；在接口中不会，只是约束子类。
+
+例：
+public string Name {get; set; }
+虽然 Interface 与 class 里面属性都是写的 get; set; 
+但是意义是不同的：
+
+ 接口中的表示有一个名为 Name的属性,它拥有 public 的getter 与 setter ，但并不知道它们将被如何实现。
+ 
+ 类中的表示有一个名为 Name 的属性，它拥有 public 的getter 与 setter ，后台会自动生成一个对应的私有字段，然后将getter 与 setter 对应到这个字段上。
+
+2.方法的默认实现（C#8.0）
+
+如果子类重写接口中有默认实现的方法，无论怎么调用都会调用到类重写的方法，相当于override，彻底掩盖掉了接口中的实现；
+如果子类没有重写接口中有默认实现的方法，想要调用有默认实现的方法必须显示调用: (Interface)object.Method(); ,避免所继承的接口有相同名称方法，导致的调用错误。
+
+3.非公开成员（C#8.0）
+
+接口中的非公开方法必须给出默认实现，用于给 public 方法调用；如果在分布接口中，必须有一个分布中实现。
+
+private方法只能在当前接口调用，并且必须在当前接口实现；
+protected方法可以在子接口中调用，不能在子类中调用，可以在子接口中延迟实现；
+
+4.静态成员（C#8.0）
+
+接口中的静态方法必须给出默认实现。
+子类不能调用，只能用接口调用。通常在泛型接口中使用。
+
+interface IDeserialzable<T> where T : IDeserialzable<T>
+{
+  static T? Deserialize(string json) => JsonSerializer.Deserialize<T>(json);
+}
+
+class Student :IDeserialzable<Student>
+{
+	public string Name{get;set;}
+
+}
+
+var student = IDeserialzable<Student>.Deserialize();
+
+5.抽象静态方法（C#11.0）
+
+接口中的方法本身就类似于抽象类中的抽象方法，要求子类必须实现；
+接口中允许存在静态方法，而静态方法又必须在接口中给出实现；
+所以如果希望接口中存在可以不在接口中实现的静态方法，就需要声明为抽象方法。
+
+例1：
+interface IDeserialzable<T> where T : IDeserialzable<T>
+{
+  static abstract T Deserialize(string json);
+}
+
+class DataModel : IDeserialzable<DataModel>
+{
+	public static DataModel Deserialize(string json)
+	{
+		return JsonSerializer.Deserialize<T>(json);
+	}
+}
+
+
+例2：
+interface IFactory<T>
+{
+ static abstract T Create();
+}
+
+class ToBeCreated
+{
+}
+
+class ConcreteFactory：IFactory<ToBeCreated>
+{
+	private ConcreteFactory() {};
+	
+	public static ToBeCreated Create() =>  new ToBeCreated();
+}
+
+6.虚静态成员（C#11.0）
+
+接口中的虚静态方法必须给出默认实现。
+它通常用于泛型调用的场合。
+虽然接口静态虚方法无法直接通过接口来获取，但可以通过泛型标记T来获取。
+
+
+例：
+
+Interface：
+
+interface ITestInterface
+{
+	static virtual string TestString()
+	{
+		return "TestString ITestInterface";
+	}
+}
+
+interface ITestInterfaceGeneric<TSelf> where TSelf : ITestInterfaceGeneric<TSelf>
+{
+	static void TestCallerGeneric()
+	{
+		Console.WriteLine(TSelf.TestStringGeneric());
+	}
+
+	static virtual string TestStringGeneric()
+	{
+		return "TestStringGeneric ITestInterfaceGeneric";
+	}
+}
+
+Class：
+
+public class A : ITestInterface,ITestInterfaceGeneric<A>
+{
+	public static string TestStringGeneric()
+	{
+		return "TestStringGeneric A";
+	}
+}
+
+public class B : ITestInterface,ITestInterfaceGeneric<A>
+{
+	public static string TestString()
+	{
+		return "TestString ITestInterface  B";
+	}
+}
+
+
+InvokeMethod:
+
+static void TestCallerInstance<T>(T t) where T ： ITestInterface
+{
+	Console.WriteLine(T.TestString());
+}
+
+InvokeResult:
+
+TestCallerInstance<A>(new A());
+TestCallerInstance<B>(new B());
+ITestInterfaceGeneric<A>.TestCallerGeneric();
+ITestInterfaceGeneric<B>.TestCallerGeneric();
+
+output:
+
+TestString ITestInterface
+TestString ITestInterface B
+TestStringGeneric A
+TestStringGeneric ITestInterfaceGeneric
