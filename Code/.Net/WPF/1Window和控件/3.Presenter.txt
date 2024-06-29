@@ -1,0 +1,74 @@
+
+名称				释义			类型
+ContentControl		内容控件		class
+DataTemplate		内容模板		class
+ControlTemplate		控件模板		class
+ContentPresenter	内容呈现器		class
+Template			控件模板		ControlTemplate类型的属性
+ContentTemplate		内容模板		DataTemplate类型的属性
+
+
+ContentPresenter 作为占位符表示“将实际内容放在这里”。 使用ContentPresenter 必须设置内容控件模板的tartgettype。
+所有的内容控件都包含ContentPresenter元素---它是表示“在此插入内容”的标记器，告诉wpf在何处保存内容。
+
+通常，会使用ContentPresenter在一个ContentControl的ContentTemplate属性中来指定内容添加的位置。 每个ContentControl类型的默认控件模板中都会有一个ContentPresenter（来呈现ContentControl的内容。
+
+当一个ContentPresenter对象位于ContentControl的ControlTemplate中时，该对象的Content，ContentTemplate以及ContentTemplateSelector属性会从ContentControl中的相同名称的属性中取得值。
+ContentControl和ContentPresenter中都有一个ContentTemplate属性，意思就是ContentPresenter的ContentTemplate会使用ContentControl的ContentTemplate数据。
+
+你可以通过设置ContentSource属性或者绑定的方式来让ContentPresenter属性从其他的模板化父亲（Templated Parent）的属性中获取值。
+如果用ContentSource的话，Content相关的属性比如ContentStringFormat，ContentTemplate和ContentTemplateSelector都会被自动设置，而如果用Content加TemplateBinding，必须手动将上述属性绑定到ContentPresenter上。
+
+比如使用ContentPresenter的ContentSource，然后在ContentControl中设置ContentStringFormat：
+
+<Window.Resources>
+
+    <Style TargetType="ContentControl">
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="ContentControl">
+
+                    <!-- 这里等价于直接<ContentPresenter /> -->
+
+                    <!-- 强调一下直接用ContentPresenter其ContentSource属性为Content -->
+
+                    <ContentPresenter ContentSource="Content"/>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+</Window.Resources>
+
+
+<ContentControl ContentStringFormat="你好：{0}">Mgen</ContentControl>
+
+　　结果会输出：你好：Mgen。
+
+　　如果把上面ContentPresenter改用TemplateBinding绑定ContentControl的Content属性：
+
+<ContentPresenter Content="{TemplateBinding Content}"/>
+ 
+　　结果只会输出：Mgen。
+
+此时其实ContentStringFormat，ContentTemplate和ContentTemplateSelector都不会管用的，那么只能再用TemplateBinding都把他们在ContentPresenter中绑定好：
+
+<ContentPresenter Content="{TemplateBinding Content}"
+
+                 ContentStringFormat="{TemplateBinding ContentStringFormat}"
+
+                 ContentTemplate="{TemplateBinding ContentTemplate}"
+
+                 ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"/>
+
+参考：
+https://blog.csdn.net/BadAyase/article/details/124984891
+https://www.cnblogs.com/cdaniu/p/16556294.html
+https://blog.csdn.net/imJaron/article/details/70155572

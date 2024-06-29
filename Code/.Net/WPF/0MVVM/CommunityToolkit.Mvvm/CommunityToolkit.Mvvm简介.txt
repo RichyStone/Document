@@ -1,0 +1,62 @@
+参考资料地址：
+MSDN：https://learn.microsoft.com/zh-cn/dotnet/communitytoolkit/mvvm/
+
+1.定义
+
+包 CommunityToolkit.Mvvm (又名 MVVM 工具包，以前名为 Microsoft.Toolkit.Mvvm) 是一个现代、快速且模块化的 MVVM 库。 它是 .NET 社区工具包的一部分，围绕以下原则构建：
+
+平台和运行时独立 	- .NET Standard 2.0、 .NET Standard 2.1 和 .NET 6 (UI Framework 不可知)
+易于选取和使用 		- 在“MVVM”) 之外，对应用程序结构或编码范例 (没有严格的要求，即灵活使用。
+选项 				- 自由选择要使用的组件。
+参考实现 			- 精益和性能，为基类库中包含的接口提供实现，但缺少直接使用它们的具体类型。
+
+MVVM 工具包由 Microsoft 维护和发布，是 .NET Foundation 的一部分。 它还由内置于 Windows 中的多个第一方应用程序（例如 Microsoft Store）使用。
+
+此包面向 .NET Standard，因此可在任何应用平台上使用：UWP、WinForms、WPF、Xamarin、Uno 等;和在任何运行时上：.NET Native、.NET Core、.NET Framework或 Mono。 它在所有它们上运行。 API 图面在所有情况下都是相同的，因此非常适合生成共享库。
+
+2.结构
+
+使用此包访问标准、独立、轻型类型的集合，这些类型为使用 MVVM 模式生成新式应用提供入门实现。 仅这些类型通常足以让许多用户生成应用，而无需额外的外部引用。
+
+包含的类型包括：
+
+1）CommunityToolkit.Mvvm.ComponentModel
+
+ObservableObject
+ObservableRecipient
+ObservableValidator
+
+2）CommunityToolkit.Mvvm.DependencyInjection
+
+Ioc
+
+3）CommunityToolkit.Mvvm.Input
+
+RelayCommand
+RelayCommand<T>
+AsyncRelayCommand
+AsyncRelayCommand<T>
+IRelayCommand
+IRelayCommand<T>
+IAsyncRelayCommand
+IAsyncRelayCommand<T>
+
+4）CommunityToolkit.Mvvm.Messaging
+
+IMessenger
+WeakReferenceMessenger
+StrongReferenceMessenger
+IRecipient<TMessage>
+MessageHandler<TRecipient, TMessage>
+
+5）CommunityToolkit.Mvvm.Messaging.Messages
+
+PropertyChangedMessage<T>
+RequestMessage<T>
+AsyncRequestMessage<T>
+CollectionRequestMessage<T>
+AsyncCollectionRequestMessage<T>
+ValueChangedMessage<T>
+
+此包旨在提供尽可能多的灵活性，因此开发人员可以自由选择要使用的组件。 所有类型都是松散耦合的，因此只需包含你使用的内容。 
+无需使用一系列特定的包罗万象 API 进行“全能”操作，在使用这些帮助程序生成应用时，也不需要遵循一组必需的模式。 以最符合需求的方式组合这些构建基块。

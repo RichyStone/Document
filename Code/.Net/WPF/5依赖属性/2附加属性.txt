@@ -1,0 +1,18 @@
+附加属性
+
+1.定义
+附加属性作用于支持附加属性元素
+附加属性是由支持附加属性的父元素产生作用，支持附加属性的元素会继承所在的父元素
+附加属性的格式：AttachedPropertyProvider.PropertyName
+
+2.附加属性的特点
+
+1)特殊的依赖属性
+2)用于非定义该属性的类。例如Canvas.Left、Canvas.Top、Grid.Row、Grid.Column
+
+3.声明附加属性
+
+1）声明数据属性变量。 public static 的DependencyProperty类型的变量。
+2）在属性系统中进行注册，使用DependencyProperty.RegisterAttached()方法来注册，方法参数和注册依赖属性时Register()方法的参数一致。
+3）调用静态方法设置和获取属性值。通过调用DependencyObject的SetValue()和GetValue()方法来设置和获取属性的值。
+两个方法应该命名为SetPropertyName()方法和GetPropertyName()方法。

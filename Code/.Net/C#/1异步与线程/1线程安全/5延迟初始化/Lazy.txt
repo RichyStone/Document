@@ -1,0 +1,14 @@
+Lazy(延迟初始化)用法
+
+从.Net Framework 4.0开始，C#开始支持延迟初始化，通过Lazy关键字，可以声明某个对象为仅仅当第一次使用的时候初始化,如果一直没有调用，那就不初始化，提升了效率。
+
+Lazy<T> 对象初始化默认是线程安全的，在多线程环境下，第一个访问 Lazy<T> 对象的 Value 属性的线程将初始化 Lazy<T> 对象，以后访问的线程都将使用第一次初始化的数据。
+
+
+实现单例：
+
+private static readonly Lazy<T> _instance = new();
+
+public static T GetInstance() => _instance.Value;
+
+private T(){}

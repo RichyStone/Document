@@ -1,0 +1,20 @@
+ObservableRecipient
+
+1.定义
+该 ObservableRecipient 类型是可观察对象的基类，也充当邮件的收件人。 此类是一个扩展 ObservableObject ，它还提供使用类型的 IMessenger 内置支持。
+
+2.工作原理
+该 ObservableRecipient 类型旨在使用 IMessenger 功能的 viewmodel ，因为为IMessenger提供内置支持。 具体而言：
+
+1）它有一个无参数构造函数和一个 IMessenger 用于依赖注入实例的构造函数。 它还公开 Messenger 可用于在 viewmodel 中发送和接收消息的属性。 如果使用无参数构造函数，则会 WeakReferenceMessenger.Default 将实例分配给 Messenger 该属性。
+
+2）它公开 IsActive 属性用于激活/停用 viewmodel。 
+有两个相关方法， OnActivated 在 OnDeactivated在属性更改时调用。 
+默认情况下， OnDeactivated 自动从所有已注册的消息中注销当前实例。 
+为了获得最佳结果并避免内存泄漏，建议用 OnActivated 向消息注册并且用 OnDeactivated 执行清理操作。 
+此模式允许多次启用/禁用 viewmodel。
+默认情况下， OnActivated 将自动注册通过 IRecipient<TMessage> 接口定义的所有消息处理程序。
+
+3）它公开一个Broadcast<T>(T, T, string)方法，该方法通过IMessenger属性中可用的Messenger实例发送PropertyChangedMessage<T>消息。 
+这可用于广播 viewmodel 属性中的更改，而无需手动检索 Messenger 要使用的实例。 
+此方法由各种 SetProperty 方法的重载使用，该方法具有附加 bool broadcast 属性来指示是否也发送消息。

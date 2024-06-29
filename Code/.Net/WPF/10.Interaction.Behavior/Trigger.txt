@@ -1,0 +1,32 @@
+Interaction.Trigger
+
+1.ChangePropertyAction
+
+ <i:Interaction.Triggers>
+     <i:EventTrigger EventName="MouseEnter">
+         <i:ChangePropertyAction PropertyName="Foreground" Value="red" />
+     </i:EventTrigger>
+
+     <i:EventTrigger EventName="MouseLeave">
+         <i:ChangePropertyAction PropertyName="Foreground" Value="black" />
+     </i:EventTrigger>
+
+ </i:Interaction.Triggers>
+ 
+2.CallMethodAction
+
+ <Button Content="Close">
+     <i:Interaction.Triggers>
+         <i:EventTrigger EventName="Click">
+             <i:CallMethodAction MethodName="Close" TargetObject="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+         </i:EventTrigger>
+     </i:Interaction.Triggers>
+ </Button>
+ 
+3.InvokeCommandAction
+
+<i:Interaction.Triggers>
+    <i:EventTrigger>
+         <i:InvokeCommandAction Command="{Binding LoadedCommond}" CommandParameter="" PassEventArgsToCommand="true" />
+    </i:EventTrigger>
+</i:Interaction.Triggers>

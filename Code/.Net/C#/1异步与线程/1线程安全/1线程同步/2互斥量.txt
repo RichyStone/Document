@@ -1,0 +1,35 @@
+互斥量（Mutex）
+互斥量跟临界区很相似，只有拥有互斥对象的线程才具有访问资源的权限，由于互斥对象只有一个，因此就决定了任何情况下此共享资源都不会同时被多个线程所访问。当前占据资源的线程在任务处理完后应将拥有的互斥对象交出，以便其他线程在获得后得以访问资源。互斥量比临界区复杂。因为使用互斥不仅仅能够在同一应用程序不同线程中实现资源的安全共享，而且可以在不同应用程序的线程之间实现对资源的安全共享。c#中的Mutex属于互斥量。
+
+Mutex的突出特点是可以跨应用程序域边界对资源进行独占访问，即可以用于同步不同进程中的线程，这种功能当然这是以牺牲更多的系统资源为代价的。
+
+①主要常用的方法:
+public virtual bool WaitOne() 阻止当前线程，直到当前 System.Threading.WaitHandle 收到信号获取互斥锁。
+public void ReleaseMutex() 释放 System.Threading.Mutex 一次。
+Mutex是一种嵌套锁，WaitOne()这个方法是去获取锁资源，如果获取了3次锁资源而不释放，则需要调用ReleaseMutex()释放4次锁资源之后，其他线程才能获得锁资源。
+
+“打开指定的已命名的互斥体”，试图去得到一个已经存在的互斥锁对象，静态方法：
+OpenExisting(string name);
+bool TryOpenExisting(string name, out Mutex result);
+
+②构造函数：
+(1)Mutex(bool initiallyOwned);
+
+这个构造方法用于指示调用线程是否应具有互斥体的初始所有权，如果给调用线程赋予互斥体的初始所属权，则传入的参数为 true；否则为 false。
+也就是说，如果传入true，那么别的线程是获取不到锁的，除非本线程调用ReleaseMutex()。
+下面两句代码效果是等同的：
+Mutex mutex = new Mutex(false);
+Mutex mutex = new Mutex();
+
+(2)Mutex(bool initiallyOwned, string name);
+
+这个构造方法用于给互斥锁命名，如果传入null则构造出的互斥锁也是未命名的。之前用Mutex();或者Mutex(bool initiallyOwned);构造出来的互斥锁都是没有名字的。
+如果构造一个互斥锁，并且已经具有相同名字的互斥锁存在，那么无论构造时传入的initiallyOwned是true还是false，该线程都不具备互斥锁的所有权，但它仍然可以使用该互斥锁。
+
+(3)Mutex(bool initiallyOwned, string name, out bool createdNew);
+
+为了知道自己构造出来的互斥锁是不是已经存在，可以再传入createdNew参数，如果锁存在，那么createdNew返回值为false，否则为true。
+
+参考资料网址：
+https://www.cnblogs.com/Suzkfly/p/15861487.html
+https://learn.microsoft.com/zh-cn/dotnet/api/system.threading.mutex?view=netframework-4.8.1

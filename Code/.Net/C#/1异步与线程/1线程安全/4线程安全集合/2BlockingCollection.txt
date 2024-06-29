@@ -1,0 +1,92 @@
+BlockingCollection<T> 是一个线程安全集合类，可提供以下功能：
+
+1.实现制造者-使用者模式。
+2.通过多线程并发添加和获取项。
+3.可选最大容量。
+4.集合为空或已满时通过插入和移除操作进行阻塞。
+5.插入和移除“尝试”操作不发生阻塞，或在指定时间段内发生阻塞。
+6.封装实现 IProducerConsumerCollection<T> 的任何集合类型
+7.使用取消标记执行取消操作。
+8.支持使用 foreach（在 Visual Basic 中，使用 For Each）的两种枚举：
+	只读枚举。
+	在枚举项时将项移除的枚举。
+	
+
+一、构造函数
+
+BlockingCollection<T>()									初始化 BlockingCollection<T> 类的新实例，该实例没有上限。
+BlockingCollection<T>(Int32)							初始化 BlockingCollection<T> 类的新实例，该实例具有指定的上限。
+BlockingCollection<T>(IProducerConsumerCollection<T>)	初始化 BlockingCollection<T> 类的新实例，使用提供的 IProducerConsumerCollection<T>作为其基础数据存储区。
+
+一、属性
+
+BoundedCapacity				获取此 BlockingCollection<T> 实例的限定容量。
+Count						获取 BlockingCollection<T> 中包含的项的数量。
+IsAddingCompleted			获取此 BlockingCollection<T> 是否已标记为完成添加。
+IsCompleted					获取此 BlockingCollection<T> 是否已标记为完成添加并且为空。
+
+二、方法
+
+Add(T)									将项添加到 BlockingCollection<T> 中。
+Add(T, CancellationToken)				将项添加到 BlockingCollection<T> 中。
+
+CompleteAdding()						将BlockingCollection<T> 实例标记为不任何更多的添加。
+
+CopyTo(T[], Int32)						将 BlockingCollection<T> 实例中的所有项复制到兼容的一维数组中，复制从目标数组的指定索引处开始。
+
+GetConsumingEnumerable()				为集合中的项提供一个使用 IEnumerable<T>。
+
+Take()									从 BlockingCollection<T> 中移除一个项。
+Take(CancellationToken)					从 BlockingCollection<T> 中移除一个项。
+
+TryAdd(T)								尝试将指定的项添加到 BlockingCollection<T>。
+TryAdd(T, Int32)						尝试在指定的时间段内将指定的项添加到 BlockingCollection<T>。
+TryAdd(T, Int32, CancellationToken)		在观察取消标记时，尝试在指定的时间段内将指定的项添加到 BlockingCollection<T>。
+TryAdd(T, TimeSpan)						尝试将指定的项添加到 BlockingCollection<T>。
+
+TryTake(T)								尝试从 BlockingCollection<T> 中移除一个项。
+TryTake(T, Int32)						尝试在指定的时间段内从 BlockingCollection<T> 中移除一个项。
+TryTake(T, Int32, CancellationToken)	在观察取消标记时，尝试在指定的时间段内从 BlockingCollection<T> 中移除一个项。
+TryTake(T, TimeSpan)					尝试在指定的时间段内从 BlockingCollection<T> 中移除一个项。
+
+注：当有多个线程 Take 时，将形成一个 Take 队列，依次获取到元素。
+调用 CompleteAdding 方法将使阻塞状态的 Take 方法抛出 System.InvalidOperationException 异常。
+
+三、实现队列FIFO(先进先出),LIFO(先进后出)
+//先进先出(FIFO)
+BlockingCollection<int> bc = new(new ConcurrentQueue<int>());
+
+//先进后出(LIFO)
+BlockingCollection<int> bc2 = new(new ConcurrentStack<int>());
+
+四、案例：生产者=> 消费者
+
+int count = 0 ;
+BlockingCollection<string> blockingCollection = new(1);
+
+//生产者
+Task.Factory.StartNew(() =>
+{
+ while (true)
+ {
+    blockingCollection.Add("String: " + count);
+    count++;
+    if (count > 10)
+    {
+     blockingCollection.CompleteAdding();
+    }
+ }
+});
+
+//消费者
+Task.Factory.StartNew(() =>
+{
+ foreach (var element in blockingCollection.GetConsumingEnumerable())
+ {
+  Thread.Sleep(1000);
+  ("Work: " + element).Dump();
+ }
+});
+
+上面的代码中这个方法GetConsumingEnumerable很重要,它可以在BlockingCollection集合有数据的时候取数据，没有的话停止取，可以达到监测的效果
+这个案例实现了如下功能: 1. 多线程并发添加和获取项 2. 生产者和消费者模式 3. 使用取消标记执行取消操作(让生产者知道我们已经不需要你工作了)

@@ -1,0 +1,152 @@
+ObservableProperty 属性
+
+1.定义
+类型 ObservableProperty 是一个属性，允许从批注字段生成可观察属性。 其用途是大大减少定义可观测属性所需的代码量。
+
+注意：若要正常工作，批注字段需要位于具有必要INotifyPropertyChanged基础结构的分部类中。 如果该类型是嵌套的，则声明语法树中的所有类型也必须定义为部分的（Partial）。 否则将导致编译错误，因为生成器将无法使用请求的可观测属性生成该类型的不同分部声明。
+
+2.工作原理
+
+将基于字段名称创建生成的属性的名称。 生成器假定字段命名为lowerCamel 、 _lowerCamel 或 m_lowerCamel，并将转换为 UpperCamel ，以遵循正确的 .NET 命名约定。 生成的属性将始终具有公共访问器，但可以使用任何可见性声明字段，建议private。
+
+1）8.0之前旧框架代码：
+public string? Name
+{
+    get => name;
+    set => SetProperty(ref name, value);
+}
+
+2）8.0代码：
+[ObservableProperty]
+private string? name;
+
+3）8.0后台生成代码：
+生成的代码实际上比此旧版本要复杂一些，原因是它还公开了一些可以实现以挂钩到通知逻辑的方法，并在即将更新属性时运行其他逻辑，并在需要更新属性后立即运行其他逻辑。 也就是说，生成的代码实际上类似于以下内容：
+
+public string? Name
+{
+    get => name;
+    set
+    {
+        if (!EqualityComparer<string?>.Default.Equals(name, value))
+        {
+            OnNameChanging(value);
+            OnPropertyChanging();
+            name = value;
+            OnNameChanged(value);
+            OnPropertyChanged();
+        }
+    }
+}
+
+partial void OnNameChanging(string? value);
+partial void OnNameChanged(string? value);
+
+这允许你实现这两种方法中的任何一个来注入其他代码：
+
+partial void OnNameChanging(string? value)
+{
+    Console.WriteLine($"Name is about to change to {value}");
+}
+
+partial void OnNameChanged(string? value)
+{
+    Console.WriteLine($"Name has changed to {value}");
+}
+
+生成的方法是没有实现的分部方法 ，这意味着如果选择实现它们，则无法为它们指定显式可访问性。 也就是说，这些方法的实现也应仅声明为 partial 方法，并且它们将始终隐式具有专用辅助功能。 尝试添加显式辅助功能 (例如添加 public 或 private) 将导致错误，因为 C# 中不允许这样。
+
+3.通知依赖属性
+
+假设你有一个 FullName 想要在更改 Name 时发出通知的属性。 可以使用 属性执行此操作 NotifyPropertyChangedFor ，如下所示：
+
+[ObservableProperty]
+[NotifyPropertyChangedFor(nameof(FullName))]
+private string? name;
+
+这将导致生成与以下等效的属性：
+public string? Name
+{
+    get => name;
+    set
+    {
+        if (SetProperty(ref name, value))
+        {
+            OnPropertyChanged("FullName");
+        }
+    }
+}
+
+4.通知依赖命令
+
+假设你有一个命令，其执行状态取决于此属性的值。 也就是说，每当属性更改时，命令的执行状态都应失效并再次计算。 换句话说， ICommand.CanExecuteChanged 应再次引发 。 可以使用 属性来实现此目的 NotifyCanExecuteChangedFor ：
+
+[ObservableProperty]
+[NotifyCanExecuteChangedFor(nameof(MyCommand))]
+private string? name;
+
+这将导致生成与以下等效的属性：
+public string? Name
+{
+    get => name;
+    set
+    {
+        if (SetProperty(ref name, value))
+        {
+            MyCommand.NotifyCanExecuteChanged();
+        }
+    }
+}
+
+若要执行此操作，目标命令必须是某个 IRelayCommand 属性。
+
+5.请求属性验证
+
+如果属性是在继承自 ObservableValidator 的类型中声明的，则还可以使用任何验证属性对其进行批注，然后请求生成的 setter 触发该属性的验证。 这可以通过 属性来实现 NotifyDataErrorInfo ：
+[ObservableProperty]
+[NotifyDataErrorInfo]
+[Required]
+[MinLength(2)] // Any other validation attributes too...
+private string? name;
+
+这将导致生成以下属性：
+
+public string? Name
+{
+    get => name;
+    set
+    {
+        if (SetProperty(ref name, value))
+        {
+            ValidateProperty(value, "Value2");
+        }
+    }
+}
+
+然后，生成的 ValidateProperty 调用将验证属性并更新对象的状态 ObservableValidator ，以便 UI 组件可以对其进行响应并相应地显示任何验证错误。
+
+注意：根据设计，只有继承自 ValidationAttribute 的字段属性才会转发到生成的属性。 这是专门为支持数据验证方案而进行的。 将忽略所有其他字段属性，因此目前无法在字段上添加其他自定义属性，并将它们也应用于生成的属性。 如果需要， (例如若要控制序列化) ，请考虑改用传统的手动属性。
+
+6.发送通知消息
+
+如果属性是在继承自 ObservableRecipient的类型中声明的，则可以使用 NotifyPropertyChangedRecipients 特性指示生成器也插入代码，以便为属性更改发送属性更改消息。 这将允许已注册的收件人动态响应更改。 也就是说，请考虑以下代码：
+
+[ObservableProperty]
+[NotifyPropertyChangedRecipients]
+private string? name;
+
+public string? Name
+{
+    get => name;
+    set
+    {
+        string? oldValue = name;
+
+        if (SetProperty(ref name, value))
+        {
+            Broadcast(oldValue, value);
+        }
+    }
+}
+
+然后，生成的 Broadcast 调用将使用当前 viewmodel 中使用的 实例向所有已注册的订阅者发送新的 PropertyChangedMessage<T>IMessenger 。

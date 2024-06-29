@@ -1,0 +1,45 @@
+IOC
+
+1.配置和解析服务
+
+public sealed partial class App : Application
+{
+    public App()
+    {
+        Services = ConfigureServices();
+
+        this.InitializeComponent();
+    }
+
+    /// <summary>
+    /// Gets the current <see cref="App"/> instance in use
+    /// </summary>
+    public new static App Current => (App)Application.Current;
+
+    /// <summary>
+    /// Gets the <see cref="IServiceProvider"/> instance to resolve application services.
+    /// </summary>
+    public IServiceProvider Services { get; }
+
+    /// <summary>
+    /// Configures the services for the application.
+    /// </summary>
+    private static IServiceProvider ConfigureServices()
+    {
+        var services = new ServiceCollection();
+
+         // Services
+		services.AddSingleton<IContactsService, ContactsService>();
+		services.AddSingleton<IPhoneService, PhoneService>();
+
+		// Viewmodels
+		services.AddTransient<ContactsViewModel>();
+
+        return services.BuildServiceProvider();
+    }
+}
+
+在此，该 Services 属性在启动时初始化，所有应用程序服务和 viewmodel 都注册。 还有一个新 Current 属性可用于从应用程序中的其他视图轻松访问 Services 该属性。 
+例如：
+
+IFilesService filesService = App.Current.Services.GetService<IFilesService>();

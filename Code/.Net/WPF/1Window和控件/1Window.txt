@@ -1,0 +1,39 @@
+
+参考：https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/windows/how-to-get-set-main-application-window?view=netdesktop-6.0
+
+一、在 XAML 中设置主窗口
+生成 WPF 应用程序的模板通常将 Application.StartupUri 属性设置为 XAML 文件。 
+此属性非常有用，因为：
+1.它可以轻松更改为项目中的其他 XAML 文件。
+2.可自动实例化并显示指定的窗口。
+3.指定的窗口变为 Application.MainWindow。
+
+XAML
+<Application x:Class="MainApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MainApp"
+             StartupUri="Window1.xaml">
+    
+</Application>
+
+可以将 Application.MainWindow 设置为 XAML 声明的窗口，而不必使用 Application.StartupUri。 但此处指定的窗口不会显示，必须对其可见性进行设置。
+XAML
+<Application x:Class="MainApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MainApp">
+
+    <Application.MainWindow>
+        <local:Window2 Visibility="Visible" />
+    </Application.MainWindow>
+</Application>
+
+注意：如果同时设置 Application.StartupUri 属性和 Application.MainWindow 属性，则应用程序启动时将显示这两个窗口。
+ 
+二、通过代码设置主窗口
+
+应用程序实例化的第一个窗口将自动成为主窗口并设置为 Application.MainWindow 属性。 若要设置其他主窗口，将此属性更改为窗口：
+
+Application.Current.MainWindow = new Window2();
+Application.Current.MainWindow.Show();

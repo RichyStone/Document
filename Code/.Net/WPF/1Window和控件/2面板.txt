@@ -1,0 +1,91 @@
+面板（Panel）
+
+WPF用于布局的面板主要有6个，StackPanel(栈面板)、WrapPanel（环绕面板）、DockPanel（停靠面板）、Canvas（画布）、Grid（网格面板）和UniformGrid(均布网格)。
+
+一、StackPanel：栈面板
+
+1.定义
+栈面板,可以将元素排列成一行或者一列，其特点是：每个元素各占一行或者一列。
+
+2.属性
+Orientation属性指定排列方式：Vertical(垂直)【默认】、Horizontal(水平)，默认情况下，水平排列时，每个元素都与面板一样高；垂直排列时，每个元素都与面板一样宽。如果包含的元素超过了面板空间，它只会截断多出的内容。 
+元素的Margin属性用于使元素之间产生一定得间隔，当元素空间大于其内容的空间时，剩余空间将由HorizontalAlignment和 VerticalAlignment属性来决定如何分配。
+当把StackPanel的FlowDirection属性设置为RightToLeft，Orientation属性设置为Horizontal，StackPanel将从右向左排列元素。
+
+二、WrapPanel（环绕面板）
+
+1.定义
+WrapPanel布局面板将各个控件从左至右按照行或列的顺序罗列，当长度或高度不够时就会自动调整进行换行，后续排序按照从上至下或从右至左的顺序进行。
+
+2.属性
+Orientation——根据内容自动换行。当Orientation属性的值设置为 Horizontal：元素是从左向右排列的，然后自上至下自动换行。当Orientation属性的值设置为Vertical：元素是从上向下排列的，然后从左至右自动换行。
+ItemHeight——所有子元素都一致的高度。ItemWidth——所有子元素都一致的宽度。
+
+三、DockPanel（停靠面板）
+
+DockPanel定义一个区域，在此区域中，您可以使子元素通过描点的形式排列，这些对象位于 Children 属性中。
+停靠面板类似于WinForm中控件的Dock属性。DockPanel会对每个子元素进行排序，并将根据指定的边进行停靠，多个停靠在同侧的元素则按顺序排序。在DockPanel中，指定停靠边的控件，会根据定义的顺序占领边角，所有控件绝不会交叠。
+默认情况下，后添加的元素只能使用剩余空间，无论对DockPanel的最后一个子元素设置任何停靠值，该子元素都将始终填满剩余的空间。如果不希望最后一个元素填充剩余区域，可以将DockPanel属性LastChildFill设置为false，还必须为最后一个子元素显式指定停靠方向。
+
+四、Canvas（画布）
+
+1.定义
+画布，用于完全控制每个元素的精确位置。他是布局控件中最为简单的一种，直接将元素放到指定位置，主要来布置图面。使用Canvas，必须指定一个子元素的位置（相对于画布），否则所有元素都将出现在画布的左上角。调整位置用Left、Right、Top和Bottom四个附加属性。如果Canvas是窗口主元素（即最外层的布局面板是Canvas），用户改变窗口大小时，Canvas也会随之变化，子元素的位置也会随之移动，以保证相对于Canvas的位置属性不变。
+
+Canvas允许子元素的部分或全部超过其边界，默认不会裁剪子元素，同时可以使用负坐标，即溢出的内容会显示在Canvas外面，这是因为默认 ClipToBounds=”False”，因此画布不需要指定大小。如果想复制画布内容，将ClipToBounds设为true即可。
+
+要说明一点Canvas内的子控件不能使用两个以上的Canvas附加属性，如果同时设置Canvas.Left和Canvas.Right属性，那么后者将会被忽略。
+
+2.ZIndex属性
+Canvas面板中可能会有多个相互重叠的元素，可以设置Canvas的ZIndex附加属性，来控制他们的重叠方式ZIndex属性默认值都是0，属性值必须是整数。
+
+五、Grid（网格面板）
+
+1.定义
+Grid顾名思义就是“网格”，以表格形式布局元素，对于整个面板上的元素进行布局，它的子控件被放在一个一个事先定义好的小格子里面，整齐配列。 Grid和其他各个Panel比较起来，功能最多也最为复杂。
+要使用Grid，首先要向RowDefinitions和ColumnDefinitions属性中添加一定数量的RowDefinitions和 ColumnDefinitions元素，从而定义行数和列数。
+而放置在Grid面板中的控件元素都必须显示采用Row和Column附加属性定义其放置所在的行和列，这两个属性的值都是从0开始的索引数，如果没有显式设置任何行或列，Grid将会隐式地将控件加入在第0行第0列。
+由于Grid的组成并非简单的添加属性标记来区分行列，这也使得用户在实际应用中可以具体到某一单元格中，所以布局起来就很精细了。 
+列宽和行高，分别可以在ColumnDefinition、RowDefinition里面指定Width、Height的值。
+
+Grid的单元格可以是空的，一个单元格中可以有多个元素，而在单元格中元素是根据它们的Z顺序一个接着一个呈现的。与Canvas一样，同一个单元格中的子元素不会与其他元素交互布局，信息——它们仅仅是重叠而已。
+
+Grid面板将元素分割到不可见的行列网格中。尽管可以在一个单元格中放置多个元素（这时这些元素会相互重叠），但在每个单元格中只放置一个元素通常更合理。当然，在Grid单元格中的元素本身也可能是另一个容器，该容器组织它所包含的一组控件。
+
+注意：尽管Grid面板被设计成不可见的，但可将Grid.ShowGridLines属性设置为True，从而更清晰的观察Grid面板，方便调试，可以更准确地控制Grid面板如何选择列宽和行高。
+
+2.调整行高和列宽
+
+Grid面板支持以下三种设置尺寸的方式：
+
+绝对设置尺寸方式		使用设备无关单位准确地设置尺寸，就是给一个实际的数字，但通常将此值指定为整数。这是最无用的策略，因为这种策略不够灵活，难以适应内容大小和容器大小的改变，而且难以处理本地化。
+
+自动设置尺寸方式 		值为Auto，实际作用就是取实际控件所需的最小值，每行和每列的尺寸刚好满足需要，这是最有用的尺寸设置方式。
+
+按比例设置尺寸方式		按比例将空间分割到一组行和列中。这是对所有行和列的标准设置。通常值为*或N*，实际作用就是取尽可能大的值，当某一列或行被定义为*则是尽可能大，当出现多列或行被定义为*则是代表几者之间按比例方设置尺寸。
+
+3.跨越多行和多列
+
+除了可以使用Row和Column附加属性在单元格中放置元素，还可以使用另外两个附加属性使元素跨越多个单元格，这两个附加属性是RowSpan和ColumnSpan。
+
+4.分割窗口
+在WPF中，分隔条由GridSplitter类表示，它是Grid面板的功能之一。通过为Grid面板添加GridSplitter对象，用户就可以改变行和列的尺寸。
+为了成功地创建GridSplitter对象，务必为VerticalAlignment（垂直对齐方式）、HorizontalAlignment（水平对齐方式）以及width属性（或Height属性）提供相应的属性值。
+
+1）GridSplitter对象必须放在Grid单元格中，可与以及存在的内容一并放到单元格中，这时需要调整边距设置，使他们不相互重叠。更好的方法是预留一列或一行专门用于放置GridSplitter对象，并将预留行或列的Height或Width属性的值设置为Auto。
+2）GridSplitter对象总是改变整行或整列的尺寸（而非改变单个单元格的尺寸）。为使GridSplitter对象的外观和行为保持一致，需要拉伸GridSplitter对象使其穿越整行或整列，而不是将其限制在单元格中。为此，可使用RowSpan或ColumnSpan属性。
+3）GridSplitter对象很小不易看见，为了使其更可用，需要为其设置最小尺寸。对于垂直分隔条，需要将VerticalAlignment属性设置为Stretch（使分隔条填满区域的整个高度），并将Width设置为固定值。对于水平分隔条，需要设置HorizontalAlignment属性来拉伸，并将Height属性设置为固定值。
+4）GridSplitter对齐方式还决定了分隔条是水平的（用于改变行的尺寸）还是竖直的（用于改变列的尺寸）。对于水平分隔条，需要将VerticalAlignment属性设置为Center（这也是默认值），以指明拖动分隔条改变上面行和下面行的尺寸。对于垂直分隔条，需要将HorizontalAlignment属性设置为Center，以改变分隔条两侧列的尺寸。    
+5）在声明GridSplitter对象时，将ShowPreview属性设置为false，因此，当把分隔条从一边拖到另一边时，会立即改变列的尺寸。但是如果将ShowPreview属性设置为true，当拖到分隔条时就会看到一个灰色的阴影跟随鼠标指针，用于显示将在何处进行分割。并且直到释放了鼠标键之后列的尺寸才改变。如果GridSplitter对象获得了焦点，也可以使用箭头键改变相应的尺寸。 
+
+提示：可以改变GridSplitter对象的填充方式，使其不只是具有阴影的灰色矩形。技巧是使用Background属性应用填充，该属性可以接收简单的颜色或更复杂的画刷。
+
+六、 UniformGrid(均布网格)
+
+1.定义
+UniformGrid相当于简化版本的Grid，对于Grid的属性 Grid.Row 、Grid.Column 和 Grid.RowSpan 、Grid.ColumnSpan 用在 UniformGrid 上会没有任何的效果。
+
+2.属性
+Rows			获取或设置网格中的行数；
+Columns			获取或设置网格中的列数；
+FirstColumn		获取或设置网格第一行中前导空白单元格的数量，必须小于属性的值Columns；

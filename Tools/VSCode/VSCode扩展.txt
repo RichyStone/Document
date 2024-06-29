@@ -4,3 +4,4 @@ Code Spell Checker
 GitLens--Git supercharged
 Image preview
 vscode-icons
+Git History

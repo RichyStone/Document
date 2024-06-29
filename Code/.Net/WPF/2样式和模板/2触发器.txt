@@ -1,0 +1,106 @@
+触发器：
+
+参考：https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/controls/styles-templates-overview?view=netdesktop-6.0
+
+触发器在属性值发生更改或引发事件时设置属性或启动操作，例如动画。 Style、ControlTemplate 和 DataTemplate 都具有可包含一组触发器的 Triggers 属性。 触发器分为几种类型。
+
+一、PropertyTrigger
+
+根据属性的值设置属性值或启动操作的 Trigger 称为属性触发器。
+
+<Window.Resources>
+    <Style TargetType="ListBoxItem">
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="MaxHeight" Value="75" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="Opacity" Value="1.0" />
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</Window.Resources>
+
+此示例使用 Trigger 设置属性值，但请注意，Trigger 类还有 EnterActions 和 ExitActions 属性，这些属性可使触发器执行操作。
+
+二、EventTrigger
+
+另一个触发器类型是 EventTrigger，用于根据某个事件的发生启动一组操作。
+
+<Style.Triggers>
+    <Trigger Property="IsSelected" Value="True">
+        <Trigger.Setters>
+            <Setter Property="Opacity" Value="1.0" />
+        </Trigger.Setters>
+    </Trigger>
+    <EventTrigger RoutedEvent="Mouse.MouseEnter">
+        <EventTrigger.Actions>
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Duration="0:0:0.2"
+                        Storyboard.TargetProperty="MaxHeight"
+                        To="90"  />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger.Actions>
+    </EventTrigger>
+	
+    <EventTrigger RoutedEvent="Mouse.MouseLeave">
+        <EventTrigger.Actions>
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Duration="0:0:1"
+                        Storyboard.TargetProperty="MaxHeight"  />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger.Actions>
+    </EventTrigger>
+	
+</Style.Triggers>
+
+三、MultiTrigger
+
+除了 Trigger 和 EventTrigger，还有其他类型的触发器。 MultiTrigger 允许基于多个条件设置属性值。 
+表示在满足一组条件时应用属性值或执行操作的触发器。
+
+四、DataTrigger 和 MultiDataTrigger
+
+表示一个触发器，它会在绑定数据满足指定条件时应用属性值或执行操作。
+
+<Window.Resources>
+  <c:Places x:Key="PlacesData"/>
+
+  <Style TargetType="ListBoxItem">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding Path=State}" Value="WA">
+        <Setter Property="Foreground" Value="Red" />
+      </DataTrigger>	
+      <MultiDataTrigger>
+        <MultiDataTrigger.Conditions>
+          <Condition Binding="{Binding Path=Name}" Value="Portland" />
+          <Condition Binding="{Binding Path=State}" Value="OR" />
+        </MultiDataTrigger.Conditions>
+        <Setter Property="Background" Value="Cyan" />
+      </MultiDataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <DataTemplate DataType="{x:Type c:Place}">
+    <Canvas Width="160" Height="20">
+      <TextBlock FontSize="12"
+             Width="130" Canvas.Left="0" Text="{Binding Path=Name}"/>
+      <TextBlock FontSize="12" Width="30"
+                 Canvas.Left="130" Text="{Binding Path=State}"/>
+    </Canvas>
+  </DataTemplate>
+</Window.Resources>
+
+<StackPanel>
+  <TextBlock FontSize="18" Margin="5" FontWeight="Bold"
+    HorizontalAlignment="Center">Data Trigger Sample</TextBlock>
+  <ListBox Width="180" HorizontalAlignment="Center" Background="Honeydew"
+    ItemsSource="{Binding Source={StaticResource PlacesData}}"/>
+</StackPanel>

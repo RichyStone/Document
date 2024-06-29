@@ -1,0 +1,7 @@
+多重绑定
+
+可以在对象中 MultiBinding指定多个绑定。 MultiBinding将对象与转换器一起使用时，它会根据这些绑定的值为绑定目标生成最终值。 例如，颜色可能由红色、蓝色和绿色值计算，这些值可以是来自相同或不同绑定源对象的值。 当值从目标移动到源时，目标属性值被转换为一组值，这些值反馈回绑定。
+如果 Mode 对象的 属性 MultiBinding 设置为 TwoWay，则考虑 TwoWay 集合中的所有绑定，除非显式地在其中一个绑定上设置了不同的 Mode 值。
+
+MultiBinding 当前仅支持 Binding 类型的对象，而不支持 MultiBinding 或 PriorityBinding 类型的对象。
+

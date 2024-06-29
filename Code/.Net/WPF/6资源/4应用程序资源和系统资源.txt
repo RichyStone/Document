@@ -1,0 +1,86 @@
+
+一、应用程序级别资源 
+
+可以在应用程序级别定义资源，通常通过 App.xaml 或 Application.xaml 文件进行，具体取决于你的项目使用哪个文件。 应用程序定义的资源是全局范围的，可由应用程序的所有部分访问。
+
+<Application.Resources>
+    <Style TargetType="Border" x:Key="FancyBorder">
+        <Setter Property="Background" Value="#4E1A3D" />
+        <Setter Property="BorderThickness" Value="5" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0.0" Color="#4E1A3D"/>
+                    <GradientStop Offset="1.0" Color="Salmon"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</Application.Resources>
+
+应用程序定义文件定义资源部分（Resources 属性的值）。 构成应用程序的所有其他页均可访问在应用程序级别定义的资源。 这种情况下，资源是声明样式。
+
+二、系统资源
+
+系统资源由 WPF 提供，并允许访问操作系统资源，例如字体、颜色和图标。 系统资源将系统确定的许多值以资源和属性的形式公开，以帮助创建与 Windows 一致的视觉效果。
+
+1.参数
+
+1）XAML示例
+使用 SystemParameters 类引用系统级属性，例如主显示器的大小。 此类包含系统参数值属性和绑定到值的资源键。 
+例如，FullPrimaryScreenHeight 是一个 SystemParameters 属性值，而 FullPrimaryScreenHeightKey 是相应的资源键。
+
+<Button FontSize="8" 
+        Height="{x:Static SystemParameters.CaptionHeight}"
+        Width="{x:Static SystemParameters.IconGridWidth}"
+        Content="System Parameters">
+</Button>
+
+2）代码示例
+var myButton = new Button()
+{
+    Content = "SystemParameters",
+    FontSize = 8,
+    Background = SystemColors.ControlDarkDarkBrush,
+    Height = SystemParameters.CaptionHeight,
+    Width = SystemParameters.CaptionWidth,
+};
+
+mainStackPanel.Children.Add(myButton);
+
+3）XAML 中的动态参数
+系统参数规格可用作静态或动态资源。 如果希望参数规格在应用程序运行时自动更新，请使用动态资源；否则，请使用静态资源。
+
+注意：动态资源的属性名称后面附有关键字 Key。
+
+<Button FontSize="8" 
+        Height="{DynamicResource {x:Static SystemParameters.CaptionHeightKey}}"
+        Width="{DynamicResource {x:Static SystemParameters.IconGridWidthKey}}"
+        Content="System Parameters">
+</Button>
+
+2.字体
+
+1）XAML示例
+使用 SystemFonts 类引用操作系统使用的字体。此类既包含作为静态属性的系统字体值，又包含引用可用于在运行时动态访问这些值的资源键的属性。 
+例如，CaptionFontFamily 是一个 SystemFonts 值，而 CaptionFontFamilyKey 是相应的资源键。
+
+<TextBlock FontSize="{x:Static SystemFonts.SmallCaptionFontSize}"
+           FontWeight="{x:Static SystemFonts.SmallCaptionFontWeight}"
+           FontFamily="{x:Static SystemFonts.SmallCaptionFontFamily}"
+           Text="Small Caption Font">
+</TextBlock>
+
+2）代码示例
+若要在代码中使用 SystemFonts 的值，不必使用静态值或动态资源引用。 而是可以使用 SystemFonts 类的非键属性。 尽管非键属性已明确定义为静态属性，但是系统托管的 WPF 的运行时行为将会实时重新评估这些属性，并且会适当考虑对系统值进行用户驱动的更改。
+
+var myButton = new Button()
+{
+    Content = "SystemFonts",
+    Background = SystemColors.ControlDarkDarkBrush,
+    FontSize = SystemFonts.IconFontSize,
+    FontWeight = SystemFonts.MessageFontWeight,
+    FontFamily = SystemFonts.CaptionFontFamily
+};
+
+mainStackPanel.Children.Add(myButton);

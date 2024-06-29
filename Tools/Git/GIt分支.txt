@@ -1,0 +1,37 @@
+分支列表
+
+1.master 分支
+主分支，永远处于隐藏状态，对应当前线上版本
+以 tag 标记一个版本，因此在 master 分支上看到的每一个 tag 都应该对应一个线上版本
+不允许在该分支直接提交代码，一般由release以及 hotfix 分支合并
+
+2.develop 分支
+开发分支，包含了项目最新的功能和代码，所有开发都依赖 develop 分支进行
+develop 分支作为开发的主分支，也不允许直接提交代码。新改动需要切出新的 feature 分支进行，开发完毕后以此分支提 merge request 合并至 develop 分支，目的是保证每个改动都经过了强制代码 review，降低代码风险
+始终保持为最新已完成以及bug修复后的代码
+
+3.feature 分支
+功能分支，开发新功能的分支
+开发新的功能或者改动较大的调整，从 develop 分支切换出 feature 分支，分支名称为 feature/xxx
+开发完成后合并回 develop 分支并删除该 feature/xxx 分支
+
+4.release 分支
+发布分支，新功能合并到 develop 分支后，准备发布新版本时使用的分支
+当 develop 分支完成功能合并和部分 bug fix，准备发布新版本时，切出一个 release 分支，来做发布前的准备，分支名约定为 release/xxx
+发布之前发现的 bug 就直接在这个分支上修复，确定准备发版本就合并到 master 分支，完成发布，同时合并到 develop 分支
+
+5.hotfix 分支
+紧急修复线上的 bug 分支。
+当线上版本出现 bug 时，从 mater 分支切出一个 hotfix/xxx 分支，完成 bug 修复，然后将 hotfix/xxx 合并到 master 和 develop 分支（如果此时存在 release 分支，则应该合并到 release 分支），合并完成后删除该 hotfix/xxx 分支。
+
+6.临时开发分支（可选）
+同一个模块多个人开发时，可在对应的feature分支上继续创建开发人员自己的分支，开发并测试完成后将其合并到feature分支，功能开发完成后再将feature合并到develop分支
+临时修改bug等也可以创建临时开发分支
+
+有关命名功能分支的一些建议：
+users/username/description：用户/用户名/说明
+users/username/workitem：用户/用户名/工作项
+bugfix/description：bug修复/description
+feature/feature-name：功能/功能-名称
+feature/feature-area/feature-name：功能/功能-区域/功能-名称
+hotfix/description：修补程序/描述

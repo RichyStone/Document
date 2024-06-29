@@ -1,0 +1,35 @@
+视觉状态
+
+控件始终处于特定的状态。 例如，当鼠标在控件的表面上移动时，该控件被视为处于公用状态 MouseOver。 没有特定状态的控件被视为处于公用 Normal 状态。 状态分为多个组，前面提到的状态属于 CommonStates 状态组。 大多数控件都有两个状态组：CommonStates 和 FocusStates。 在应用于控件的每个状态组中，控件始终处于每个组的一种状态，例如 CommonStates.MouseOver 和 FocusStates.Unfocused。 但是，控件不能处于同一组中的两种不同状态，例如 CommonStates.Normal 和 CommonStates.Disabled。
+
+VisualState名称		VisualStateGroup名称	描述
+
+Normal				CommonStates			默认状态。
+MouseOver			CommonStates			鼠标指针悬停在控件上方。
+Pressed				CommonStates			已按下控件。
+Disabled			CommonStates			已禁用控件。
+Focused				FocusStates				控件有焦点。
+Unfocused			FocusStates				控件没有焦点。
+
+通过在控件模板的根元素上定义 System.Windows.VisualStateManager，可以在控件进入特定状态时触发动画。 VisualStateManager 声明要监视的 VisualStateGroup 和 VisualState 的组合。 当控件进入受监视状态时，将启动 VisualStateManager 定义的动画。
+
+例如，以下 XAML 代码监视 CommonStates.MouseOver 状态，以对名为 backgroundElement 的元素的填充颜色进行动画处理。 当控件恢复为 CommonStates.Normal 状态时，将还原名为 backgroundElement 的元素的填充颜色。
+
+<ControlTemplate x:Key="roundbutton" TargetType="Button">
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup Name="CommonStates">
+                <VisualState Name="Normal">
+                    <ColorAnimation Storyboard.TargetName="backgroundElement"
+                                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                    To="{TemplateBinding Background}"
+                                    Duration="0:0:0.3"/>
+                </VisualState>
+                <VisualState Name="MouseOver">
+                    <ColorAnimation Storyboard.TargetName="backgroundElement"
+                                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                    To="Yellow"
+                                    Duration="0:0:0.3"/>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>

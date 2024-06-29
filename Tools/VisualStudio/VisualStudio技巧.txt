@@ -1,0 +1,60 @@
+Visual Studio:
+
+1.Visual Studio扩展:
+
+1)Fuction
+
+MVVM Tools：Ctrl+E+Q切换View和ViewModel
+CodeMaid
+Add New File：Shift+F2
+Viasfora：花括号颜色
+Open in Visual Studio Code
+ILSpy
+XAML Styler
+
+2)Theme:
+
+BlueStone Theme
+Goodnight Theme
+One Monokai VS Theme
+Rider Dark Theme For Visual Studio
+
+2.快捷键
+
+Ctrl + T/Q 			高级查找
+Ctrl + ;   			搜索解决方案管理器
+Ctrl + -   			向后导航
+Ctrl + Shift + -   	向前导航
+Ctrl + Shift + V	剪贴板
+Ctrl + Shift + L	删除当前行
+Ctrl + L			剪切当前行
+Ctrl + K + Z 		打开上一个关闭文件
+Ctrl + K + M 		切换到大纲显示
+Ctrl + K + D 		自动对齐
+Ctrl + K + E 		自动清理并对齐
+Ctrl + K + S 		外侧代码
+
+3.设置
+
+环境-选项卡和窗口-文档选项卡-文档选项卡着色
+文本编辑器-C#-滚动条
+文本编辑器-C#-高级-大纲-折叠到定义时可折叠#regions
+文本编辑器-C#-高级-内联提示-显示内联参数名称提示
+文本编辑器-C#-高级-文档大纲-启用文档大纲
+
+注意：工具箱可以放代码文本，方便复制
+
+4.调试
+
+1）单步调试：
+逐过程：F10
+逐语句：F11
+跳出：	Shift+F11
+
+2）断点
+
+条件断点：	断点上右键，添加条件
+函数断点：	调试-新建断点-新建函数断点  通过函数名打断点
+断点组：	右键添加到断点组
+
+

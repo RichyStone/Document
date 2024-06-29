@@ -1,0 +1,138 @@
+ObservableValidator
+
+1.定义
+
+ObservableValidator是实现接口的INotifyDataErrorInfo并继承自 ObservableObject的类，支持验证向其他应用程序模块公开的属性。 它可以用作需要同时支持属性更改通知和属性验证的所有对象的起点。
+
+2.工作原理
+ObservableValidator 具有以下主要功能：
+
+1）它为 INotifyDataErrorInfo 提供基本实现，公开 ErrorsChanged 事件和其他必要的 API。
+
+2）它提供一系列附加的 SetProperty 重载(基于 ObservableObject 类)，这些重载提供在更新其值之前自动验证属性和引发必要事件的能力。
+
+3）它公开了许多 TrySetProperty 重载，这些重载类似于 SetProperty ，但仅在验证成功时更新目标属性。
+
+4）它公开 ValidateProperty 方法，该方法可用于手动触发特定属性的验证，以防其值尚未更新，但其验证依赖于已更新的另一个属性的值。
+
+5）它公开 ValidateAllProperties 方法，该方法会自动执行当前实例中所有公共实例属性的验证，前提是它们至少应用了一个 [ValidationAttribute] 属性。
+
+6）它公开了一个 ClearAllErrors 方法，该方法在重置绑定到用户可能想要再次填充的某个表单的模型时非常有用。
+
+7）它提供了许多构造函数，允许传递不同的参数来初始化 ValidationContext 将用于验证属性的实例。使用可能需要其他服务或选项才能正常工作的自定义验证属性时，这尤其有用。
+
+3.简单示例
+
+public class RegistrationForm : ObservableValidator
+{
+    private string name;
+
+    [Required]
+    [MinLength(2)]
+    [MaxLength(100)]
+    public string Name
+    {
+        get => name;
+        set => SetProperty(ref name, value, true);
+    }
+}
+
+此处，我们将调用 SetProperty<T>(ref T, T, bool, string) 由 ObservableValidator公开的方法。
+将附加 bool 参数设置为 true 指示我们还希望在属性值更新时验证属性。 
+
+4.自定义验证方法
+
+有时，验证属性需要 viewmodel 有权访问其他服务、数据或其他 API。 可通过不同的方法向属性添加自定义验证，具体取决于方案和所需的灵活性级别。 下面是一个示例， [CustomValidationAttribute] 说明如何使用 类型来指示需要调用特定方法才能对属性执行其他验证：
+
+public class RegistrationForm : ObservableValidator
+{
+    private readonly IFancyService service;
+
+    public RegistrationForm(IFancyService service)
+    {
+        this.service = service;
+    }
+
+    private string name;
+
+    [Required]
+    [MinLength(2)]
+    [MaxLength(100)]
+    [CustomValidation(typeof(RegistrationForm), nameof(ValidateName))]
+    public string Name
+    {
+        get => this.name;
+        set => SetProperty(ref this.name, value, true);
+    }
+
+    public static ValidationResult ValidateName(string name, ValidationContext context)
+    {
+        RegistrationForm instance = (RegistrationForm)context.ObjectInstance;
+        bool isValid = instance.service.Validate(name);
+
+        if (isValid)
+        {
+            return ValidationResult.Success;
+        }
+
+        return new("The name was not validated by the fancy service");
+    }
+}
+
+5.自定义验证属性
+
+执行自定义验证的另一种方法是实现自定义 [ValidationAttribute] ，然后将验证逻辑插入重写 IsValid 的方法中。 与自定义验证方法相比，这样可以实现额外的灵活性，因为它使得在多个位置重复使用同一属性变得非常简单。
+
+假设我们想要根据属性相对于同一 viewmodel 中另一个属性的相对值来验证该属性。 第一步是定义自定义 [GreaterThanAttribute]，如下所示：
+
+public sealed class GreaterThanAttribute : ValidationAttribute
+{
+    public GreaterThanAttribute(string propertyName)
+    {
+        PropertyName = propertyName;
+    }
+
+    public string PropertyName { get; }
+
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    {
+        object
+            instance = validationContext.ObjectInstance,
+            otherValue = instance.GetType().GetProperty(PropertyName).GetValue(instance);
+
+        if (((IComparable)value).CompareTo(otherValue) > 0)
+        {
+            return ValidationResult.Success;
+        }
+
+        return new("The current value is smaller than the other one");
+    }
+}
+
+接下来，我们可以将此属性添加到 viewmodel 中：
+
+public class ComparableModel : ObservableValidator
+{
+    private int a;
+
+    [Range(10, 100)]
+    [GreaterThan(nameof(B))]
+    public int A
+    {
+        get => this.a;
+        set => SetProperty(ref this.a, value, true);
+    }
+
+    private int b;
+
+    [Range(20, 80)]
+    public int B
+    {
+        get => this.b;
+        set
+        {
+            SetProperty(ref this.b, value, true);
+            ValidateProperty(A, nameof(A));
+        }
+    }
+}

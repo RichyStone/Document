@@ -1,0 +1,46 @@
+数据绑定：
+
+1.定义
+数据绑定是 WPF 应用程序中的一种机制，它为 Windows 运行应用程序时提供了一种简单易用的方式来显示数据并与数据交互。在这种机制中，数据的管理与数据的显示完全分离。
+
+数据绑定允许数据在用户界面上的 UI 元素和数据对象之间流动。当建立绑定并且数据或您的业务模型发生变化时，它会自动将更新反映到 UI 元素，反之亦然。
+也可以不绑定到标准数据源，而是绑定到页面上的另一个元素。
+
+2.数据流向
+
+1)OneWay--对源属性的更改会自动更新目标属性，但对目标属性的更改不会传播回源属性。
+2)TwoWay--更改源属性或目标属性时会自动更新另一方。
+3)OneWayToSource --当目标属性更改时，它会更新源属性。
+4)OneTime --使源属性初始化目标属性，但不传播后续更改。
+
+3.触发源更新的因素
+如果 UpdateSourceTrigger 值为 UpdateSourceTrigger.PropertyChanged，则目标属性更改后，TwoWay 或 OneWayToSource 绑定的右箭头指向的值会立即更新。 但是，如果 UpdateSourceTrigger 值为 LostFocus，则仅当目标属性失去焦点时才会使用新值更新该值。
+
+4.绑定组件
+
+使用Binding对象建立绑定，且每个绑定通常具有四个组件：绑定目标(Target)、目标属性(Target property)、绑定源(Source object)以及绑定源使用路径(Source object value path);
+
+5.指定绑定源：
+
+1）设置 DataContext 属性
+2）从上级元素继承 DataContext 值
+3）设置 Binding.Source 属性 绑定静态属性、Enum或常量用{x:Static}
+4）使用 Binding.ElementName 属性--当希望绑定到应用程序上另一个元素的属性时
+5）使用Binding.RelativeSource 属性-在样式或模板中定义绑定在 ControlTemplate 或 Style 中指定绑定时，可以使用 RelativeSource 属性，或想要将元素的一个属性绑定到同一元素的另一个属性时。
+
+6.指定指向值的路径
+
+虽然我们已强调要使用的值的 Path 是绑定的四个必需组件之一，但在要绑定到整个对象的方案中，要使用的值会与绑定源对象相同。 在这些情况下，可以不指定 Path。
+<ListBox ItemsSource="{Binding}"
+IsSynchronizedWithCurrentItem="true"/>
+
+以上示例使用空绑定语法：{Binding}。在此示例中，ListBox 从父元素继承 DataContext。
+未指定路径时，默认为绑定到整个对象。换句话说，此示例中的路径已省略，因为要将 ItemsSource 属性绑定到整个对象。
+除了绑定到集合以外，在希望绑定到整个对象，而不是仅绑定到对象的单个属性时，也可以使用此方案。
+
+7.绑定到集合
+绑定源对象可以被视为其属性包含数据的单个对象，也可以被视为通常组合在一起的多态对象的数据集合（例如数据库查询的结果）。例如，一种常见方案是使用 ItemsControl（例如 ListBox、ListView 或 TreeView）来显示数据集合。
+
+WPF 提供 ObservableCollection<T> 类，该类是公开 INotifyCollectionChanged 接口的数据集合的内置实现。 若要完全支持将数据值从源对象传输到目标，支持可绑定属性的集合中的每个对象还必须实现 INotifyPropertyChanged 接口。 
+
+参考：https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/data/?view=netdesktop-6.0

@@ -1,0 +1,91 @@
+数据验证
+
+接受用户输入的大多数应用都需要具有验证逻辑，以确保用户输入了预期信息。 可基于类型、范围、格式或特定于应用的其他要求执行验证检查。
+
+一、将验证规则与绑定关联
+
+WPF 数据绑定模型允许将 ValidationRules 与 Binding 对象关联。 
+例如，以下示例将 TextBox 绑定到名为StartPrice的属性，并将 ExceptionValidationRule对象添加到Binding.ValidationRules 属性。
+
+<TextBox Name="StartPriceEntryForm" Grid.Row="2"
+         Style="{StaticResource textStyleTextBox}" Margin="8,5,0,5" Grid.ColumnSpan="2">
+    <TextBox.Text>
+        <Binding Path="StartPrice" UpdateSourceTrigger="PropertyChanged">
+            <Binding.ValidationRules>
+                <ExceptionValidationRule />
+            </Binding.ValidationRules>
+        </Binding>
+    </TextBox.Text>
+</TextBox>
+
+ValidationRule对象检查属性的值是否有效。 WPF有两种类型的内置ValidationRule对象：
+
+1）ExceptionValidationRule检查在绑定源属性更新期间引发的异常。 在以上示例中，StartPrice为整数类型。 当用户输入的值无法转换为整数时，将引发异常，这会导致将绑定标记为无效。 用于显式设置 ExceptionValidationRule的替代语法是在 Binding 或 MultiBinding 对象上将 ValidatesOnExceptions 属性设置为 true。
+
+2）DataErrorValidationRule 对象检查实现 IDataErrorInfo接口的对象所引发的错误。
+用于显式设置 DataErrorValidationRule 的替代语法是在 Binding 或 MultiBinding 对象上将 ValidatesOnDataErrors 属性设置为 true。
+
+3）还可以通过从 ValidationRule 类派生并实现 Validate 方法来创建自己的验证规则。 以下示例演示了什么是数据绑定部分中添加产品清单“起始日期”TextBox 所用的规则。
+
+public class FutureDateRule : ValidationRule
+{
+    public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+    {
+        // Test if date is valid
+        if (DateTime.TryParse(value.ToString(), out DateTime date))
+        {
+            // Date is not in the future, fail
+            if (DateTime.Now > date)
+                return new ValidationResult(false, "Please enter a date in the future.");
+        }
+        else
+        {
+            // Date is not a valid date, fail
+            return new ValidationResult(false, "Value is not a valid date.");
+        }
+
+        // Date is valid and in the future, pass
+        return ValidationResult.ValidResult;
+    }
+}
+
+<TextBox Name="StartDateEntryForm" Grid.Row="3"
+         Validation.ErrorTemplate="{StaticResource validationTemplate}" 
+         Style="{StaticResource textStyleTextBox}" Margin="8,5,0,5" Grid.ColumnSpan="2">
+    <TextBox.Text>
+        <Binding Path="StartDate" UpdateSourceTrigger="PropertyChanged" 
+                 Converter="{StaticResource dateConverter}" >
+            <Binding.ValidationRules>
+                <src:FutureDateRule />
+            </Binding.ValidationRules>
+        </Binding>
+    </TextBox.Text>
+</TextBox>
+
+二、提供视觉反馈
+如果用户输入的值无效，你可能希望在应用 UI 上提供一些有关错误的反馈。 提供此类反馈的一种方法是将 Validation.ErrorTemplate 附加属性设置为自定义 ControlTemplate。
+
+<ControlTemplate x:Key="validationTemplate">
+    <DockPanel>
+        <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
+        <AdornedElementPlaceholder/>
+    </DockPanel>
+</ControlTemplate>
+
+AdornedElementPlaceholder 元素指定应放置待装饰控件的位置。
+
+此外，还可以使用 ToolTip 来显示错误消息。 StartDateEntryForm 和 StartPriceEntryFormTextBox 都使用样式 textStyleTextBox，该样式创建显示错误消息的 ToolTip。 以下示例显示了 textStyleTextBox 的定义。 如果绑定元素属性上的一个或多个绑定出错，则附加属性 Validation.HasError 为 true。
+
+<Style x:Key="textStyleTextBox" TargetType="TextBox">
+    <Setter Property="Foreground" Value="#333333" />
+    <Setter Property="MaxLength" Value="40" />
+    <Setter Property="Width" Value="392" />
+    <Style.Triggers>
+        <Trigger Property="Validation.HasError" Value="true">
+            <Setter Property="ToolTip" 
+                    Value="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
+        </Trigger>
+    </Style.Triggers>
+</Style>
+
+如果 Binding 具有关联的验证规则，但未在绑定控件上指定 ErrorTemplate，则发生验证错误时，将使用默认的 ErrorTemplate 通知用户。 默认的 ErrorTemplate 是一个控件模板，它在装饰层中定义红色边框。

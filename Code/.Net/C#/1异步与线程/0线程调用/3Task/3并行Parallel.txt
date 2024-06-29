@@ -1,0 +1,48 @@
+一、数据并行
+
+数据并行的核心类就是System.Threading.Tasks.Parallel，它包含两个静态方法 Parallel.For 与 Parallel.ForEach, 使用方式与for、foreach相仿。通过这两个方法可以并行处理System.Func<>、System.Action<>委托。
+
+若想停止操作，可以利用ParallelLoopState参数，
+public static ParallelLoopResult ForEach<TSource>( IEnumerable<TSource> source, Action<TSource, ParallelLoopState> action)
+其中source为数据集，在Action<TSource,ParallelLoopState>委托的ParallelLoopState参数当中包含有Break（）和 Stop（）两个方法都可以使迭代停止。
+Break的使用跟传统for里面的使用方式相似，但因为处于并行处理当中，使用Break并不能保证所有运行能立即停止，在当前迭代之前的迭代会继续执行。若想立即停止操作，可以使用Stop方法，它能保证立即终止所有的操作，无论它们是处于当前迭代的之前还是之后。
+
+当要在多个线程中调用本地变量，可以使用以下方法：
+public static ParallelLoopResult ForEach<TSource, TLocal>(IEnumerable<Of TSource>, Func<Of TLocal>, Func<Of TSource,ParallelLoopState,TLocal,TLocal>, Action<Of TLocal>)
+其中第一个参数为数据集;
+第二个参数是一个Func委托，用于在每个线程执行前进行初始化;
+第 三个参数是委托Func<Of T1,T2,T3,TResult>,它能对数据集的每个成员进行迭代，当中T1是数据集的成员，T2是一个ParallelLoopState对 象，它可以控制迭代的状态，T3是线程中的本地变量;
+第四个参数是一个Action委托，用于对每个线程的最终状态进行最终操作。
+
+在以下例子中，使用ForEach计算多个Order的总体价格。在ForEach方法中，首先把参数初始化为0f，然后用把同一个Order的多个OrderItem价格进行累加，计算出Order的价格，最后把多个Order的价格进行累加，计算出多个Order的总体价格。
+
+二、任务并行
+
+在TPL当中还可以使用Parallel.Invoke方法触发多个异步任务,其中 actions 中可以包含多个方法或者委托，parallelOptions用于配置Parallel类的操作。
+public static void Invoke(Action[] actions )
+public static void Invoke(ParallelOptions parallelOptions, Action[] actions )
+
+三、并行查询（PLINQ）
+
+并行 LINQ (PLINQ) 是 LINQ 模式的并行实现，主要区别在于 PLINQ 尝试充分利用系统中的所有处理器。 它利用所有处理器的方法，把数据源分成片段，然后在多个处理器上对单独工作线程上的每个片段并行执行查询， 在许多情况下，并行执行意味着查询运行速度显著提高。但这并不说明所有PLINQ都会使用并行方式，当系统测试要并行查询会对系统性能造成损害时，那将自动化地使用同步执行。
+在System.Linq.ParallelEnumerable类中，包含了并行查询的大部分方法。
+
+AsParallel
+PLINQ 的入口点。 指定如果可能，应并行化查询的其余部分。
+
+AsOrdered
+若要使查询结果必须保留源序列排序方式，可以使用AsOrdered方法。指定 PLINQ 应保留查询的其余部分的源序列排序，直到例如通过使用 orderby子句更改排序为止。
+AsOrdered依然使用并行方式，只是在查询过程加入额外信息，在并行结束后把查询结果再次进行排列。
+
+AsUnordered(Of TSource)
+指定查询的其余部分的 PLINQ 不需要保留源序列的排序。
+
+WithCancellation(Of TSource)
+指定 PLINQ 应定期监视请求取消时提供的取消标记和取消执行的状态。
+
+WithDegreeOfParallelism(Of TSource)
+指定 PLINQ 应当用来并行化查询的处理器的最大数目。
+
+ForAll(Of TSource)
+如果要对并行查询结果进行操作，一般会在for或foreach中执行，执行枚举操作时会使用同步方式。
+有见及此，PLINQ中包含了ForAll方法，它可以使用并行方式对数据集进行操作。

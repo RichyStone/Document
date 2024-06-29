@@ -18,13 +18,20 @@ git config --list
 git config user.name
 git config user.email
 
-注： --global 表示全局， 没有--global表示只查询在当前项目中的配置
 git config --global user.name
 git config --global user.email
 
+注： --global 表示全局， 没有--global表示只查询在当前项目中的配置
+
 5. 设置用户名和邮箱
+
+git config user.name "username"
+git config user.email "eamil@qq.com"
+
 git config --global user.name "username"
 git config --global user.email "eamil@qq.com"
+
+注： --global 表示全局， 没有--global表示只查询在当前项目中的配置
 
 二、Git 对项目代码进行管理
 
@@ -154,3 +161,11 @@ git push <alias/url> --all           	推送所有本地分支到远程仓库
 
 注: <alias/url> 远程仓库的别名 或者是 远程仓库地址
 <branch-name> 本地分支名
+
+9.ssh密钥
+ssh-keygen.exe -t rsa -C "zhangsan@qq.com"
+
+七.标签操作
+
+删除标签：		git tag -d Release_1_0
+推送所有标签： 	git ls-remote --tags

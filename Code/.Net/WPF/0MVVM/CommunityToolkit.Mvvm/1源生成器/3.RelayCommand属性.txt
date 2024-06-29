@@ -1,0 +1,153 @@
+RelayCommand 属性
+
+1.定义
+类型 RelayCommand 是一个属性，允许为带批注的方法生成中继命令属性。 其用途是完全消除在 viewmodel 中定义包装专用方法的命令所需的样本。
+
+注意：若要正常工作，批注方法需要位于 分部类中。 如果类型是嵌套的，则声明语法树中的所有类型也必须注释为部分。 这样做将导致编译错误，因为生成器将无法使用请求的命令生成该类型的不同部分声明。
+
+2.工作原理
+
+[RelayCommand]
+private void GreetUser()
+{
+    Console.WriteLine("Hello!");
+}
+
+=》
+
+private RelayCommand? greetUserCommand;
+
+public IRelayCommand GreetUserCommand => greetUserCommand ??= new RelayCommand(GreetUser);
+
+注意：将基于方法名称创建生成的命令的名称。 生成器将使用方法名称并在末尾追加“Command”，如果存在“On”前缀，则将去除“On”前缀。 此外，对于异步方法，在应用“Command”之前，也会删除“Async”后缀。
+
+3.命令参数
+
+该 [RelayCommand] 属性支持使用参数为方法创建命令。 在这种情况下，它会自动将生成的命令更改为 IRelayCommand<T> 相反，接受相同类型的参数：
+
+[RelayCommand]
+private void GreetUser(User user)
+{
+    Console.WriteLine($"Hello {user.Name}!");
+}
+
+=》
+
+private RelayCommand<User>? greetUserCommand;
+
+public IRelayCommand<User> GreetUserCommand => greetUserCommand ??= new RelayCommand<User>(GreetUser);
+
+生成的命令将自动使用参数的类型作为其类型参数。
+
+4.异步命令
+
+该 [RelayCommand] 命令还支持通过 IAsyncRelayCommand 接口 IAsyncRelayCommand<T> 包装异步方法。 每当方法返回 Task 类型时，都会自动处理此情况。 例如：
+
+[RelayCommand]
+private async Task GreetUserAsync()
+{
+    User user = await userService.GetCurrentUserAsync();
+
+    Console.WriteLine($"Hello {user.Name}!");
+}
+
+private AsyncRelayCommand? greetUserCommand;
+
+public IAsyncRelayCommand GreetUserCommand => greetUserCommand ??= new AsyncRelayCommand(GreetUserAsync);
+
+
+如果该方法采用参数，则生成的命令也将是泛型命令。
+
+此方法具有 CancellationToken一个特殊情况，因为该方法将传播到命令以启用取消。 也就是说，如下所示的方法：
+
+[RelayCommand]
+private async Task GreetUserAsync(CancellationToken token)
+{
+    try
+    {
+        User user = await userService.GetCurrentUserAsync(token);
+
+        Console.WriteLine($"Hello {user.Name}!");
+    }
+    catch (OperationCanceledException)
+    {
+    }
+}
+
+将导致生成的命令将令牌传递给包装方法。 这使使用者只需调用 IAsyncRelayCommand.Cancel 以发出该令牌的信号，并允许挂起的操作正确停止。
+
+5.启用和禁用命令
+
+通常，能够禁用命令，然后才能使状态失效，并再次检查是否可以执行命令。
+
+为了支持这一点，该 RelayCommand 属性公开 CanExecute 属性，该属性可用于指示用于评估是否可以执行命令的目标属性或方法：
+
+[RelayCommand(CanExecute = nameof(CanGreetUser))]
+private void GreetUser(User? user)
+{
+    Console.WriteLine($"Hello {user!.Name}!");
+}
+
+private bool CanGreetUser(User? user)
+{
+    return user is not null;
+}
+
+这样， CanGreetUser 当按钮首次绑定到 UI时调用，然后在每次 IRelayCommand.NotifyCanExecuteChanged 调用命令时再次调用该按钮。
+
+例如，这是命令可以绑定到属性以控制其状态的方式：
+
+[ObservableProperty]
+[NotifyCanExecuteChangedFor(nameof(GreetUserCommand))]
+private User? selectedUser;
+
+<!-- Note: this example uses traditional XAML binding syntax -->
+<Button
+    Content="Greet user"
+    Command="{Binding GreetUserCommand}"
+    CommandParameter="{Binding SelectedUser}"/>
+	
+在此示例中，每次生成 SelectedUser 属性的值更改时都会调用 GreetUserCommand.NotifyCanExecuteChanged() 方法。
+UI 具有 Button 控件绑定 GreetUserCommand，这意味着每次引发其 CanExecuteChanged 事件时，它都会再次调用其 CanExecute 方法。 
+这将导致计算包装CanGreetUser的方法，这将基于输入实例 (SelectedUser UI 中绑定到属性) null是否User返回按钮的新状态。 
+这意味着每当 SelectedUser 发生更改时， GreetUserCommand 都将基于该属性是否具有值（此方案中所需的行为）启用。
+
+注意：当方法或属性的CanExecute返回值发生更改时，该命令不会自动知道。 由开发人员调用 IRelayCommand.NotifyCanExecuteChanged 使命令失效，并请求再次评估链接 CanExecute 方法，然后更新绑定到命令的控件的视觉状态。
+
+6.处理并发执行
+
+每当命令是异步的，都可以将其配置为决定是否允许并发执行。 使用特性 RelayCommand 时，可以通过属性设置此属性 AllowConcurrentExecutions 。
+默认值为 false，这意味着在执行挂起之前，该命令会将其状态指示为禁用状态。 如果设置为 true该调用，则可以将任意数量的并发调用排队。
+
+请注意，如果命令接受取消令牌，则请求并发执行时也会取消令牌。 主要区别是，如果允许并发执行，该命令将保持启用状态，并且它将启动新的请求执行，而无需等待上一个执行实际完成。
+
+7.处理异步异常
+
+异步中继命令处理异常的方式有两种不同的方法：
+
+1）await 和重新引发 (默认) ：当命令等待调用完成时，任何异常自然都会在同一同步上下文中引发。 这通常意味着引发的异常只会使应用崩溃，这与同步命令的行为一致， (引发异常也会使应用崩溃) 。
+
+2）流异常到任务计划程序：如果命令配置为将异常流式流式传送到任务计划程序，则引发的异常不会使应用崩溃，而是通过公开 IAsyncRelayCommand.ExecutionTask 的异常以及浮泡 TaskScheduler.UnobservedTaskException而变为可用。 这可实现更高级的方案 (例如，让 UI 组件绑定到任务，并根据操作结果) 显示不同的结果，但正确使用更为复杂。
+
+默认行为是命令等待并重新引发异常。 这可以通过属性进行配置 FlowExceptionsToTaskScheduler ：
+
+[RelayCommand(FlowExceptionsToTaskScheduler = true)]
+private async Task GreetUserAsync(CancellationToken token)
+{
+    User user = await userService.GetCurrentUserAsync(token);
+
+    Console.WriteLine($"Hello {user.Name}!");
+}
+
+在这种情况下， try/catch 不需要，因为异常将不再崩溃应用。 请注意，这还会导致其他不相关的异常自动重新引发，因此应仔细决定如何处理每个单独的方案并相应地配置其余代码。
+
+8.取消异步操作的命令
+异步命令的最后一个选项是请求生成取消命令的功能。 这是一个 ICommand 包装异步中继命令，可用于请求取消操作。 此命令将自动发出信号，以反映它是否可以在任何给定时间使用。 例如，如果链接命令未执行，它将报告其状态，因为它不可执行。 这可以按如下所示使用：
+
+[RelayCommand(IncludeCancelCommand = true)]
+private async Task DoWorkAsync(CancellationToken token)
+{
+    // Do some long running work...
+}
+
+这将导致 DoWorkCancelCommand 也会生成属性。 然后，可以绑定到其他一些 UI 组件，以便用户轻松取消挂起的异步操作。

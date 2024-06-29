@@ -1,0 +1,113 @@
+依赖属性：
+
+一、依赖属性：
+
+1.定义：
+在 WPF 应用程序中，依赖属性是一种特定类型的属性，它扩展了 CLR 属性。它利用了 WPF 属性系统中可用的特定功能。
+依赖属性自己可以没有值，并且可以通过绑定从其他数据源获取值。依赖属性可支持WPF中的样式设置、数据绑定、继承、动画及默认值。
+定义依赖属性的类必须继承DependencyObject类。XAML 中使用的许多 UI 控件类都是从DependencyObject类派生的，它们支持依赖属性，例如 Button 类支持IsMouseOver依赖属性。
+
+依赖属性具有继承的特性。
+
+2.应用场景：
+
+1）引用资源
+<StackPanel.Resources>
+    <SolidColorBrush x:Key="MyBrush" Color="Gold"/>
+</StackPanel.Resources>
+
+2）数据绑定
+<Button Content="{Binding Source={StaticResource TestData}, XPath=test[1]/@text}"/>
+
+3）样式
+<Style x:Key="GreenButtonStyle">
+    <Setter Property="Control.Background" Value="Green"/>
+</Style>
+
+4）动画
+<Button Content="I am animated">
+    <Button.Background>
+        <SolidColorBrush x:Name="AnimBrush"/>
+    </Button.Background>
+    <Button.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ColorAnimation
+                        Storyboard.TargetName="AnimBrush" 
+                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                        From="Blue" To="White" Duration="0:0:1" 
+                        AutoReverse="True" RepeatBehavior="Forever" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Button.Triggers>
+</Button>
+
+5）元数据重写
+public class SpinnerControl : ItemsControl
+{
+    static SpinnerControl() => DefaultStyleKeyProperty.OverrideMetadata(
+            typeof(SpinnerControl),
+            new FrameworkPropertyMetadata(typeof(SpinnerControl))
+        );
+}
+
+6）属性值继承
+<StackPanel Canvas.Top="50" DataContext="{Binding Source={StaticResource TestData}}">
+    <Button Content="{Binding XPath=test[2]/@text}"/>
+</StackPanel>
+
+3.依赖属性和其他CLR 属性之间的主要区别：
+CLR 属性可以通过使用getter和setter直接从类的私有成员读取/写入。相反，依赖属性不存储在本地对象中。
+依赖属性存储在由 DependencyObject 类提供的键/值对字典中。它还节省了大量内存，因为它在更改时存储属性。它也可以在 XAML 中绑定。
+
+4.依赖属性的特点
+
+1）属性变更通知
+无论什么时候，只要依赖属性的值发生改变，wpf就会自动根据属性的元数据触发一系列的动作，这些动作可以重新呈现UI元素，也可以更新当前的布局，刷新数据绑定等等，这种变更的通知最有趣的特点之一就是属性触发器，它可以在属性值改变的时候，执行一系列自定义的动作，而不需要更改任何其他的代码来实现。
+
+2）属性值继承
+是指属性值自顶向下沿着元素树进行传递。
+
+3）节省内存空间
+依赖属性和CLR属性在内存的使用上是截然不同的，每个CLR属性都包含一个非static的字段，因此当我们实例化一个类型的时候，就会创建该类型所拥有的所有CLR属性，也就是说一个对象所占用的内存在调用new操作进行实例化的时候就已经决定了、而wpf允许对象在创建的时候并不包含用于存储数据的空间，只保留在需要用到数据的时候能够获得该默认值，即用其他对象数据或者实时分配空间的能力。
+
+5.依赖属性优先级列表
+
+下面列出了在将运行时值分配给依赖属性时，属性系统所使用的最终优先级顺序。 最高优先级最先列出：
+
+1)属性系统强制。
+
+2)活动动画或具有 Hold 行为的动画。 若要拥有实用效果，动画必须拥有比基值（无动画）更高的优先级，即使基值进行了本地设置也是如此。
+
+3)本地值。 可以通过“包装器”属性设置本地值，这相当于在 XAML 中设置特性或属性元素，或者使用特定实例的属性调用 SetValue API。 通过绑定或资源设置的本地值会具有与直接设置的值相同的优先级。
+
+4)TemplatedParent 模板属性值。 如果元素是通过模板创建（ControlTemplate 或 DataTemplate）创建的，则具有 TemplatedParent。 在通过 TemplatedParent 指定的模板中，优先级顺序为：
+a.触发器。
+b.属性集（通常通过 XAML 特性进行设置）。
+
+5)隐式样式。 仅应用于 Style 属性。 Style 值是具有与元素类型匹配的 TargetType 值的任何样式资源。 样式资源必须存在于页面或应用程序中。 对隐式样式资源的查找不会扩展到主题中的样式资源。
+
+6)样式触发器。 样式触发器是显式或隐式样式中的触发器。 样式必须存在于页面或应用程序中。 默认样式中的触发器的优先级较低。
+
+7)模板触发器。 模板触发器是直接应用的模板或样式中的模板中的触发器。 样式必须存在于页面或应用程序中。
+
+8)样式资源库值。 样式资源库值是样式中通过 Setter 应用的值。 样式必须存在于页面或应用程序中。
+
+9)默认样式，也称为主题样式。 有关详细信息，请参阅默认（主题）样式。 在默认样式中，优先级顺序如下：
+a.活动触发器。
+b.资源库。
+
+10)继承。 子元素的某些依赖属性从父元素继承其值。 因此，可能不需要在整个应用程序中对每个元素设置属性值。 有关详细信息，请参阅属性值继承。
+
+11)依赖属性元数据中的默认值。依赖属性可以在该属性的属性系统注册期间设置默认值。 继承依赖属性的派生类可以选择按照类型重写依赖属性元数据（包括默认值）。
+
+5.自定义依赖属性
+
+快速定义依赖属性的快捷方式：
+输入propdp，连续按两下Tab健，自动生成定义依赖属性的语法。
+
+1）声明依赖属性变量。依赖属性的声明都是通过public static来公开一个静态变量，变量的类型必须是DependencyProperty
+2）在属性系统中进行注册。使用DependencyProperty.Register方法来注册依赖属性，或者是使用DependencyProperty.RegisterReadOnly方法来注册
+3）使用.NET属性包装依赖属性，在类上实现属性时，只要该类派生自 DependencyObject，便可以选择使用 DependencyProperty 标识符来标示属性，从而将其设置为依赖属性。

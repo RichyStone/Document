@@ -1,0 +1,110 @@
+路由事件：
+
+1.定义：
+
+从 功能 角度来看，路由事件是一种事件类型，它可以在元素树中的多个侦听器上调用处理程序，而不仅仅是在事件源上。 
+事件侦听器是附加和调用事件处理程序的元素。 事件源是最初引发事件的元素或对象。
+
+从 实现 的角度来看，路由事件是向 WPF 事件系统注册的事件，是 RoutedEvent类的实例，并由 WPF 事件系统处理。
+通常，路由事件通过 CLR 事件“包装器”实现，以便在 XAML 和代码隐藏中启用附加处理程序，就像使用 CLR 事件一样。
+
+2.路由策略
+
+三种路由策略：
+
+冒泡：最初，调用事件源上的事件处理程序。 路由事件随后路由到连续的父元素，依次调用其事件处理程序，直到到达元素树根。 大多数路由事件都使用冒泡路由策略。 冒泡路由事件通常用于报告来自复合控件或其他 UI 元素的输入或状态更改。
+
+隧道：最初，将调用元素树根上的事件处理程序。 路由事件随后路由到连续的子元素，依次调用其事件处理程序，直到到达事件源。 遵循隧道路由的事件也称为 预览 事件。WPF 输入事件通常以 预览和冒泡对的形式实现。
+
+直接：仅调用事件源上的事件处理程序。 此非路由策略类似于Windows 窗体 UI 框架事件，即标准 CLR 事件。 与 CLR 事件不同，直接路由事件支持类处理 ，并且可由 EventSetters 和 EventTriggers 使用。
+
+3.路由事件的实现
+
+路由事件是向 WPF 事件系统注册的事件，由RoutedEvent类的实例提供支持，并由 WPF 事件系统处理。 RoutedEvent从注册获取的实例通常存储为public static readonly注册它的类的成员。 该类称为事件“owner”类。 通常，路由事件实现同名 CLR 事件“包装器”。 CLR 事件包装器包含 add 和 remove 访问器，用于通过特定于语言的事件语法在 XAML 和代码隐藏中启用附加处理程序。
+add和 remove 访问器重写其 CLR 实现并调用路由事件AddHandler和RemoveHandler方法。
+路由事件支持和连接机制在概念上类似于依赖属性是由 DependencyProperty 类支持并在 WPF 属性系统中注册的 CLR 属性。
+
+// Register a custom routed event using the Bubble routing strategy.
+public static readonly RoutedEvent TapEvent = EventManager.RegisterRoutedEvent(
+    name: "Tap",
+    routingStrategy: RoutingStrategy.Bubble,
+    handlerType: typeof(RoutedEventHandler),
+    ownerType: typeof(CustomButton));
+
+// Provide CLR accessors for adding and removing an event handler.
+public event RoutedEventHandler Tap
+{
+    add { AddHandler(TapEvent, value); }
+    remove { RemoveHandler(TapEvent, value); }
+}
+
+4.使用路由事件的原因
+
+路由事件具有特殊行为，但如果在引发该事件的元素上处理事件，该行为基本上不可见。 但是，如果要将事件处理程序附加到父元素以处理子元素引发的事件（例如在复合控件中），路由事件是相关的。
+
+路由事件侦听器不需要其处理的路由事件成为其类的成员。 任何 UIElement 或 ContentElement 可以是任一路由事件的事件侦听器。 
+由于可视元素派生自 UIElement 或 ContentElement，因此可以将路由事件用作支持应用程序中不同元素之间事件信息交换的概念“接口”。 路由事件的“接口”概念特别适用于 输入事件。
+路由事件支持沿事件路由的元素之间的事件信息交换，因为每个侦听器都有权访问相同的事件数据实例。 如果事件数据中某个元素更改了某些内容，该更改对事件路由中的后续元素可见。
+
+除了路由方面，可能出于以下原因选择实现路由事件而不是标准 CLR 事件：
+
+1）某些 WPF 样式设置和模板化功能（如 EventSetters 和 EventTriggers）要求引用的事件成为路由事件。
+
+2）路由事件支持 类事件处理程序 ，这些事件处理程序在侦听器类的任何实例上处理同一事件的实例处理程序之前处理事件。 此功能在控件设计中很有用，因为类处理程序可以强制实施实例处理程序不会意外取消的事件驱动类行为。
+
+5.处理的概念
+
+所有路由事件共享事件数据的通用基类，即 RoutedEventArgs 类。 类 RoutedEventArgs 定义布尔 Handled 属性。 属性的 Handled 用途是让事件路由上的任何事件处理程序将路由事件标记为 已处理。 若要将事件标记为已处理，请在事件处理程序代码中将 Handled 的值设置为 true。
+
+6.XAML 中的限定事件名称
+
+语法 <owner type>.<event name> 使用其所有者类型的名称限定事件名称。 此语法允许将事件附加到任何元素，而不仅仅是将事件作为其类的成员实现的元素。 在 XAML 中为附加事件或沿 事件 路由的任意元素上的路由事件附加处理程序时，语法适用。 假设你想要将处理程序附加到父元素，以便处理子元素上引发的路由事件。 如果父元素没有路由事件作为成员，则需要使用限定的事件名称语法。
+
+<StackPanel Name="StackPanel1" Button.Click="Button_Click">
+    <Button>Click me</Button>
+</StackPanel>
+
+7.WPF 输入事件
+
+WPF 平台中路由事件的一个常见应用是 输入事件。 按照约定，遵循隧道路由的 WPF 路由事件的名称以“Preview”为前缀。 预览前缀表示预览事件在配对浮升事件开始之前完成。 输入事件通常成对出现，一个是预览事件，另一个是冒泡路由事件。 例如，PreviewKeyDown 和 KeyDown。 事件对共享相同的事件数据实例，对于 PreviewKeyDown 和 KeyDown 的类型为 KeyEventArgs。 有时，输入事件只有浮升版本，或者只有直接路由版本。 在 API 文档中，路由事件主题交叉引用路由事件对，并阐明每个路由事件的路由策略。
+
+实现成对的 WPF 输入事件，以便来自输入设备的单个用户操作（如按下鼠标按钮）将按顺序引发预览和冒泡路由事件。 首先，引发预览事件并完成其路由。 预览事件完成后，将引发冒泡事件并完成其路由。 RaiseEvent引发冒泡事件的实现类中的方法调用将重复使用来自冒泡事件的预览事件中的事件数据。
+
+标记为已处理的预览输入事件不会为预览路由的其余部分调用任何正常注册的事件处理程序，并且不会引发配对的冒泡事件。 如果复合控件设计器希望在其控件的顶层报告基于命中测试的输入事件或基于焦点的输入事件，则此处理行为非常有用。 控件的顶级元素有机会对控件子组件中的预览事件进行类处理，以便用特定于控件的顶级事件“替换”它们。
+
+8.EventSetter 和 EventTrigger
+
+在标记样式中，可以使用 来包括预先声明的 EventSetter XAML 事件处理语法。 处理 XAML 时，引用的处理程序将添加到带样式的实例。 只能为路由事件声明 。
+
+<StackPanel>
+    <StackPanel.Resources>
+        <Style TargetType="{x:Type Button}">
+            <EventSetter Event="Click" Handler="ApplyButtonStyle"/>
+        </Style>
+    </StackPanel.Resources>
+    <Button>Click me</Button>
+    <Button Click="Button_Click">Click me</Button>
+</StackPanel>
+
+9.自定义路由事件
+
+1）声明路由事件变量并注册：定义只读的静态变量字段RouteEvent类来声明一个变量，然后使用EventManager的RegisterRoutedEvent()方法向事件系统注册路由事件，该方法的签名如下：
+
+public static RoutedEvent RegisterRoutedEvent(string name, RoutingStrategy routingStrategy, Type handlerType, Type ownerType); 
+
+name表示该路由事件在WPF事件系统中的名称。
+
+
+routingStrategy是RoutingStrategy类型的枚举值，标明了路由事件的路由策略，共三种策略：,第一种Bubble是冒泡策略，这种模式是从触发点向根节点传递，直到最外层。第二种是Direct就是传统的事件一样的。第三种是隧道策略，这和冒泡策略相反，向下传递。
+
+handlerType用来标明事件处理函数的类型。
+
+ownerType则用来标明拥有该路由事件的类型。
+
+EventManager的RegisterRoutedEvent()方法返回一个RoutedEvent类型的实例。一般情况下，该实例将由一个public static readonly字段所保存。
+
+2）通过标准的.NET事件包装路由事件：事件包装器使用AddHandler方法来添加路由事件的调用程序，然后使用RemoveHandler来删除已经添加的调用程序。
+
+3）创建可以激发路由事件的方法。
+
+自定义路由事件参考： https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/events/how-to-create-a-custom-routed-event?view=netdesktop-6.0
