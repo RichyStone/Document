@@ -20,7 +20,8 @@ WCF的基本概念是以契约(Contract)来定义双方沟通的协议，契约�
 错误契约(Fault Contract)
 
 协议绑定：
-由于 WCF 支持了HTTP，TCP，Named Pipe，MSMQ，Peer-To-Peer TCP 等协议，而 HTTP 又分为基本 HTTP 支持(BasicHttpBinding) 以及 WS-HTTP 支持 (WsHttpBinding)，而 TCP 亦支持 NetTcpBinding，NetPeerTcpBinding 等通信方式，因此，双方必须要统一通信的协议，并且也要在编码以及格式上要有所一致。
+由于 WCF 支持了HTTP，TCP，Named Pipe，MSMQ，Peer-To-Peer TCP 等协议，而 HTTP 又分为基本 HTTP 支持(BasicHttpBinding) 以及 WS-HTTP 支持 (WsHttpBinding)，
+而 TCP 亦支持 NetTcpBinding，NetPeerTcpBinding 等通信方式，因此，双方必须要统一通信的协议，并且也要在编码以及格式上要有所一致。
 
 SOA(Service Oriented Architecture),面向服务架构，属于一种组建架构模型。一组公开发表的接口，并且提供查询的组件。
 4个特性：

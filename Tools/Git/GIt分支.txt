@@ -7,7 +7,8 @@
 
 2.develop 分支
 开发分支，包含了项目最新的功能和代码，所有开发都依赖 develop 分支进行
-develop 分支作为开发的主分支，也不允许直接提交代码。新改动需要切出新的 feature 分支进行，开发完毕后以此分支提 merge request 合并至 develop 分支，目的是保证每个改动都经过了强制代码 review，降低代码风险
+develop 分支作为开发的主分支，也不允许直接提交代码。新改动需要切出新的 feature 分支进行，开发完毕后以此分支提 merge request 合并至 develop 分支，
+目的是保证每个改动都经过了强制代码 review，降低代码风险
 始终保持为最新已完成以及bug修复后的代码
 
 3.feature 分支
@@ -22,7 +23,8 @@ develop 分支作为开发的主分支，也不允许直接提交代码。新改
 
 5.hotfix 分支
 紧急修复线上的 bug 分支。
-当线上版本出现 bug 时，从 mater 分支切出一个 hotfix/xxx 分支，完成 bug 修复，然后将 hotfix/xxx 合并到 master 和 develop 分支（如果此时存在 release 分支，则应该合并到 release 分支），合并完成后删除该 hotfix/xxx 分支。
+当线上版本出现 bug 时，从 mater 分支切出一个 hotfix/xxx 分支，完成 bug 修复，然后将 hotfix/xxx 合并到 master 和 develop 分支（如果此时存在 release 分支，则应该合并到 release 分支），
+合并完成后删除该 hotfix/xxx 分支。
 
 6.临时开发分支（可选）
 同一个模块多个人开发时，可在对应的feature分支上继续创建开发人员自己的分支，开发并测试完成后将其合并到feature分支，功能开发完成后再将feature合并到develop分支
